@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" fill="none" role="img" aria-labelledby="title description">
+  <title id="title">Golden Breeze — Agent Platform</title>
+  <desc id="description">Светлая золотистая обложка Golden Breeze: агентная платформа для торговых стратегий.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1200" y2="360" gradientUnits="userSpaceOnUse"><stop stop-color="#FFFDF7"/><stop offset="1" stop-color="#F4E9CA"/></linearGradient>
+    <linearGradient id="gold" x1="857" y1="71" x2="1062" y2="287" gradientUnits="userSpaceOnUse"><stop stop-color="#D8B45C"/><stop offset="1" stop-color="#8B6426"/></linearGradient>
+    <clipPath id="frame"><rect width="1200" height="360" rx="24"/></clipPath>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="360" fill="url(#paper)"/>
+    <path d="M700 360C846 184 1002 451 1239 104" stroke="#E3CF99" stroke-width="2"/>
+    <path d="M749 360C894 209 1073 435 1232 167" stroke="#E3CF99" stroke-width="2"/>
+    <path d="M796 360C934 241 1094 423 1252 223" stroke="#E3CF99" stroke-width="2"/>
+    <circle cx="961" cy="179" r="117" fill="#FFFCF1" fill-opacity=".68"/>
+    <circle cx="961" cy="179" r="116" stroke="#DFC993"/>
+    <text x="961" y="205" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="82" font-weight="600" letter-spacing="-5" fill="url(#gold)">GB</text>
+    <rect x="64" y="66" width="36" height="4" rx="2" fill="#AE812E"/>
+    <text x="116" y="76" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="600" letter-spacing="4" fill="#87642D">AGENT PLATFORM</text>
+    <text x="60" y="171" font-family="Segoe UI,Arial,sans-serif" font-size="66" font-weight="600" letter-spacing="-2" fill="#302B21">Golden Breeze</text>
+    <text x="64" y="220" font-family="Segoe UI,Arial,sans-serif" font-size="23" fill="#665A43">Агентная платформа для торговых стратегий</text>
+    <path d="M64 271H456" stroke="#D9C599"/>
+    <text x="64" y="301" font-family="Segoe UI,Arial,sans-serif" font-size="15" letter-spacing="2" fill="#87642D">DESKTOP APPLICATION · WINDOWS</text>
+  </g>
+  <rect x=".5" y=".5" width="1199" height="359" rx="23.5" stroke="#E5D8B7"/>
+</svg>

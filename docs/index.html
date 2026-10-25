@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Golden Breeze — Агентная платформа для торговых стратегий</title>
+  <meta name="description" content="Golden Breeze — самостоятельная мультиагентная платформа для Windows x64: исследование рынка, разработка, проверка, версионирование и контролируемое применение торговых стратегий.">
+  <meta name="theme-color" content="#FAF6EC">
+  <link rel="icon" type="image/svg+xml" href="./assets/brand/favicon.svg">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Перейти к основному содержанию</a>
+
+  <!-- Плашка актуального выпуска -->
+  <div class="access-banner" role="region" aria-label="Сведения о текущем выпуске">
+    <div class="container access-banner__inner">
+      <span class="access-banner__badge">
+        <span class="access-banner__dot" aria-hidden="true"></span>
+        Агентная платформа для Windows x64 · Срез состояния на 25 октября 2026
+      </span>
+      <span>
+        Актуальный выпуск: <strong>v0.12.0-alpha</strong> (Pre-release, FirstInstall) · <a href="#download">Скачать и проверить SHA-256</a>
+      </span>
+    </div>
+  </div>
+
+  <!-- Шапка и навигация -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand-logo" href="#top" aria-label="Golden Breeze — наверх страницы">
+        <span class="brand-logo__mark" aria-hidden="true">GB</span>
+        <span class="brand-logo__text">
+          Golden Breeze
+          <span class="brand-logo__meta">Agent Platform · Windows x64</span>
+        </span>
+      </a>
+
+      <!-- Основная навигация по разделам -->
+      <nav id="site-nav" class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="#capabilities">Возможности</a></li>
+          <li><a class="site-nav__link" href="#user-journey">Путь пользователя</a></li>
+          <li><a class="site-nav__link" href="#roadmap">Статусы и план</a></li>
+          <li><a class="site-nav__link" href="#download">Скачать и старт</a></li>
+          <li><a class="site-nav__link" href="#partners">Партнёрам</a></li>
+        </ul>
+      </nav>
+
+      <!-- Постоянные действия в шапке (всегда видны ВНЕ выпадающего списка разделов) -->
+      <div class="site-header__actions">
+        <a
+          class="btn btn--primary btn--sm header-release-btn"
+          href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.12.0-alpha"
+          aria-label="Выпуск v0.12.0-alpha"
+        >
+          <span class="header-release-btn__full">Выпуск v0.12.0-alpha</span>
+          <span class="header-release-btn__short" aria-hidden="true">v0.12.0</span>
+        </a>
+
+        <button
+          id="nav-toggle"
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Открыть или закрыть меню разделов"
+        >
+          <span class="nav-toggle__icon" aria-hidden="true">☰</span>
+          <span class="nav-toggle__text">Меню</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- HERO -->
+    <section id="top" class="hero" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div>
+          <div class="hero__eyebrow">Desktop Application · Multi-Agent Platform</div>
+          <h1 id="hero-title" class="hero__title">
+            Агентная платформа для исследования, создания и проверки торговых стратегий
+          </h1>
+          <p class="hero__lead">
+            Golden Breeze развивается как самостоятельная мультиагентная среда для Windows:
+            от сохраняемого разговора с агентом, изучения рынка и разработки кода стратегии —
+            к изолированным проверкам, версиям в каталоге, контролю счёта и будущему управлению портфелем.
+          </p>
+
+          <div class="hero__Chips" aria-label="Ключевые характеристики платформы">
+            <span class="chip">Пульт управления и Агент-студия</span>
+            <span class="chip">Диалог с агентом и выбор модели</span>
+            <span class="chip">Подключение MetaTrader 5 (Demo / Real)</span>
+            <span class="chip">Автообновление по HTTPS</span>
+            <span class="chip">Интерфейс: RU · UA · EN</span>
+          </div>
+
+          <div class="hero__actions">
+            <a
+              class="btn btn--primary"
+              href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.12.0-alpha/GoldenBreeze-FirstInstall-0.12.0-alpha.exe"
+            >
+              Скачать для Windows
+            </a>
+            <a
+              class="btn btn--secondary"
+              href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.12.0-alpha"
+            >
+              Выпуск v0.12.0-alpha (Alpha)
+            </a>
+            <a class="btn btn--ghost" href="#roadmap">
+              Статус возможностей
+            </a>
+          </div>
+
+          <p class="hero__note">
+            Предварительный выпуск <strong>v0.12.0-alpha</strong> (канал <code>stable</code>, Windows x64). Установщик включает собственное окружение и не запускает торговлю автоматически.
+          </p>
+        </div>
+
+        <!-- Карточка актуального опубликованного релиза -->
+        <aside class="release-card" aria-labelledby="release-card-heading">
+          <div class="release-card__header">
+            <div>
+              <p class="release-card__meta">Опубликованный выпуск · Канал stable</p>
+              <h2 id="release-card-heading" class="release-card__title">Golden Breeze v0.12.0-alpha</h2>
+            </div>
+            <span class="badge badge--released">Alpha · 17.10.2026</span>
+          </div>
+
+          <div class="release-card__specs">
+            <div class="spec-box">
+              <span class="spec-box__label">Пакет установки</span>
+              <span class="spec-box__value">FirstInstall (Windows x64)</span>
+            </div>
+            <div class="spec-box">
+              <span class="spec-box__label">Размер файла</span>
+              <span class="spec-box__value">365,5 МиБ (383 300 782 Б)</span>
+            </div>
+            <div class="spec-box">
+              <span class="spec-box__label">Торговый контур</span>
+              <span class="spec-box__value">MT5 (TradeLocker — в плане)</span>
+            </div>
+            <div class="spec-box">
+              <span class="spec-box__label">Статус цикла</span>
+              <span class="spec-box__value">Продолжается живая приёмка</span>
+            </div>
+          </div>
+
+          <div class="hash-box">
+            <div class="hash-box__header">
+              <span class="hash-box__label">SHA-256 файла GoldenBreeze-FirstInstall-0.12.0-alpha.exe</span>
+              <button class="copy-btn" type="button" data-copy-target="hero-sha256">
+                Копировать SHA-256
+              </button>
+            </div>
+            <code id="hero-sha256" class="hash-box__code">d4546bc1fe718020f78315bbe98e4b232db044fb80bdb1061f1d2fe44ffd60a2</code>
+          </div>
+
+          <p class="release-card__meta">
+            Сверка SHA-256 подтверждает точное совпадение скачанных байтов с опубликованным файлом выпуска.
+          </p>
+
+          <div class="release-card__links">
+            <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.12.0-alpha/GoldenBreeze-FirstInstall-0.12.0-alpha.exe.sha256">Файл .sha256</a>
+            <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.12.0-alpha/build-manifest.json">build-manifest.json</a>
+            <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.12.0-alpha/first-install.json">first-install.json</a>
+            <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.12.0-alpha/first-install.json.sig">Подпись манифеста .sig</a>
+            <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases">Все выпуски</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ВИТРИНА ИНТЕРФЕЙСА (ИНТЕРАКТИВНЫЙ ПРИМЕР ПУЛЬТА С ДЕМО-ДАННЫМИ) -->
+    <section class="showcase" aria-labelledby="showcase-heading">
+      <div class="container">
+        <div class="showcase__frame">
+          <div class="showcase__topbar">
+            <div class="showcase__title-group">
+              <div id="showcase-heading" class="showcase__title">
+                <span>Рабочее пространство: Пульт управления Golden Breeze</span>
+              </div>
+              <span class="showcase__caption-tag">
+                Интерактивный пример · демонстрационные данные
+              </span>
+            </div>
+            <div class="showcase__controls">
+              <span id="pult-anim-status" class="pult-demo__live-indicator" aria-live="polite">
+                <span class="pult-demo__live-dot" aria-hidden="true"></span>
+                <span id="pult-anim-status-text">Демо-обновление активно</span>
+              </span>
+              <button
+                id="pult-anim-toggle"
+                class="pult-demo__ctrl-btn"
+                type="button"
+                aria-pressed="false"
+                aria-label="Приостановить или запустить демонстрационную анимацию Пульта"
+              >
+                Пауза
+              </button>
+            </div>
+          </div>
+
+          <!-- Нативная композиция Пульта управления -->
+          <div class="pult-demo" role="region" aria-label="Демонстрационный макет Пульта управления Golden Breeze">
+            <!-- Левая узкая панель навигации приложения -->
+            <aside class="pult-demo__rail" aria-hidden="true">
+              <div class="pult-demo__rail-top">
+                <div class="pult-demo__gb-logo">GB</div>
+                <div class="pult-demo__rail-btn" title="Диалог с агентом">&gt;_</div>
+                <div class="pult-demo__rail-btn pult-demo__rail-btn--active" title="Пульт управления">⊞</div>
+                <div class="pult-demo__rail-btn" title="Агент-студия">◇</div>
+                <div class="pult-demo__rail-btn" title="Каталог стратегий">☰</div>
+                <div class="pult-demo__rail-btn" title="Правила и счета">⚙</div>
+              </div>
+              <div class="pult-demo__rail-bottom">
+                <div class="pult-demo__rail-btn" title="Настройки">⚙</div>
+              </div>
+            </aside>
+
+            <!-- Основная рабочая область Пульта -->
+            <div class="pult-demo__canvas">
+              <!-- Верхняя строка состояния системы -->
+              <div class="pult-demo__sysbar">
+                <div class="pult-demo__sys-pills">
+                  <span class="pult-sys-pill">АГЕНТЫ : <strong>3</strong></span>
+                  <span class="pult-sys-pill pult-sys-pill--ok">ЗАПУЩЕНО : <strong id="pult-sys-running">1</strong></span>
+                  <span class="pult-sys-pill">СИСТЕМА : <strong>STABLE v0.12</strong></span>
+                  <span class="pult-sys-pill">ДАННЫЕ : <strong>СЕРВЕР MT5</strong></span>
+                </div>
+                <div class="pult-demo__sys-right">
+                  <span class="pult-sys-pill">RU ▾</span>
+                  <span id="pult-demo-clock" class="pult-demo__clock">14:20:05</span>
+                  <span class="pult-sys-pill">Вид ▾</span>
+                </div>
+              </div>
+
+              <!-- Информационная полоса статуса рабочей версии -->
+              <div class="pult-demo__notice-bar">
+                <span id="pult-studio-banner">
+                  Рабочая версия стратегии <strong>Momentum-Session v2.4.0 (+sourcefree)</strong> применена в Студии. Все условия допуска демо-контура выполнены.
+                </span>
+                <span class="pult-demo__notice-meta">Учебный демонстрационный контур</span>
+              </div>
+
+              <!-- Блок ТОРГОВЫЕ АГЕНТЫ (стандартные компактные карточки, а не одна растянутая полоса) -->
+              <div class="pult-demo__section-box">
+                <div class="pult-demo__section-head">
+                  <span class="pult-demo__section-label">ТОРГОВЫЕ АГЕНТЫ · ВЫБЕРИТЕ ПРОФИЛЬ</span>
+                  <span class="pult-demo__section-hint">3 стандартных профиля в рабочей области</span>
+                </div>
+                <div class="pult-demo__agents-grid" role="tablist" aria-label="Демонстрационные профили торговых агентов">
+                  <!-- Карточка профиля 1 -->
+                  <button
+                    type="button"
+                    role="tab"
+                    id="pult-tab-xau-h1"
+                    class="pult-agent-card is-selected"
+                    data-agent-profile="xau-h1"
+                    aria-selected="true"
+                  >
+                    <div class="pult-agent-card__top">
+                      <span class="pult-agent-card__avatar">GB</span>
+                      <div class="pult-agent-card__titles">
+                        <span class="pult-agent-card__name">XAU · Импульс H1</span>
+                        <span class="pult-agent-card__sub">XAUUSD · H1 / M15 · FTMO Demo</span>
+                      </div>
+                    </div>
+                    <div class="pult-agent-card__bottom">
+                      <span class="pult-status-tag pult-status-tag--active">АКТИВЕН · ДЕМО</span>
+                      <span class="pult-agent-card__metric" id="pult-card-metric-xau-h1">BUY 0.20 · +$144</span>
+                    </div>
+                  </button>
+
+                  <!-- Карточка профиля 2 -->
+                  <button
+                    type="button"
+                    role="tab"
+                    id="pult-tab-xau-m15"
+                    class="pult-agent-card"
+                    data-agent-profile="xau-m15"
+                    aria-selected="false"
+                  >
+                    <div class="pult-agent-card__top">
+                      <span class="pult-agent-card__avatar">GB</span>
+                      <div class="pult-agent-card__titles">
+                        <span class="pult-agent-card__name">XAU · Возврат M15</span>
+                        <span class="pult-agent-card__sub">XAUUSD · M15 / H4 · FTMO Demo</span>
+                      </div>
+                    </div>
+                    <div class="pult-agent-card__bottom">
+                      <span class="pult-status-tag pult-status-tag--ready">ГОТОВ К СТАРТУ</span>
+                      <span class="pult-agent-card__metric">Ожидание сигнала</span>
+                    </div>
+                  </button>
+
+                  <!-- Карточка профиля 3 -->
+                  <button
+                    type="button"
+                    role="tab"
+                    id="pult-tab-eur-m30"
+                    class="pult-agent-card"
+                    data-agent-profile="eur-m30"
+                    aria-selected="false"
+                  >
+                    <div class="pult-agent-card__top">
+                      <span class="pult-agent-card__avatar">GB</span>
+                      <div class="pult-agent-card__titles">
+                        <span class="pult-agent-card__name">EUR · Диапазон M30</span>
+                        <span class="pult-agent-card__sub">EURUSD · M30 · MT5 Demo</span>
+                      </div>
+                    </div>
+                    <div class="pult-agent-card__bottom">
+                      <span class="pult-status-tag pult-status-tag--paused">ПАУЗА · ИЗУЧЕНИЕ</span>
+                      <span class="pult-agent-card__metric">Бары прочитаны</span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Паспорт выбранного агента -->
+              <div class="pult-demo__section-box pult-demo__passport">
+                <div class="pult-demo__passport-top">
+                  <div class="pult-demo__passport-id">
+                    <span class="pult-agent-card__avatar">GB</span>
+                    <strong id="pult-active-name" class="pult-demo__passport-name">«XAU · Импульс H1»</strong>
+                    <span id="pult-active-badge" class="pult-status-tag pult-status-tag--active">АКТИВЕН · ДЕМО-СЕССИЯ</span>
+                  </div>
+                  <span class="pult-demo__studio-pill">Настроить агента в Студии →</span>
+                </div>
+
+                <div class="pult-demo__specs-row">
+                  <div class="pult-spec-cell">
+                    <span class="pult-spec-cell__label">ИНСТРУМЕНТ</span>
+                    <strong id="pult-spec-symbol" class="pult-spec-cell__val">XAUUSD</strong>
+                  </div>
+                  <div class="pult-spec-cell">
+                    <span class="pult-spec-cell__label">ТАЙМФРЕЙМ</span>
+                    <strong id="pult-spec-tf" class="pult-spec-cell__val">H1 (подтв. M15)</strong>
+                  </div>
+                  <div class="pult-spec-cell">
+                    <span class="pult-spec-cell__label">СЧЁТ</span>
+                    <strong id="pult-spec-account" class="pult-spec-cell__val">MT5 Demo · DEMO-01</strong>
+                  </div>
+                  <div class="pult-spec-cell">
+                    <span class="pult-spec-cell__label">ТОРГОВЫЙ КОНТУР</span>
+                    <strong id="pult-spec-contour" class="pult-spec-cell__val">Демо (MT5)</strong>
+                  </div>
+                  <div class="pult-spec-cell">
+                    <span class="pult-spec-cell__label">ТЕРМИНАЛ</span>
+                    <strong id="pult-spec-terminal" class="pult-spec-cell__val">MT5 · Подключён</strong>
+                  </div>
+                  <div class="pult-spec-cell">
+                    <span class="pult-spec-cell__label">ЯЗЫКОВОЕ ЯДРО</span>
+                    <strong id="pult-spec-llm" class="pult-spec-cell__val">Выбранная модель · Демо</strong>
+                  </div>
+                  <div class="pult-spec-cell">
+                    <span class="pult-spec-cell__label">СТРАТЕГИЯ</span>
+                    <strong id="pult-spec-strategy" class="pult-spec-cell__val">Momentum v2.4.0 (+sourcefree)</strong>
+                  </div>
+                  <div class="pult-spec-cell">
+                    <span class="pult-spec-cell__label">РИСК-ПРОФИЛЬ</span>
+                    <strong id="pult-spec-risk" class="pult-spec-cell__val">0.5% / сделка · SL обязателен</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Средний ряд: РЫНОК (график и котировка) + СЧЁТ И РИСК -->
+              <div class="pult-demo__mid-grid">
+                <!-- Панель РЫНОК -->
+                <div class="pult-demo__section-box pult-demo__market-box">
+                  <div class="pult-demo__market-head">
+                    <div class="pult-demo__market-title">
+                      <span class="pult-demo__section-label" id="pult-market-label">РЫНОК · XAUUSD (ЗОЛОТО / ДОЛЛАР США)</span>
+                      <div class="pult-demo__quote-row">
+                        <strong id="pult-market-price" class="pult-demo__price">2 648.40</strong>
+                        <span id="pult-market-delta" class="pult-demo__delta pult-demo__delta--up">+0.42% (+11.10)</span>
+                      </div>
+                    </div>
+                    <span id="pult-market-state" class="pult-status-tag pult-status-tag--active">ПОТОК АКТИВЕН · ЗАКРЫТЫЕ БАРЫ + ТИК</span>
+                  </div>
+
+                  <!-- Встроенный SVG-график с японскими свечами, EMA и уровнями позиции -->
+                  <div class="pult-demo__chart-wrap">
+                    <svg
+                      id="pult-chart-svg"
+                      class="pult-demo__chart-svg"
+                      viewBox="0 0 620 176"
+                      role="img"
+                      aria-label="Демонстрационный график цены с закрытыми барами, линией EMA-21, уровнем входа и защитным стоп-лоссом"
+                    >
+                      <!-- Горизонтальная сетка -->
+                      <line x1="12" y1="26" x2="545" y2="26" stroke="#E4DAC4" stroke-dasharray="3 3" />
+                      <line x1="12" y1="68" x2="545" y2="68" stroke="#E4DAC4" stroke-dasharray="3 3" />
+                      <line x1="12" y1="110" x2="545" y2="110" stroke="#E4DAC4" stroke-dasharray="3 3" />
+                      <line x1="12" y1="152" x2="545" y2="152" stroke="#E4DAC4" stroke-dasharray="3 3" />
+
+                      <!-- Зона тейк-профита и защитного стопа -->
+                      <rect id="pult-chart-tp-band" x="340" y="18" width="205" height="66" fill="rgba(31, 107, 67, 0.06)" />
+                      <rect id="pult-chart-sl-band" x="340" y="84" width="205" height="28" fill="rgba(184, 137, 51, 0.08)" />
+
+                      <!-- Уровень входа BUY -->
+                      <line id="pult-chart-entry-line" x1="320" y1="84" x2="545" y2="84" stroke="#7A5618" stroke-width="1.2" stroke-dasharray="4 3" />
+                      <text id="pult-chart-entry-text" x="324" y="79" fill="#7A5618" font-size="9.5" font-family="Consolas, monospace" font-weight="600">BUY 0.20 @ 2641.20</text>
+
+                      <!-- Уровень защитного стопа (Trailing SL) -->
+                      <line id="pult-chart-sl-line" x1="360" y1="72" x2="545" y2="72" stroke="#1F6B43" stroke-width="1.2" stroke-dasharray="2 2" />
+                      <text id="pult-chart-sl-text" x="364" y="67" fill="#1F6B43" font-size="9.5" font-family="Consolas, monospace" font-weight="600">Trailing SL @ 2643.50 (безубыток+)</text>
+
+                      <!-- Плавная линия EMA-21 -->
+                      <path
+                        id="pult-chart-ema"
+                        d="M 28 142 Q 95 136, 155 122 T 285 98 T 415 76 T 518 56"
+                        fill="none"
+                        stroke="#B88933"
+                        stroke-width="2"
+                      />
+
+                      <!-- Группа свечей (генерируется и обновляется детерминированно) -->
+                      <g id="pult-chart-candles">
+                        <!-- Свеча 1 -->
+                        <line x1="34" y1="132" x2="34" y2="156" stroke="#8C8270" stroke-width="1.4" />
+                        <rect x="28" y="138" width="12" height="12" rx="1.5" fill="#C97A63" />
+                        <!-- Свеча 2 -->
+                        <line x1="68" y1="124" x2="68" y2="150" stroke="#1F6B43" stroke-width="1.4" />
+                        <rect x="62" y="128" width="12" height="16" rx="1.5" fill="#2D8655" />
+                        <!-- Свеча 3 -->
+                        <line x1="102" y1="116" x2="102" y2="140" stroke="#1F6B43" stroke-width="1.4" />
+                        <rect x="96" y="120" width="12" height="14" rx="1.5" fill="#2D8655" />
+                        <!-- Свеча 4 -->
+                        <line x1="136" y1="118" x2="136" y2="138" stroke="#8C8270" stroke-width="1.4" />
+                        <rect x="130" y="122" width="12" height="10" rx="1.5" fill="#C97A63" />
+                        <!-- Свеча 5 -->
+                        <line x1="170" y1="104" x2="170" y2="130" stroke="#1F6B43" stroke-width="1.4" />
+                        <rect x="164" y="108" width="12" height="16" rx="1.5" fill="#2D8655" />
+                        <!-- Свеча 6 -->
+                        <line x1="204" y1="94" x2="204" y2="118" stroke="#1F6B43" stroke-width="1.4" />
+                        <rect x="198" y="98" width="12" height="14" rx="1.5" fill="#2D8655" />
+                        <!-- Свеча 7 -->
+                        <line x1="238" y1="96" x2="238" y2="116" stroke="#8C8270" stroke-width="1.4" />
+                        <rect x="232" y="100" width="12" height="9" rx="1.5" fill="#C97A63" />
+                        <!-- Свеча 8 -->
+                        <line x1="272" y1="84" x2="272" y2="108" stroke="#1F6B43" stroke-width="1.4" />
+                        <rect x="266" y="88" width="12" height="14" rx="1.5" fill="#2D8655" />
+                        <!-- Свеча 9 -->
+                        <line x1="306" y1="76" x2="306" y2="98" stroke="#1F6B43" stroke-width="1.4" />
+                        <rect x="300" y="80" width="12" height="12" rx="1.5" fill="#2D8655" />
+                        <!-- Свеча 10 (вход) -->
+                        <line x1="340" y1="68" x2="340" y2="92" stroke="#1F6B43" stroke-width="1.4" />
+                        <rect x="334" y="72" width="12" height="14" rx="1.5" fill="#2D8655" />
+                        <!-- Свеча 11 -->
+                        <line x1="374" y1="60" x2="374" y2="82" stroke="#1F6B43" stroke-width="1.4" />
+                        <rect x="368" y="64" width="12" height="12" rx="1.5" fill="#2D8655" />
+                        <!-- Свеча 12 -->
+                        <line x1="408" y1="62" x2="408" y2="80" stroke="#8C8270" stroke-width="1.4" />
+                        <rect x="402" y="66" width="12" height="8" rx="1.5" fill="#C97A63" />
+                        <!-- Свеча 13 -->
+                        <line x1="442" y1="48" x2="442" y2="72" stroke="#1F6B43" stroke-width="1.4" />
+                        <rect x="436" y="54" width="12" height="14" rx="1.5" fill="#2D8655" />
+                        <!-- Свеча 14 -->
+                        <line x1="476" y1="42" x2="476" y2="64" stroke="#1F6B43" stroke-width="1.4" />
+                        <rect x="470" y="46" width="12" height="12" rx="1.5" fill="#2D8655" />
+                        <!-- Свеча 15 (живая демо-свеча) -->
+                        <line id="pult-live-wick" x1="510" y1="32" x2="510" y2="56" stroke="#1F6B43" stroke-width="1.6" />
+                        <rect id="pult-live-body" x="504" y="36" width="12" height="14" rx="1.5" fill="#1F6B43" />
+                      </g>
+
+                      <!-- Линия текущей демо-цены и плашка справа -->
+                      <line id="pult-price-line" x1="12" y1="38" x2="545" y2="38" stroke="#1F6B43" stroke-width="1" stroke-dasharray="2 2" />
+                      <rect id="pult-price-tag-bg" x="546" y="28" width="68" height="20" rx="4" fill="#1F6B43" />
+                      <text id="pult-price-tag-txt" x="580" y="42" fill="#FFFFFF" font-size="10" font-family="Consolas, monospace" font-weight="700" text-anchor="middle">2648.40</text>
+
+                      <!-- Шкала цен справа -->
+                      <text x="552" y="24" fill="#6E6658" font-size="9.5" font-family="Consolas, monospace">2655.00</text>
+                      <text x="552" y="71" fill="#6E6658" font-size="9.5" font-family="Consolas, monospace">2643.50</text>
+                      <text x="552" y="113" fill="#6E6658" font-size="9.5" font-family="Consolas, monospace">2634.00</text>
+                      <text x="552" y="155" fill="#6E6658" font-size="9.5" font-family="Consolas, monospace">2624.00</text>
+                    </svg>
+                  </div>
+
+                  <div class="pult-demo__market-foot">
+                    <span id="pult-market-session">Сессия: <strong>Лондон / Нью-Йорк (02:00–22:00 UTC)</strong></span>
+                    <span id="pult-market-bars">Данные: <strong>200 закрытых баров H1 · EMA-21 · ATR 14.2</strong></span>
+                  </div>
+                </div>
+
+                <!-- Панель СЧЁТ И РИСК -->
+                <div class="pult-demo__section-box pult-demo__account-box">
+                  <div class="pult-demo__account-head">
+                    <span class="pult-demo__section-label">СЧЁТ И РИСК</span>
+                    <span id="pult-acc-status" class="pult-status-tag pult-status-tag--active">MT5 DEMO · ПОДКЛЮЧЁН</span>
+                  </div>
+
+                  <dl class="pult-demo__acc-list">
+                    <div class="pult-demo__acc-row">
+                      <dt>Счёт</dt>
+                      <dd id="pult-acc-id">MT5 Demo · DEMO-01</dd>
+                    </div>
+                    <div class="pult-demo__acc-row">
+                      <dt>Баланс</dt>
+                      <dd id="pult-acc-balance">$100 000.00</dd>
+                    </div>
+                    <div class="pult-demo__acc-row">
+                      <dt>Эквити</dt>
+                      <dd id="pult-acc-equity" class="pult-demo__acc-val--up">$100 144.00 (+0.14%)</dd>
+                    </div>
+                    <div class="pult-demo__acc-row">
+                      <dt>Позиции</dt>
+                      <dd id="pult-acc-pos">1 открыта (BUY 0.20 XAUUSD)</dd>
+                    </div>
+                    <div class="pult-demo__acc-row">
+                      <dt>Дневной риск</dt>
+                      <dd id="pult-acc-dd">0.38% из 5.00% (норма риска)</dd>
+                    </div>
+                    <div class="pult-demo__acc-row">
+                      <dt>Лимит сделок</dt>
+                      <dd id="pult-acc-limit">до 2 одновременных · SL обязателен</dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+
+              <!-- Панель ДЕЙСТВИЯ -->
+              <div class="pult-demo__section-box pult-demo__actions-box">
+                <div class="pult-demo__actions-head">
+                  <span id="pult-actions-title" class="pult-demo__section-label">ДЕЙСТВИЯ · XAU · ИМПУЛЬС H1</span>
+                  <span class="pult-demo__actions-hint">Явное разделение изучения, проверки готовности и старта</span>
+                </div>
+
+                <div class="pult-demo__actions-bar">
+                  <div class="pult-action-pill pult-action-pill--done">
+                    <span>Изучить рынок</span>
+                    <span class="pult-action-check" aria-hidden="true">✓</span>
+                  </div>
+                  <div class="pult-action-pill pult-action-pill--done">
+                    <span>Проверить готовность</span>
+                    <span class="pult-action-check" aria-hidden="true">✓</span>
+                  </div>
+                  <div class="pult-mode-switch" aria-label="Режим счёта: выбран Демо">
+                    <span class="pult-mode-switch__item is-active">Демо</span>
+                    <span class="pult-mode-switch__item">Реальный</span>
+                  </div>
+                  <div id="pult-run-state-pill" class="pult-run-pill pult-run-pill--running">
+                    <span>● Торговая сессия активна (Демо)</span>
+                  </div>
+                  <span class="pult-server-ok">Ответ сервера получен · проверки 6/6</span>
+                </div>
+
+                <div class="pult-demo__ops-summary" id="pult-ops-summary">
+                  <strong>РЕЗУЛЬТАТЫ ОПЕРАЦИЙ:</strong> Изучение рынка: прочитано 200 закрытых баров H1, тренд восходящий · Проверить готовность: терминал MT5 подключён, Algo Trading разрешён, спред 18 п. в норме.
+                </div>
+              </div>
+
+              <!-- Полоса ПОСЛЕДНЕЕ РЕШЕНИЕ -->
+              <div class="pult-demo__section-box pult-demo__decision-bar">
+                <div class="pult-demo__decision-content">
+                  <span class="pult-demo__section-label">ПОСЛЕДНЕЕ РЕШЕНИЕ</span>
+                  <p id="pult-decision-text" class="pult-demo__decision-text">
+                    14:20:05 · Удержание позиции BUY 0.20 XAUUSD (вход 2 641.20): закрытие H1 выше EMA-21 (2 641.80), защитный стоп переведён в +2.30 п. (2 643.50, trailing-stop активен).
+                  </p>
+                </div>
+                <span class="pult-demo__decision-tag">Ревью поведения: пройдено</span>
+              </div>
+
+              <!-- Нижний ряд: ЖУРНАЛ АГЕНТА + ПОЗИЦИИ / ЗАЯВКИ -->
+              <div class="pult-demo__bottom-grid">
+                <!-- Журнал агента -->
+                <div class="pult-demo__section-box">
+                  <div class="pult-demo__subhead">
+                    <span id="pult-log-title" class="pult-demo__section-label">ЖУРНАЛ АГЕНТА · XAU · ИМПУЛЬС H1</span>
+                    <span class="pult-demo__sublink">записи демо-сессии</span>
+                  </div>
+                  <ul id="pult-log-list" class="pult-demo__log-list" aria-live="off">
+                    <li class="pult-log-item is-fresh">
+                      <span class="pult-log-item__time">14:20:05</span>
+                      <span class="pult-log-item__badge pult-log-item__badge--sl">СТОП</span>
+                      <span class="pult-log-item__msg">Trailing-stop подтянут на <strong>2 643.50</strong> (+2.30 п. выше цены входа).</span>
+                    </li>
+                    <li class="pult-log-item">
+                      <span class="pult-log-item__time">14:05:12</span>
+                      <span class="pult-log-item__badge pult-log-item__badge--exec">ОРДЕР</span>
+                      <span class="pult-log-item__msg">Открыта демо-позиция <strong>BUY 0.20 XAUUSD @ 2 641.20</strong>, SL 2 634.00, TP 2 662.00.</span>
+                    </li>
+                    <li class="pult-log-item">
+                      <span class="pult-log-item__time">14:00:04</span>
+                      <span class="pult-log-item__badge pult-log-item__badge--mkt">РЫНОК</span>
+                      <span class="pult-log-item__msg">Изучение рынка: закрыт бар H1 (2 640.90), пробой локального максимума сессии.</span>
+                    </li>
+                    <li class="pult-log-item">
+                      <span class="pult-log-item__time">13:58:40</span>
+                      <span class="pult-log-item__badge pult-log-item__badge--ok">ГОТОВ</span>
+                      <span class="pult-log-item__msg">Проверка готовности пройдена (6/6): счёт MT5 Demo · DEMO-01, лимит риска 0.5%.</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Позиции / Заявки -->
+                <div class="pult-demo__section-box">
+                  <div class="pult-demo__subhead">
+                    <span class="pult-demo__section-label">ПОЗИЦИИ / ЗАЯВКИ (ДЕМО-КОНТУР)</span>
+                    <span id="pult-pos-badge" class="pult-status-tag pult-status-tag--active">Риск защищён · Trailing SL</span>
+                  </div>
+
+                  <div id="pult-pos-card" class="pult-demo__pos-card">
+                    <div class="pult-demo__pos-top">
+                      <div>
+                        <strong id="pult-pos-instrument" class="pult-demo__pos-sym">XAUUSD · BUY 0.20 лота</strong>
+                        <span id="pult-pos-ticket" class="pult-demo__pos-ticket">Тикет #DEMO-01 · MT5 Demo</span>
+                      </div>
+                      <strong id="pult-pos-pnl" class="pult-demo__pos-pnl pult-demo__pos-pnl--up">+$144.00</strong>
+                    </div>
+
+                    <div class="pult-demo__pos-grid">
+                      <div class="pult-pos-cell">
+                        <span>Цена входа</span>
+                        <strong id="pult-pos-entry">2 641.20</strong>
+                      </div>
+                      <div class="pult-pos-cell">
+                        <span>Текущая цена</span>
+                        <strong id="pult-pos-current">2 648.40</strong>
+                      </div>
+                      <div class="pult-pos-cell">
+                        <span>Защитный стоп (SL)</span>
+                        <strong id="pult-pos-sl" class="pult-pos-cell--ok">2 643.50 (безубыток+)</strong>
+                      </div>
+                      <div class="pult-pos-cell">
+                        <span>Цель (TP)</span>
+                        <strong id="pult-pos-tp">2 662.00</strong>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- БЛОК ВОЗМОЖНОСТЕЙ И АРХИТЕКТУРЫ ПЛАТФОРМЫ -->
+    <section id="capabilities" class="section section--alt" aria-labelledby="capabilities-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">Архитектура продукта</span>
+          <h2 id="capabilities-title" class="section__title">
+            Ключевые модули платформы Golden Breeze
+          </h2>
+          <p class="section__subtitle">
+            Платформа связывает исследование рынка, диалог с ИИ-агентами, управление версиями стратегий и контроль торгового счёта в едином приложении для Windows.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+          <!-- Карточка 1 -->
+          <article class="feature-card">
+            <div class="feature-card__top">
+              <div class="feature-card__header">
+                <h3 class="feature-card__title">Пульт управления и Агент-студия</h3>
+                <span class="badge badge--released">В выпуске v0.12</span>
+              </div>
+              <p class="feature-card__desc">
+                Единый центр состояния торговых агентов: выбор профиля, привязка стратегии и счёта, изучение рынка по закрытым барам брокера, проверка готовности и журнал решений агента.
+              </p>
+            </div>
+            <p class="feature-card__boundary">
+              <strong>Статус:</strong> доступно в сборке v0.12.0-alpha; сквозная приёмка всех экранов и сценариев закрытого рынка с расписанием сессий продолжается в цикле 0.13.
+            </p>
+          </article>
+
+          <!-- Карточка 2 -->
+          <article class="feature-card">
+            <div class="feature-card__top">
+              <div class="feature-card__header">
+                <h3 class="feature-card__title">Сохраняемый разговор и ядро агентов</h3>
+                <span class="badge badge--released">В выпуске v0.12</span>
+              </div>
+              <p class="feature-card__desc">
+                Раздел «Диалог с агентом» поддерживает создание, переименование, группировку и архивацию бесед, сохранение черновиков между чатами, выбор модели и уровня рассуждений (thinking effort), а также отображение фактически использованной модели.
+              </p>
+            </div>
+            <p class="feature-card__boundary">
+              <strong>Статус:</strong> управление диалогами и выбор параметров модели работают в v0.12.0-alpha; создание исполняемого кода стратегии напрямую из разговора запланировано следующим этапом.
+            </p>
+          </article>
+
+          <!-- Карточка 3 -->
+          <article class="feature-card">
+            <div class="feature-card__top">
+              <div class="feature-card__header">
+                <h3 class="feature-card__title">Счета, риск и подключение MT5</h3>
+                <span class="badge badge--inprogress">В работе / Приёмка</span>
+              </div>
+              <p class="feature-card__desc">
+                Модель демо и реальных счетов через MetaTrader 5 (MT5), карточки проп-компаний и торговых счетов, проверка идентичности счёта, прав автоторговли терминала и ограничений риска.
+              </p>
+            </div>
+            <p class="feature-card__boundary">
+              <strong>Статус:</strong> MT5 — действующее торговое подключение. Полный технический демо-цикл MT5 проходит живую приёмку; приёмка торговли на реальном счёте не заявляется.
+            </p>
+          </article>
+
+          <!-- Карточка 4 -->
+          <article class="feature-card">
+            <div class="feature-card__top">
+              <div class="feature-card__header">
+                <h3 class="feature-card__title">Каталог стратегий и версионирование</h3>
+                <span class="badge badge--inprogress">Развитие пути</span>
+              </div>
+              <p class="feature-card__desc">
+                Точная фиксация версий стратегий, выбор рабочей версии для конкретного агента, проверка совместимости и запись результатов «Ревью поведения» (включая установленные сборки с версиями <code>+sourcefree</code>).
+              </p>
+            </div>
+            <p class="feature-card__boundary">
+              <strong>Статус:</strong> каталог и применение версий реализованы; автоматизированный цикл генерации нового кода стратегии разговорным агентом — целевое направление развития.
+            </p>
+          </article>
+
+          <!-- Карточка 5 -->
+          <article class="feature-card">
+            <div class="feature-card__top">
+              <div class="feature-card__header">
+                <h3 class="feature-card__title">Установщик FirstInstall и автообновление</h3>
+                <span class="badge badge--released">В выпуске v0.12</span>
+              </div>
+              <p class="feature-card__desc">
+                Автономная установка на Windows x64 и обновление по кнопке через собственный HTTPS-сервер с проверкой подписи манифеста Ed25519, контролем завершения дочерних процессов и сохранением пользовательских профилей.
+              </p>
+            </div>
+            <p class="feature-card__boundary">
+              <strong>Статус:</strong> чистая установка FirstInstall и обновление канала <code>stable</code> проверены; они обеспечивают доставку программы, а функциональная приёмка торговых сценариев идёт отдельно.
+            </p>
+          </article>
+
+          <!-- Карточка 6 -->
+          <article class="feature-card">
+            <div class="feature-card__top">
+              <div class="feature-card__header">
+                <h3 class="feature-card__title">Знания, профильные агенты и портфель</h3>
+                <span class="badge badge--planned">Запланировано</span>
+              </div>
+              <p class="feature-card__desc">
+                Личная библиотека книг и учебных материалов, веб-поиск с проверяемыми источниками, долговременная память с историей происхождения, координация нескольких исполнителей и управление портфелем.
+              </p>
+            </div>
+            <p class="feature-card__boundary">
+              <strong>Статус:</strong> в текущей сборке работает история сообщений и наблюдений агента; база знаний с источниками и портфельный контур — отдельные будущие поставки.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- НАГЛЯДНЫЙ ПУТЬ ПОЛЬЗОВАТЕЛЯ -->
+    <section id="user-journey" class="section" aria-labelledby="journey-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">Логика работы</span>
+          <h2 id="journey-title" class="section__title">
+            Путь от идеи и настройки до контролируемого применения
+          </h2>
+          <p class="section__subtitle">
+            Каждый переход между исследованием, настройкой, проверкой готовности и торговой сессией прозрачен и управляется явно.
+          </p>
+        </div>
+
+        <div class="journey-steps" role="list">
+          <div class="step-card" role="listitem">
+            <span class="step-card__num">1</span>
+            <h3 class="step-card__title">Диалог и исследование</h3>
+            <p class="step-card__text">
+              В сохраняемом разговоре пользователь обсуждает рыночную задачу, выбирает провайдера ИИ, модель и глубину рассуждений. Примеры запросов ничего не запускают без отправки сообщения.
+            </p>
+          </div>
+
+          <div class="step-card" role="listitem">
+            <span class="step-card__num">2</span>
+            <h3 class="step-card__title">Стратегия и версия</h3>
+            <p class="step-card__text">
+              В Агент-студии выбирается точная версия стратегии, инструмент (например, XAUUSD), таймфреймы и риск-профиль. Настройки явно применяются к выбранному профилю агента.
+            </p>
+          </div>
+
+          <div class="step-card" role="listitem">
+            <span class="step-card__num">3</span>
+            <h3 class="step-card__title">Счёт и правила риска</h3>
+            <p class="step-card__text">
+              Подключается торговый счёт MT5 и профиль проп-компании (в текущем контуре — FTMO). Платформа сверяет тип счёта (Demo / Real) и применяет ограничения риска.
+            </p>
+          </div>
+
+          <div class="step-card" role="listitem">
+            <span class="step-card__num">4</span>
+            <h3 class="step-card__title">Изучение и готовность</h3>
+            <p class="step-card__text">
+              Последовательность в Пульте: <strong>«Изучить рынок» → «Проверить готовность»</strong>. Система проверяет связь с терминалом, расписание сессии, котировки и разрешение Algo Trading.
+            </p>
+          </div>
+
+          <div class="step-card" role="listitem">
+            <span class="step-card__num">5</span>
+            <h3 class="step-card__title">Сессия и контроль</h3>
+            <p class="step-card__text">
+              После подтверждённой готовности становится доступным <strong>«Запустить торговлю»</strong>. Все решения и ордера фиксируются в журнале, а остановка выполняется отдельной кнопкой.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- КАРТА СОСТОЯНИЯ И РАЗВИТИЯ (ROADMAP MATRIX) -->
+    <section id="roadmap" class="section section--alt" aria-labelledby="roadmap-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">Состояние направлений · 25 октября 2026</span>
+          <h2 id="roadmap-title" class="section__title">
+            Что доступно в выпуске, что в работе и что запланировано
+          </h2>
+          <p class="section__subtitle">
+            Мы разделяем публикацию установщика, реализацию кода в ветке разработки и завершённую живую функциональную приёмку в установленной программе.
+          </p>
+        </div>
+
+        <!-- Пояснение статусов -->
+        <div class="status-legend" aria-label="Пояснение статусов готовности">
+          <div class="legend-item">
+            <span class="badge badge--released">В выпуске v0.12</span>
+            <strong>Опубликовано в v0.12.0-alpha</strong>
+            Функция включена в опубликованный пакет FirstInstall и проверена базовыми или профильными тестами.
+          </div>
+          <div class="legend-item">
+            <span class="badge badge--inprogress">В работе / 0.13 и приёмка</span>
+            <strong>Текущий цикл доводки</strong>
+            Изменения интегрированы в ветку <code>0.13.0-alpha</code> и проходят сквозную живую функциональную приёмку.
+          </div>
+          <div class="legend-item">
+            <span class="badge badge--planned">Запланировано</span>
+            <strong>Следующие целевые этапы</strong>
+            Направления развития платформы, которые поставляются после завершения текущей приёмки.
+          </div>
+          <div class="legend-item">
+            <span class="badge badge--deferred">Отложено</span>
+            <strong>Отдельные будущие решения</strong>
+            Самостоятельные модули и опции, вынесенные за рамки ближайших выпусков.
+          </div>
+        </div>
+
+        <!-- Кнопки фильтрации -->
+        <div class="filter-bar">
+          <div class="filter-buttons" role="group" aria-label="Фильтр направлений по статусу">
+            <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">Все направления (10)</button>
+            <button class="filter-btn" type="button" data-filter="released" aria-pressed="false">В выпуске v0.12</button>
+            <button class="filter-btn" type="button" data-filter="inprogress" aria-pressed="false">В работе и на приёмке</button>
+            <button class="filter-btn" type="button" data-filter="planned" aria-pressed="false">Запланировано</button>
+            <button class="filter-btn" type="button" data-filter="deferred" aria-pressed="false">Отложено</button>
+          </div>
+          <span id="filter-count" class="filter-count" aria-live="polite">Показано направлений: 10 из 10</span>
+        </div>
+
+        <!-- Список-матрица направлений -->
+        <div class="matrix-list">
+          <!-- 1 -->
+          <article class="matrix-item" data-status="released">
+            <div class="matrix-item__head">
+              <span class="badge badge--released">В выпуске v0.12</span>
+              <h3 class="matrix-item__title">Установщик FirstInstall и swap-автообновление</h3>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Что доступно в выпуске</span>
+              <p class="matrix-item__text">
+                Пакет первичной установки <code>GoldenBreeze-FirstInstall-0.12.0-alpha.exe</code> (канал <code>stable</code>). Последующие обновления доставляются напрямую с HTTPS-сервера с подписью манифеста Ed25519, контролем завершения дочерних процессов и короткими обезличенными отчётами о сбоях.
+              </p>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Граница готовности</span>
+              <p class="matrix-item__text">
+                Чистая установка и обновление по кнопке с сохранением профилей и истории проверены. Успешная установка подтверждает доставку сборки, но не заменяет функциональную приёмку торговых сценариев.
+              </p>
+            </div>
+          </article>
+
+          <!-- 2 -->
+          <article class="matrix-item" data-status="released">
+            <div class="matrix-item__head">
+              <span class="badge badge--released">В выпуске v0.12</span>
+              <h3 class="matrix-item__title">Мультидиалоговый чат ядра и выбор моделей</h3>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Что доступно в выпуске</span>
+              <p class="matrix-item__text">
+                Создание, переименование, архивация и восстановление диалогов, группировка в боковой панели, изоляция черновиков, выбор модели и уровня рассуждений (thinking effort) по возможностям провайдера, отображение запрошенной и фактической модели в деталях запуска.
+              </p>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Граница готовности</span>
+              <p class="matrix-item__text">
+                Включено в <code>v0.12.0-alpha</code>. Живая сквозная приёмка диалога с главным агентом и визуальной вёрстки карточек завершается в текущем пакете приёмки.
+              </p>
+            </div>
+          </article>
+
+          <!-- 3 -->
+          <article class="matrix-item" data-status="released">
+            <div class="matrix-item__head">
+              <span class="badge badge--released">В выпуске v0.12</span>
+              <h3 class="matrix-item__title">Трёхъязычный интерфейс (RU · UA · EN)</h3>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Что доступно в выпуске</span>
+              <p class="matrix-item__text">
+                Переключение между русским, украинским и английским языками в Пульте, Агент-студии, чате, памяти, карточках проп-компаний и уведомлениях об обновлении с сохранением выбора при перезапуске.
+              </p>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Граница готовности</span>
+              <p class="matrix-item__text">
+                Локализация ещё не 100%-ная: отдельные сообщения регистрации счёта в Настройках и несколько меток карточки счёта FTMO и экрана стартовой проверки пока отображаются на русском языке.
+              </p>
+            </div>
+          </article>
+
+          <!-- 4 -->
+          <article class="matrix-item" data-status="inprogress">
+            <div class="matrix-item__head">
+              <span class="badge badge--inprogress">В работе / 0.13</span>
+              <h3 class="matrix-item__title">Анализ закрытой истории при закрытом рынке и приёмка 0.13</h3>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Что реализовано в 0.13 и проходит приёмку</span>
+              <p class="matrix-item__text">
+                В ветке <code>0.13.0-alpha</code> доработан анализ закрытой истории баров при закрытом рынке без ожидания живого тика (с учётом расписания сессий и перерывов FTMO), автоматическое применение правил счёта после чтения кабинета, автовыбор адаптера по платформе при добавлении счёта и выравнивание экранов по целевым макетам Figma.
+              </p>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Граница готовности</span>
+              <p class="matrix-item__text">
+                Эти доработки относятся к циклу <code>0.13.0-alpha</code> и ещё не входят в опубликованный <code>v0.12.0-alpha</code>. Полная функциональная приёмка пакета продолжается перед выпуском следующей сборки.
+              </p>
+            </div>
+          </article>
+
+          <!-- 5 -->
+          <article class="matrix-item" data-status="inprogress">
+            <div class="matrix-item__head">
+              <span class="badge badge--inprogress">В работе / Приёмка</span>
+              <h3 class="matrix-item__title">Технический демо-цикл MT5 и интеграция FTMO</h3>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Что делается сейчас</span>
+              <p class="matrix-item__text">
+                Реализованы нейтральные карточки проп-компаний и счетов, общий механизм окна входа с привязкой к основному окну и прямое подключение к терминалу MetaTrader 5. Архитектура адаптеров проп-компаний построена расширяемой.
+              </p>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Граница готовности</span>
+              <p class="matrix-item__text">
+                Сквозная проверка выполняется на FTMO и MT5 Demo: подключение, рыночные данные, тестовые ордера, защитные стопы и trailing-stop, закрытие и сверка отсутствия остаточных позиций при открытом рынке. Приёмка реальной торговли не заявляется.
+              </p>
+            </div>
+          </article>
+
+          <!-- 6 -->
+          <article class="matrix-item" data-status="planned">
+            <div class="matrix-item__head">
+              <span class="badge badge--planned">Запланировано</span>
+              <h3 class="matrix-item__title">От идеи в диалоге к исполняемому коду стратегии</h3>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Целевое направление</span>
+              <p class="matrix-item__text">
+                Создание и доработка настоящего кода стратегии разговорным агентом в изолированной рабочей области, автоматический запуск проверок, фиксация версии и публикация проверенной стратегии в каталог с понятным описанием условий и риска.
+              </p>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Граница готовности</span>
+              <p class="matrix-item__text">
+                Базовый каталог стратегий и выбор версии уже работают; генерация нового исполняемого кода из диалога — следующий этап после завершения текущей приёмки.
+              </p>
+            </div>
+          </article>
+
+          <!-- 7 -->
+          <article class="matrix-item" data-status="planned">
+            <div class="matrix-item__head">
+              <span class="badge badge--planned">Запланировано</span>
+              <h3 class="matrix-item__title">Библиотека знаний, источники и профильные агенты</h3>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Целевое направление</span>
+              <p class="matrix-item__text">
+                Личная библиотека книг, статей и учебных материалов пользователя, веб-поиск с точными ссылками на источники, долговременная управляемая память с указанием происхождения и возврат результатов профильных субагентов в единый разговор.
+              </p>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Граница готовности</span>
+              <p class="matrix-item__text">
+                Проектируется как отдельный модуль знаний поверх уже работающей истории сообщений и журналов агента.
+              </p>
+            </div>
+          </article>
+
+          <!-- 8 -->
+          <article class="matrix-item" data-status="planned">
+            <div class="matrix-item__head">
+              <span class="badge badge--planned">Запланировано</span>
+              <h3 class="matrix-item__title">Отдельная интеграция TradeLocker и каталог платформ</h3>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Целевое направление</span>
+              <p class="matrix-item__text">
+                Разработка торгового коннектора TradeLocker и расширение каталога подключаемых платформ (проп-компании, брокеры, биржи) с честными индикаторами поддерживаемых возможностей каждого адаптера.
+              </p>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Граница готовности</span>
+              <p class="matrix-item__text">
+                Сейчас действующим подключением является только MT5. Наличие названия TradeLocker в каталоге отражает плановое направление и не означает готового торгового подключения.
+              </p>
+            </div>
+          </article>
+
+          <!-- 9 -->
+          <article class="matrix-item" data-status="planned">
+            <div class="matrix-item__head">
+              <span class="badge badge--planned">Запланировано</span>
+              <h3 class="matrix-item__title">Несколько торговых исполнителей и управление портфелем</h3>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Целевое направление</span>
+              <p class="matrix-item__text">
+                Координация нескольких специализированных агентов, распределение капитала по торговым направлениям, сквозной контроль портфельного риска, сохранённые рабочие процессы и исследование рыночных режимов.
+              </p>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Граница готовности</span>
+              <p class="matrix-item__text">
+                Требует отдельной модели капитала, расчёта портфельных метрик и независимой приёмки решений оператора.
+              </p>
+            </div>
+          </article>
+
+          <!-- 10 -->
+          <article class="matrix-item" data-status="deferred">
+            <div class="matrix-item__head">
+              <span class="badge badge--deferred">Отложено</span>
+              <h3 class="matrix-item__title">Расширенная Studio с редактором кода, Authenticode и отдельный домен</h3>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Что отложено</span>
+              <p class="matrix-item__text">
+                Встроенный редактор кода для ручного программирования и собственный движок глубоких исторических прогонов (чтобы не задерживать базовый путь «идея → код → проверки → каталог»), а также покупка платного сертификата Authenticode и отдельного домена.
+              </p>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Текущий порядок</span>
+              <p class="matrix-item__text">
+                Платный сертификат Windows Authenticode и отдельный домен отложены до выхода продукта на прибыль. При этом HTTPS-доставка обновлений и криптографическая подпись манифеста обновления (Ed25519) работают штатно.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <p style="margin-top: 20px; margin-bottom: 0; font-size: 0.9rem; color: var(--text-secondary);">
+          Подробные документы в репозитории:
+          <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/blob/main/docs/roadmap.md">Карта возможностей и развития (docs/roadmap.md)</a> ·
+          <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/blob/main/docs/first-start.md">Установка и первый запуск (docs/first-start.md)</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- СКАЧАТЬ, БЫСТРЫЙ СТАРТ И ПРОВЕРКА ЦЕЛОСТНОСТИ -->
+    <section id="download" class="section" aria-labelledby="download-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">Дистрибутив Windows x64 · Установка и обновления</span>
+          <h2 id="download-title" class="section__title">
+            Скачать Golden Breeze и начать работу
+          </h2>
+          <p class="section__subtitle">
+            Первичная установка выполняется автономным пакетом <strong>FirstInstall</strong> для Windows 10/11 x64. Архивы <em>Source code (zip / tar.gz)</em> на GitHub содержат только файлы этой веб-витрины и не являются установщиком программы.
+          </p>
+        </div>
+
+        <div class="two-col-grid">
+          <!-- Левая колонка: Загрузка и проверка -->
+          <div class="panel-card panel-card--highlight">
+            <h3 class="panel-card__title">1. Загрузка и сверка контрольной суммы SHA-256</h3>
+            <ul class="checklist">
+              <li>
+                <strong>Скачайте установщик FirstInstall:</strong><br>
+                <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.12.0-alpha/GoldenBreeze-FirstInstall-0.12.0-alpha.exe">
+                  GoldenBreeze-FirstInstall-0.12.0-alpha.exe
+                </a> (365,5 МиБ) и файл контрольной суммы
+                <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.12.0-alpha/GoldenBreeze-FirstInstall-0.12.0-alpha.exe.sha256">
+                  .sha256
+                </a>.
+              </li>
+              <li>
+                <strong>Проверьте SHA-256 в PowerShell</strong> перед запуском (хеш подтверждает точное совпадение байтов скачанного файла с эталонным значением выпуска):
+              </li>
+            </ul>
+
+            <div class="cmd-block">
+              <div class="cmd-block__top">
+                <span>Windows PowerShell — сверка SHA-256</span>
+                <button class="copy-btn" type="button" data-copy-target="ps-verify-cmd">
+                  Копировать команду
+                </button>
+              </div>
+              <pre id="ps-verify-cmd">Get-FileHash .\GoldenBreeze-FirstInstall-0.12.0-alpha.exe -Algorithm SHA256</pre>
+            </div>
+
+            <ul class="checklist" style="margin-bottom: 0;">
+              <li>
+                Эталонный SHA-256 для <code>v0.12.0-alpha</code>:<br>
+                <code>d4546bc1fe718020f78315bbe98e4b232db044fb80bdb1061f1d2fe44ffd60a2</code>
+              </li>
+              <li>
+                <strong>Предупреждение Windows SmartScreen при первом запуске:</strong> файл <code>.exe</code> не подписан платным сертификатом издателя Windows Authenticode. При совпадении SHA-256 подтвердите запуск вручную: <em>«Подробнее» → «Выполнить в любом случае»</em> (подробнее — в <a href="#faq">справке ниже</a>).
+              </li>
+            </ul>
+          </div>
+
+          <!-- Правая колонка: Первый запуск и автообновления -->
+          <div class="panel-card">
+            <h3 class="panel-card__title">2. Первый запуск, счета и автообновление</h3>
+            <ul class="checklist">
+              <li>
+                <strong>Встроенное окружение:</strong> установщик включает собственный runtime и не требует отдельной установки Python, Node.js или Git.
+              </li>
+              <li>
+                <strong>Подготовка подключений:</strong> выберите язык интерфейса (<strong>RU / UA / EN</strong>), настройте провайдера ИИ в разделе <em>Настройки</em> и при необходимости подключите установленный терминал MetaTrader 5. Не передавайте программе SSH-ключи, токены GitHub или секреты разработчика.
+              </li>
+              <li>
+                <strong>Последовательность действий в Пульте:</strong><br>
+                <code>Изучить рынок</code> → <code>Проверить готовность</code> → <code>Запустить торговлю</code> → наблюдение → <code>Остановить</code>.
+              </li>
+              <li>
+                <strong>Автообновление по кнопке (канал stable):</strong> после первой установки обновления приходят напрямую с HTTPS-сервера Golden Breeze (без участия GitHub). Программа проверяет криптографическую подпись манифеста <strong>Ed25519</strong> и уведомляет: <em>«Новая версия загружена»</em>.
+              </li>
+              <li>
+                <strong>Сохранение данных:</strong> нажатие <em>«Обновить сейчас»</em> запускает безопасный переход (<code>Подготовка → Обновление → Запуск</code>) с завершением дочерних процессов и сохранением профилей, счетов и истории диалогов.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Таблица опубликованных релизов -->
+        <div class="table-wrap" role="region" aria-label="История опубликованных выпусков в репозитории" tabindex="0">
+          <table class="releases-table">
+            <thead>
+              <tr>
+                <th scope="col">Выпуск (тег)</th>
+                <th scope="col">Дата публикации</th>
+                <th scope="col">Установщик и канал</th>
+                <th scope="col">Ключевые изменения выпуска</th>
+                <th scope="col">Ссылки</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <strong>v0.12.0-alpha</strong><br>
+                  <span class="badge badge--released">Актуальный pre-release</span>
+                </td>
+                <td>17.10.2026</td>
+                <td>
+                  <code>GoldenBreeze-FirstInstall-0.12.0-alpha.exe</code><br>
+                  Канал: <code>stable</code> · Source SHA: <code>6f503017</code>
+                </td>
+                <td>
+                  Управление мультидиалогами в чате (группы, архив, черновики), динамический выбор модели и thinking effort, трёхъязычный интерфейс (RU/UA/EN), нейтральные карточки проп-компаний и счетов, расширенный каталог платформ.
+                </td>
+                <td>
+                  <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.12.0-alpha">Страница релиза</a><br>
+                  <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.12.0-alpha/GoldenBreeze-FirstInstall-0.12.0-alpha.exe">Скачать .exe</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>v0.11.2-alpha</strong>
+                </td>
+                <td>16.10.2026</td>
+                <td>
+                  <code>GoldenBreeze-FirstInstall-0.11.2-alpha.exe</code><br>
+                  Канал: <code>stable</code> · Source SHA: <code>373c17f1</code>
+                </td>
+                <td>
+                  Повышена надёжность ожидания при загрузке и проверке крупных пакетов обновления на медленном соединении и диске с сохранением диагностики состояния клиента.
+                </td>
+                <td>
+                  <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.11.2-alpha">Страница релиза</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>v0.11.0-alpha</strong>
+                </td>
+                <td>15.10.2026</td>
+                <td>
+                  <code>GoldenBreeze-FirstInstall-0.11.0-alpha.exe</code><br>
+                  Канал: <code>stable</code> · Source SHA: <code>09738a1b</code>
+                </td>
+                <td>
+                  Переход на единый пакет FirstInstall и прямое swap-обновление без промежуточного bridge; управление деревом внешних процессов через Job Object; обезличенные короткие отчёты о сбоях обновления; обновлённый раздел «Диалог с агентом».
+                </td>
+                <td>
+                  <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.11.0-alpha">Страница релиза</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>v0.10.0-alpha</strong> · <strong>v0.9.0-alpha</strong>
+                </td>
+                <td>10–14.10.2026</td>
+                <td>
+                  Ранние предварительные сборки
+                </td>
+                <td>
+                  Архивация завершённых счетов FTMO, запись «Ревью поведения» для версий стратегий <code>+sourcefree</code>, первичная сборка канала раздачи.
+                </td>
+                <td>
+                  <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases">Архив Releases</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ПАРТНЁРАМ И СПОНСОРАМ -->
+    <section id="partners" class="section section--alt" aria-labelledby="partners-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">Сотрудничество и развитие</span>
+          <h2 id="partners-title" class="section__title">
+            Партнёрам, интеграторам и спонсорам направлений
+          </h2>
+          <p class="section__subtitle">
+            Мы развиваем технологические интеграции, проверочные стенды и профильные модули платформы совместно с партнёрами. Участие и поддержка привязываются к конкретной поставке из дорожной карты и проверяемому результату в продукте.
+          </p>
+        </div>
+
+        <div class="partner-grid">
+          <article class="partner-card">
+            <h3 class="partner-card__title">Торговые платформы и поставщики данных</h3>
+            <p class="partner-card__text">
+              Совместная проработка и тестирование коннекторов к торговым терминалам и API (включая плановую интеграцию TradeLocker, брокеров и проп-компаний), проверка спецификаций торговых сессий и исторических котировок.
+            </p>
+          </article>
+
+          <article class="partner-card">
+            <h3 class="partner-card__title">Независимая приёмка и пилотные сценарии</h3>
+            <p class="partner-card__text">
+              Участие в пилотной проверке сценариев на системах Windows x64, верификация правил риска проп-компаний на демо-счетах, оценка удобства Пульта управления, Агент-студии и многоязычного интерфейса.
+            </p>
+          </article>
+
+          <article class="partner-card">
+            <h3 class="partner-card__title">Целевое спонсорство модулей дорожной карты</h3>
+            <p class="partner-card__text">
+              Поддержка конкретной инженерной поставки: контура создания исполняемых стратегий из диалога, библиотеки знаний с источниками, портфельного модуля или инфраструктуры доставки.
+            </p>
+          </article>
+
+          <article class="partner-card">
+            <h3 class="partner-card__title">Обучающие материалы и документация</h3>
+            <p class="partner-card__text">
+              Подготовка проверенных методических материалов по работе со стратегиями, контролю риска и разбору рыночных режимов для будущей встроенной библиотеки знаний Golden Breeze.
+            </p>
+          </article>
+        </div>
+
+        <div class="cta-banner">
+          <div class="cta-banner__content">
+            <h3 class="cta-banner__title">Обсудить партнёрство, пилотное участие или обратную связь</h3>
+            <p class="cta-banner__text">
+              Связь и приём обращений ведутся через раздел <strong>Issues</strong> этого репозитория. Опишите область сотрудничества и ожидаемый совместный результат. При отправке сообщений об ошибках указывайте версию приложения и прикладывайте снимки экрана без паролей, API-ключей и номеров счетов.
+            </p>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+            <a
+              class="btn btn--primary"
+              href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/issues"
+            >
+              Перейти в GitHub Issues →
+            </a>
+            <a
+              class="btn btn--secondary"
+              href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases"
+            >
+              Открыть Releases
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- СПРАВКА О ПРОВЕРКЕ ФАЙЛОВ И ПОДПИСЯХ -->
+    <section id="faq" class="section" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">Техническая справка</span>
+          <h2 id="faq-title" class="section__title">
+            Ответы на вопросы об установке, проверке файлов и обновлениях
+          </h2>
+        </div>
+
+        <div class="details-list">
+          <details class="details-item">
+            <summary>Чем отличаются сверка SHA-256, подпись манифеста Ed25519 и сертификат Windows Authenticode?</summary>
+            <div class="details-item__body">
+              Эти три механизма решают разные задачи:<br>
+              1) <strong>SHA-256 установщика</strong> позволяет проверить, что скачанный файл <code>GoldenBreeze-FirstInstall-0.12.0-alpha.exe</code> побайтово совпадает с доверенным файлом, опубликованным в официальном выпуске.<br>
+              2) <strong>Криптографическая подпись Ed25519</strong> (<code>first-install.json.sig</code>) и <strong>HTTPS (TLS)</strong> используются самой программой для проверки подлинности манифеста и пакетов при автоматическом обновлении с сервера обновлений.<br>
+              3) <strong>Сертификат Windows Authenticode</strong> — платный сертификат издателя для исполняемых файлов <code>.exe</code>, который проверяет защитник Windows SmartScreen. Сам <code>.exe</code> сейчас не подписан сертификатом Authenticode (покупка отложена до выхода проекта на прибыль), поэтому при первой установке Windows запрашивает ручное подтверждение запуска.
+            </div>
+          </details>
+
+          <details class="details-item">
+            <summary>Почему ссылки ведут на конкретный тег v0.12.0-alpha, а не на /releases/latest?</summary>
+            <div class="details-item__body">
+              Текущие выпуски Golden Breeze публикуются в статусе предварительных (<code>alpha</code>, pre-release). В GitHub стандартный адрес <code>/releases/latest</code> не включает предварительные выпуски. Поэтому на витрине используются прямые проверенные ссылки на тег <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.12.0-alpha">v0.12.0-alpha</a> и общий список <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases">Releases</a>.
+            </div>
+          </details>
+
+          <details class="details-item">
+            <summary>Что находится в этом репозитории и где читать подробную документацию?</summary>
+            <div class="details-item__body">
+              Репозиторий <code>golden-breeze-releases</code> является официальной витриной раздачи установщика <code>FirstInstall</code>, заметок к выпускам и пользовательских инструкций (исходный код ядра платформы разрабатывается отдельно). Подробные материалы доступны прямо в репозитории:
+              <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/blob/main/docs/first-start.md">Установка и первый запуск</a>,
+              <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/blob/main/docs/roadmap.md">Карта возможностей и развития</a> и
+              <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/blob/main/docs/github-pages.md">Памятка по публикации витрины</a>.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ПОДВАЛ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <div class="site-footer__title">Golden Breeze · Агентная платформа</div>
+          <p style="margin-bottom: 12px;">
+            Самостоятельное приложение для Windows x64: исследование рынка, разработка и проверка торговых стратегий, контроль исполнения и риска.
+          </p>
+          <p style="margin: 0; font-size: 0.82rem; color: var(--text-muted);">
+            Опубликованный выпуск: <code>v0.12.0-alpha</code> (17.10.2026) · Срез дорожной карты: 25.10.2026
+          </p>
+        </div>
+
+        <div>
+          <div class="site-footer__title">Документация</div>
+          <ul class="site-footer__links">
+            <li><a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/blob/main/docs/roadmap.md">Карта возможностей и развития</a></li>
+            <li><a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/blob/main/docs/first-start.md">Установка и первый запуск</a></li>
+            <li><a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/blob/main/docs/github-pages.md">Памятка по GitHub Pages</a></li>
+            <li><a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases">Репозиторий витрины и релизов</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="site-footer__title">Выпуски и обратная связь</div>
+          <ul class="site-footer__links">
+            <li><a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.12.0-alpha">Выпуск v0.12.0-alpha (FirstInstall)</a></li>
+            <li><a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases">Все выпуски (Releases)</a></li>
+            <li><a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/issues">Вопросы, баг-репорты и партнёрство (Issues)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="disclaimer-box">
+        <strong>Предупреждение о рисках:</strong> Golden Breeze является программной платформой и не гарантирует получение прибыли или доходности. Результаты анализа закрытой истории, исторических проверок или работы на демо-счёте (Demo) не обещают аналогичных результатов при торговле на реальном счёте (Real). Решения о подключении счетов, выборе стратегий и параметрах риска принимаются пользователем самостоятельно.
+      </div>
+    </div>
+  </footer>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
