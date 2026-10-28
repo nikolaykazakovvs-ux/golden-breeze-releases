@@ -1,8 +1,8 @@
 # Установка и первый запуск
 
-**Состояние на 25 октября 2026 года.** В разделе Releases опубликован предварительный выпуск **`v0.12.0-alpha`** (канал `stable`, пакет первичной установки **`FirstInstall`** для Windows 10/11 x64).
+**Состояние на 25 октября 2026 года** (доступный выпуск проверен 28.10.2026). В разделе Releases опубликован предварительный выпуск **`v0.12.0-alpha`** (канал `stable`, пакет первичной установки **`FirstInstall`** для Windows 10/11 x64).
 
-[Главная страница репозитория](../README.md) · [Веб-лендинг (docs/index.html)](./index.html) · [Страница выпуска v0.12.0-alpha](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.12.0-alpha) · [Карта возможностей и развития](./roadmap.md)
+[Главная страница репозитория](../README.md) · [Веб-лендинг (docs/index.html)](./index.html) · [Страница выпуска v0.12.0-alpha](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.12.0-alpha) · [Карта возможностей и развития](./roadmap.md) · [Регламент витрины](./CONTENT-MAINTENANCE.md)
 
 ## 1. Получение и проверка установщика FirstInstall
 
