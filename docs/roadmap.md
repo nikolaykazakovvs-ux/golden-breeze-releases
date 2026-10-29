@@ -1,8 +1,10 @@
 # Golden Breeze: возможности и развитие
 
+**Язык / Language:** **Русский** · [English (docs/en/roadmap.md)](./en/roadmap.md)
+
 **Состояние на 28 октября 2026 года** (доступный выпуск `v0.12.0-alpha` в канале `stable` проверен 28.10.2026). Golden Breeze развивается как мультиагентная платформа для трейдинга: совместная работа специализированных ИИ-агентов в торговом процессе от анализа рынка и торговых решений до исполнения, сопровождения позиций и контроля риска под управлением пользователя. Исследование, разработка, версионирование и изолированная проверка стратегий служат функциональным контуром платформы, обеспечивая прозрачный путь от гипотезы к контролируемому применению.
 
-[Главная страница репозитория](../README.md) · [Веб-лендинг (docs/index.html)](./index.html) · [Актуальный выпуск v0.12.0-alpha](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.12.0-alpha) · [Все выпуски](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases) · [Регламент витрины](./CONTENT-MAINTENANCE.md) · [Обратная связь и сотрудничество](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/issues)
+[Главная страница репозитория (RU)](../README.ru.md) · [Repository Home (EN)](../README.md) · [Веб-витрина (RU)](https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/) · [Актуальный выпуск v0.12.0-alpha](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.12.0-alpha) · [Все выпуски](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases) · [Первый запуск](./first-start.md) · [Регламент витрины](./CONTENT-MAINTENANCE.md) · [Обратная связь и сотрудничество](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/issues)
 
 ## Как читать состояние
 

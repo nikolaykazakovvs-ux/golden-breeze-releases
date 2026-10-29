@@ -1,8 +1,10 @@
 # Установка и первый запуск
 
+**Язык / Language:** **Русский** · [English (docs/en/first-start.md)](./en/first-start.md)
+
 **Состояние на 28 октября 2026 года** (доступный выпуск в канале `stable` проверен 28.10.2026). В разделе Releases опубликован предварительный выпуск **`v0.12.0-alpha`** (канал `stable`, пакет первичной установки **`FirstInstall`** для Windows 10/11 x64; доработки циклов `0.13.0-alpha`–`0.14.0-alpha` проходят живую приёмку на выделенном стенде перед следующим обновлением канала `stable`).
 
-[Главная страница репозитория](../README.md) · [Веб-лендинг (docs/index.html)](./index.html) · [Страница выпуска v0.12.0-alpha](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.12.0-alpha) · [Карта возможностей и развития](./roadmap.md) · [Регламент витрины](./CONTENT-MAINTENANCE.md)
+[Главная страница репозитория (RU)](../README.ru.md) · [Repository Home (EN)](../README.md) · [Веб-витрина (RU)](https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/) · [Страница выпуска v0.12.0-alpha](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.12.0-alpha) · [Карта возможностей и развития](./roadmap.md) · [Регламент витрины](./CONTENT-MAINTENANCE.md)
 
 ## 1. Получение и проверка установщика FirstInstall
 

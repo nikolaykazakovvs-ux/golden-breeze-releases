@@ -270,6 +270,42 @@ code {
   flex-shrink: 0;
 }
 
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 2px;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.lang-switch__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 9px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  color: var(--text-secondary);
+  line-height: 1.2;
+}
+
+.lang-switch__link:hover {
+  color: var(--text-primary);
+  background: var(--bg-subtle);
+}
+
+.lang-switch__link.is-active,
+.lang-switch__link[aria-current="page"] {
+  background: var(--text-primary);
+  color: var(--bg-surface);
+}
+
 .header-release-btn {
   white-space: nowrap;
   flex-shrink: 0;
@@ -2032,19 +2068,19 @@ code {
     border-color: var(--border-subtle);
   }
   .hero__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   .cards-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .journey-steps {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .status-legend {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .matrix-item {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 12px;
   }
   .pult-demo__specs-row {
@@ -2052,7 +2088,7 @@ code {
   }
   .pult-demo__mid-grid,
   .pult-demo__bottom-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -2063,10 +2099,10 @@ code {
   .two-col-grid,
   .partner-grid,
   .site-footer__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   .release-card__specs {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   .hero {
     padding: 28px 0 28px;
@@ -2075,10 +2111,11 @@ code {
     padding: 40px 0;
   }
   .pult-demo {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   .pult-demo__rail {
     flex-direction: row;
+    flex-wrap: wrap;
     border-right: none;
     border-bottom: 1px solid #DFD5C0;
     padding: 8px 12px;
@@ -2086,6 +2123,7 @@ code {
   .pult-demo__rail-top,
   .pult-demo__rail-bottom {
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 6px;
   }
   .pult-demo__gb-logo {
@@ -2095,6 +2133,7 @@ code {
   .pult-agent-card {
     flex: 1 1 220px;
     width: auto;
+    min-width: 0;
   }
 }
 
@@ -2111,10 +2150,19 @@ code {
   .pult-agent-card {
     flex: 1 1 100%;
     width: 100%;
+    min-width: 0;
   }
   .pult-demo__specs-row,
   .pult-demo__pos-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .pult-demo__decision-content {
+    flex: 1 1 100%;
+  }
+  .pult-status-tag,
+  .badge,
+  .pult-demo__decision-tag {
+    white-space: normal;
   }
   .pult-log-item {
     grid-template-columns: 50px 50px minmax(0, 1fr);
@@ -2129,27 +2177,41 @@ code {
   section[id] {
     scroll-margin-top: 68px;
   }
+  .container {
+    padding: 0 12px;
+  }
   .site-header__inner {
-    min-height: 56px;
-    gap: 8px;
-    padding: 0 4px;
+    min-height: 52px;
+    gap: 4px;
+    padding: 4px 6px;
   }
   .brand-logo {
-    font-size: 1rem;
-    gap: 8px;
+    font-size: 0.84rem;
+    gap: 5px;
+    flex-shrink: 1;
+    min-width: 0;
   }
   .brand-logo__mark {
-    width: 32px;
-    height: 32px;
-    font-size: 0.82rem;
-    border-radius: 8px;
+    width: 26px;
+    height: 26px;
+    font-size: 0.72rem;
+    border-radius: 6px;
   }
   .site-header__actions {
-    gap: 6px;
+    gap: 4px;
+  }
+  .lang-switch {
+    padding: 1px;
+    gap: 1px;
+  }
+  .lang-switch__link {
+    padding: 4px 5px;
+    font-size: 0.7rem;
   }
   .header-release-btn {
-    padding: 6px 9px;
-    font-size: 0.8rem;
+    padding: 5px 6px;
+    font-size: 0.7rem;
+    border-radius: 7px;
   }
   .header-release-btn__full {
     display: none;
@@ -2158,9 +2220,19 @@ code {
     display: inline;
   }
   .nav-toggle {
-    padding: 6px 9px;
-    font-size: 0.82rem;
-    gap: 4px;
+    padding: 5px 6px;
+    font-size: 0.72rem;
+    gap: 3px;
+    border-radius: 7px;
+  }
+}
+
+@media (max-width: 350px) {
+  .brand-logo {
+    font-size: 0.78rem;
+    line-height: 1.05;
+    white-space: normal;
+    max-width: 82px;
   }
 }
 

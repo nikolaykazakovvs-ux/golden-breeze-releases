@@ -1,16 +1,43 @@
 /* ==========================================================================
    Golden Breeze — Независимый клиентский скрипт витрины (без сборщиков и CDN)
+   Поддерживает русскую (/golden-breeze-releases/) и английскую (/golden-breeze-releases/en/) версии.
    Возможности:
-   1. Адаптивная навигация шапки (<= 1200px меню разделов, кнопка выпуска всегда видна, Escape, resize)
-   2. Фильтрация матрицы направлений по честным статусам готовности
-   3. Копирование SHA-256 и команд PowerShell с понятным подтверждением
-   4. Интерактивный демонстрационный блок Пульта управления (профили + пауза/воспроизведение)
+   1. Адаптивная навигация шапки (<= 1200px меню разделов, кнопки выпуска и RU/EN всегда видны, Escape, resize)
+   2. Явное переключение языка RU / EN с сохранением текущего раздела, query и hash без авто-редиректов
+   3. Фильтрация матрицы направлений по честным статусам готовности (RU / EN)
+   4. Копирование SHA-256 и команд PowerShell с понятным подтверждением (RU / EN)
+   5. Интерактивный демонстрационный блок Пульта управления (профили + пауза/воспроизведение, RU / EN)
    ========================================================================== */
 
 (function () {
   "use strict";
 
-  // 1. Адаптивная навигация шапки (порог 1200px для комфортного размещения русского текста)
+  var docLang = (document.documentElement.getAttribute("lang") || "ru").toLowerCase();
+  var isEn = docLang.indexOf("en") === 0;
+
+  var I18N = isEn
+    ? {
+        filterCountPrefix: "Showing tracks: ",
+        filterCountMiddle: " of ",
+        copied: "Copied",
+        copyError: "Error",
+        playBtn: "Play",
+        pauseBtn: "Pause",
+        statusPaused: "Demo animation paused",
+        statusActive: "Live demo feed active"
+      }
+    : {
+        filterCountPrefix: "Показано направлений: ",
+        filterCountMiddle: " из ",
+        copied: "Скопировано",
+        copyError: "Ошибка",
+        playBtn: "Воспроизвести",
+        pauseBtn: "Пауза",
+        statusPaused: "Демо-анимация на паузе",
+        statusActive: "Демо-обновление активно"
+      };
+
+  // 1. Адаптивная навигация шапки (порог 1200px)
   var navToggle = document.getElementById("nav-toggle");
   var siteNav = document.getElementById("site-nav");
 
@@ -45,7 +72,65 @@
     });
   }
 
-  // 2. Фильтрация матрицы направлений (Roadmap / Статусы)
+  // 2. Явное переключение языка RU / EN (сохраняет раздел, query и hash; без авто-редиректов)
+  var langLinks = document.querySelectorAll("[data-lang-switch]");
+  var trackedSectionIds = ["capabilities", "user-journey", "roadmap", "download", "partners", "faq"];
+
+  function detectCurrentSectionHash() {
+    if (window.location.hash && window.location.hash.length > 1) {
+      return window.location.hash;
+    }
+    var scrollY = window.scrollY || window.pageYOffset || 0;
+    if (scrollY < 160) {
+      return "";
+    }
+    var bestId = "";
+    var headerOffset = 110;
+    for (var i = 0; i < trackedSectionIds.length; i += 1) {
+      var sec = document.getElementById(trackedSectionIds[i]);
+      if (sec) {
+        var rect = sec.getBoundingClientRect();
+        if (rect.top <= headerOffset && rect.bottom > headerOffset) {
+          bestId = trackedSectionIds[i];
+          break;
+        }
+      }
+    }
+    return bestId ? "#" + bestId : "";
+  }
+
+  if (langLinks.length > 0) {
+    langLinks.forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        if (
+          event.defaultPrevented ||
+          event.button !== 0 ||
+          event.metaKey ||
+          event.ctrlKey ||
+          event.shiftKey ||
+          event.altKey
+        ) {
+          return;
+        }
+        var rawHref = link.getAttribute("href");
+        if (!rawHref) {
+          return;
+        }
+
+        var baseHref = rawHref.split("#")[0].split("?")[0];
+        if (window.location.protocol === "file:" && /\/$/.test(baseHref)) {
+          baseHref = baseHref + "index.html";
+        }
+        var search = window.location.search || "";
+        var hash = detectCurrentSectionHash();
+        var finalHref = baseHref + search + hash;
+        event.preventDefault();
+        window.location.assign(finalHref);
+      });
+    });
+  }
+
+  // 3. Фильтрация матрицы направлений (Roadmap / Статусы)
   var filterButtons = document.querySelectorAll("[data-filter]");
   var matrixItems = document.querySelectorAll("[data-status]");
   var filterCountEl = document.getElementById("filter-count");
@@ -70,7 +155,8 @@
     });
 
     if (filterCountEl) {
-      filterCountEl.textContent = "Показано направлений: " + visibleCount + " из " + matrixItems.length;
+      filterCountEl.textContent =
+        I18N.filterCountPrefix + visibleCount + I18N.filterCountMiddle + matrixItems.length;
     }
   }
 
@@ -83,7 +169,7 @@
     });
   }
 
-  // 3. Копирование контрольных сумм и команд проверки
+  // 4. Копирование контрольных сумм и команд проверки
   var copyButtons = document.querySelectorAll("[data-copy-target]");
 
   function fallbackCopyText(text) {
@@ -118,7 +204,7 @@
       }
 
       function showResult(success) {
-        btn.textContent = success ? "Скопировано" : "Ошибка";
+        btn.textContent = success ? I18N.copied : I18N.copyError;
         setTimeout(function () {
           btn.textContent = originalLabel;
         }, 1800);
@@ -139,7 +225,7 @@
     });
   });
 
-  // 4. Интерактивный демонстрационный макет Пульта управления (изолированное состояние)
+  // 5. Интерактивный демонстрационный макет Пульта управления (RU и EN профили)
   function initPultDemo() {
     var toggleBtn = document.getElementById("pult-anim-toggle");
     var statusWrap = document.getElementById("pult-anim-status");
@@ -150,7 +236,7 @@
       return;
     }
 
-    var PROFILES = {
+    var PROFILES_RU = {
       "xau-h1": {
         name: "«XAU · Импульс H1»",
         badgeText: "АКТИВЕН · ДЕМО-СЕССИЯ",
@@ -396,6 +482,253 @@
       }
     };
 
+    var PROFILES_EN = {
+      "xau-h1": {
+        name: "“XAU · Momentum H1”",
+        badgeText: "ACTIVE · DEMO SESSION",
+        badgeClass: "pult-status-tag pult-status-tag--active",
+        studioBanner: "Active strategy version <strong>Momentum-Session v2.4.0 (+sourcefree)</strong> applied in Studio. All demo environment readiness checks passed.",
+        symbol: "XAUUSD",
+        tf: "H1 (conf. M15)",
+        account: "MT5 Demo · DEMO-01",
+        contour: "Demo (MT5)",
+        terminal: "MT5 · Connected",
+        llm: "Selected model · Demo",
+        strategy: "Momentum v2.4.0 (+sourcefree)",
+        risk: "0.5% / trade · SL mandatory",
+        marketLabel: "MARKET · XAUUSD (GOLD / US DOLLAR)",
+        marketState: "FEED ACTIVE · CLOSED BARS + TICK",
+        marketSession: "Session: <strong>London / New York (02:00–22:00 UTC)</strong>",
+        marketBars: "Data: <strong>200 closed H1 bars · EMA-21 · ATR 14.2</strong>",
+        accBalance: "$100 000.00",
+        accPos: "1 open (BUY 0.20 XAUUSD)",
+        accDd: "0.38% of 5.00% (within limit)",
+        accLimit: "up to 2 concurrent · SL mandatory",
+        actionsTitle: "ACTIONS · XAU · MOMENTUM H1",
+        runPillText: "● Trading session active (Demo)",
+        opsSummary: "<strong>OPERATION RESULTS:</strong> Study Market: 200 closed H1 bars read, trend bullish · Check Readiness: MT5 terminal connected, Algo Trading allowed, spread 18 pts normal.",
+        logTitle: "AGENT LOG · XAU · MOMENTUM H1",
+        posBadge: "Risk protected · Trailing SL",
+        posInstrument: "XAUUSD · BUY 0.20 lots",
+        posTicket: "Ticket #DEMO-01 · MT5 Demo",
+        posEntry: "2 641.20",
+        posSl: "2 643.50 (breakeven+)",
+        posTp: "2 662.00",
+        chartEntryLabel: "BUY 0.20 @ 2641.20",
+        chartSlLabel: "Trailing SL @ 2643.50 (breakeven+)",
+        ticks: [
+          {
+            clock: "14:20:05",
+            price: "2 648.40",
+            tagPrice: "2648.40",
+            delta: "+0.42% (+11.10)",
+            equity: "$100 144.00 (+0.14%)",
+            pnl: "+$144.00",
+            cardMetric: "BUY 0.20 · +$144",
+            priceY: 38,
+            wickTop: 32,
+            bodyY: 36,
+            bodyH: 14,
+            decision: "14:20:05 · Holding BUY 0.20 XAUUSD (entry 2 641.20): H1 closed above EMA-21 (2 641.80), protective stop moved to +2.30 pts (2 643.50, trailing-stop active).",
+            topLog: { time: "14:20:05", badge: "STOP", kind: "sl", msg: "Trailing-stop moved to <strong>2 643.50</strong> (+2.30 pts above entry price)." }
+          },
+          {
+            clock: "14:20:08",
+            price: "2 649.10",
+            tagPrice: "2649.10",
+            delta: "+0.45% (+11.80)",
+            equity: "$100 158.00 (+0.16%)",
+            pnl: "+$158.00",
+            cardMetric: "BUY 0.20 · +$158",
+            priceY: 34,
+            wickTop: 29,
+            bodyY: 33,
+            bodyH: 17,
+            decision: "14:20:08 · Managing BUY 0.20 XAUUSD: quote 2 649.10, momentum holds above local level 2 646.00; distance to TP target 12.90 pts.",
+            topLog: { time: "14:20:08", badge: "MARKET", kind: "mkt", msg: "XAUUSD quote update: <strong>2 649.10</strong> (spread 17 pts, liquidity normal)." }
+          },
+          {
+            clock: "14:20:11",
+            price: "2 648.75",
+            tagPrice: "2648.75",
+            delta: "+0.43% (+11.45)",
+            equity: "$100 151.00 (+0.15%)",
+            pnl: "+$151.00",
+            cardMetric: "BUY 0.20 · +$151",
+            priceY: 36,
+            wickTop: 30,
+            bodyY: 35,
+            bodyH: 15,
+            decision: "14:20:11 · MT5 Demo risk parameter check: floating PnL +$151.00, 4.62% daily drawdown buffer available, stop order 2 643.50 confirmed at broker.",
+            topLog: { time: "14:20:11", badge: "READY", kind: "ok", msg: "Broker protective stop reconciliation: <strong>SL 2 643.50</strong> active on MT5 server." }
+          },
+          {
+            clock: "14:20:14",
+            price: "2 649.60",
+            tagPrice: "2649.60",
+            delta: "+0.47% (+12.30)",
+            equity: "$100 168.00 (+0.17%)",
+            pnl: "+$168.00",
+            cardMetric: "BUY 0.20 · +$168",
+            priceY: 31,
+            wickTop: 26,
+            bodyY: 31,
+            bodyH: 19,
+            decision: "14:20:14 · XAUUSD momentum continues (2 649.60): next trailing-stop step triggers on consolidation above 2 651.00.",
+            topLog: { time: "14:20:14", badge: "STOP", kind: "sl", msg: "Trailing-stop monitor: next SL step scheduled upon reaching <strong>2 651.00</strong>." }
+          }
+        ],
+        baseLogs: [
+          { time: "14:05:12", badge: "ORDER", kind: "exec", msg: "Opened demo position <strong>BUY 0.20 XAUUSD @ 2 641.20</strong>, SL 2 634.00, TP 2 662.00." },
+          { time: "14:00:04", badge: "MARKET", kind: "mkt", msg: "Study Market: H1 bar closed (2 640.90), breakout above session local high." },
+          { time: "13:58:40", badge: "READY", kind: "ok", msg: "Readiness check passed (6/6): account MT5 Demo · DEMO-01, risk limit 0.5%." }
+        ]
+      },
+      "xau-m15": {
+        name: "“XAU · MeanRevert M15”",
+        badgeText: "READY TO START · DEMO",
+        badgeClass: "pult-status-tag pult-status-tag--ready",
+        studioBanner: "Active strategy version <strong>MeanRevert-Band v1.8.2 (+sourcefree)</strong> applied in Studio. Agent is awaiting a touch of the M15 lower channel band.",
+        symbol: "XAUUSD",
+        tf: "M15 (H4 filter)",
+        account: "MT5 Demo · DEMO-01",
+        contour: "Demo (MT5)",
+        terminal: "MT5 · Connected",
+        llm: "Selected model · Demo",
+        strategy: "MeanRevert v1.8.2 (+sourcefree)",
+        risk: "0.35% / trade · max 1 pos.",
+        marketLabel: "MARKET · XAUUSD (M15 MEAN REVERSION CHANNEL)",
+        marketState: "READY · AWAITING ENTRY ZONE",
+        marketSession: "Session: <strong>London / New York (02:00–22:00 UTC)</strong>",
+        marketBars: "Data: <strong>300 closed M15 bars · VWAP 2 642.10 · RSI 54.8</strong>",
+        accBalance: "$100 000.00",
+        accPos: "Awaiting entry trigger (limit 1)",
+        accDd: "0.38% of 5.00% (within limit)",
+        accLimit: "max 1 position · hard SL 6.5 pts",
+        actionsTitle: "ACTIONS · XAU · MEANREVERT M15",
+        runPillText: "● Ready to start on signal (Demo)",
+        opsSummary: "<strong>OPERATION RESULTS:</strong> Study Market: 300 closed M15 bars read, VWAP deviation +0.24% · Check Readiness: account MT5 Demo · DEMO-01 verified, position conflict excluded.",
+        logTitle: "AGENT LOG · XAU · MEANREVERT M15",
+        posBadge: "Order plan · Limit calculation",
+        posInstrument: "XAUUSD · Plan BUY LIMIT 0.15",
+        posTicket: "Calculated order · awaiting level",
+        posEntry: "2 639.50 (VWAP zone)",
+        posSl: "2 633.00 (-6.50 pts)",
+        posTp: "2 649.00 (+9.50 pts)",
+        chartEntryLabel: "M15 Entry Zone @ 2639.50",
+        chartSlLabel: "Target SL @ 2633.00 (-0.35% risk)",
+        ticks: [
+          {
+            clock: "14:20:05",
+            price: "2 648.40",
+            tagPrice: "2648.40",
+            delta: "VWAP dev. +6.30 pts",
+            equity: "$100 144.00 (shared acct)",
+            pnl: "Awaiting 2 639.50",
+            cardMetric: "Awaiting signal",
+            priceY: 40,
+            wickTop: 34,
+            bodyY: 38,
+            bodyH: 13,
+            decision: "14:20:05 · M15 observation: price 2 648.40 is in the neutral zone above VWAP (2 642.10); no entry executed without a confirmed pullback.",
+            topLog: { time: "14:20:05", badge: "MARKET", kind: "mkt", msg: "M15 evaluation: current price <strong>2 648.40</strong>, 8.90 pts above target pullback zone." }
+          },
+          {
+            clock: "14:20:08",
+            price: "2 648.10",
+            tagPrice: "2648.10",
+            delta: "VWAP dev. +6.00 pts",
+            equity: "$100 144.00 (shared acct)",
+            pnl: "Awaiting 2 639.50",
+            cardMetric: "Awaiting signal",
+            priceY: 42,
+            wickTop: 35,
+            bodyY: 40,
+            bodyH: 11,
+            decision: "14:20:08 · Higher-timeframe H4 filter check: bullish structure, counter-trend short sales blocked by strategy rules.",
+            topLog: { time: "14:20:08", badge: "READY", kind: "ok", msg: "H4 filter active: only long entries from support zone <strong>2 639.50</strong> permitted." }
+          }
+        ],
+        baseLogs: [
+          { time: "14:15:00", badge: "MARKET", kind: "mkt", msg: "M15 bar closed: recalculated reversion channel bounds and VWAP level (2 642.10)." },
+          { time: "14:02:18", badge: "READY", kind: "ok", msg: "Readiness check (6/6): risk profile 0.35%, MT5 terminal ready." },
+          { time: "13:55:10", badge: "STOP", kind: "sl", msg: "Mandatory protective stop rule verified: 6.50 pts distance locked." }
+        ]
+      },
+      "eur-m30": {
+        name: "“EUR · Range M30”",
+        badgeText: "PAUSED · HISTORY STUDY",
+        badgeClass: "pult-status-tag pult-status-tag--paused",
+        studioBanner: "Active strategy version <strong>London-Range v1.3.0 (+sourcefree)</strong> loaded. Closed M30 bars analyzed without order execution.",
+        symbol: "EURUSD",
+        tf: "M30 (London session)",
+        account: "MT5 Demo · DEMO-02",
+        contour: "Demo (MT5)",
+        terminal: "MT5 · Connected",
+        llm: "Selected model · Demo",
+        strategy: "London-Range v1.3.0",
+        risk: "0.4% / trade · max 1 pos.",
+        marketLabel: "MARKET · EURUSD (EURO / US DOLLAR)",
+        marketState: "BARS LOADED · STUDY MODE",
+        marketSession: "Session: <strong>European / US (07:00–20:00 UTC)</strong>",
+        marketBars: "Data: <strong>240 closed M30 bars · range 1.0840–1.0892</strong>",
+        accBalance: "$50 000.00",
+        accPos: "0 open positions",
+        accDd: "0.00% of 4.00% (daily limit)",
+        accLimit: "max 1 position · awaiting start",
+        actionsTitle: "ACTIONS · EUR · RANGE M30",
+        runPillText: "⏸ Paused (bar analysis only)",
+        opsSummary: "<strong>OPERATION RESULTS:</strong> Study Market: 240 closed M30 bars read, morning range bounds 1.0840–1.0892 · Check Readiness: demo account MT5 Demo · DEMO-02 verified, trading not started.",
+        logTitle: "AGENT LOG · EUR · RANGE M30",
+        posBadge: "No open trades",
+        posInstrument: "EURUSD · No positions (study mode)",
+        posTicket: "Account MT5 Demo · DEMO-02",
+        posEntry: "1.0864 (boundary)",
+        posSl: "1.0842 (calculated)",
+        posTp: "1.0908 (calculated)",
+        chartEntryLabel: "Upper Bound @ 1.0864",
+        chartSlLabel: "Target SL @ 1.0842 (22 pts)",
+        ticks: [
+          {
+            clock: "14:20:05",
+            price: "1.0862",
+            tagPrice: "1.0862",
+            delta: "+0.18% (+0.0019)",
+            equity: "$50 000.00 (0.00%)",
+            pnl: "$0.00 (paused)",
+            cardMetric: "Bars loaded",
+            priceY: 44,
+            wickTop: 38,
+            bodyY: 42,
+            bodyH: 12,
+            decision: "14:20:05 · Market study mode without trading: compiled summary over 240 closed M30 EURUSD bars, key resistance at 1.0864.",
+            topLog: { time: "14:20:05", badge: "MARKET", kind: "mkt", msg: "Closed M30 bar summary saved to agent log (quote <strong>1.0862</strong>)." }
+          },
+          {
+            clock: "14:20:08",
+            price: "1.0863",
+            tagPrice: "1.0863",
+            delta: "+0.19% (+0.0020)",
+            equity: "$50 000.00 (0.00%)",
+            pnl: "$0.00 (paused)",
+            cardMetric: "Bars loaded",
+            priceY: 42,
+            wickTop: 36,
+            bodyY: 40,
+            bodyH: 13,
+            decision: "14:20:08 · Readiness check: terminal and demo account MT5 Demo · DEMO-02 are ready; transitioning to order execution requires explicit user action “Start Trading”.",
+            topLog: { time: "14:20:08", badge: "READY", kind: "ok", msg: "Readiness confirmed: orders are never opened automatically without a start command." }
+          }
+        ],
+        baseLogs: [
+          { time: "14:10:00", badge: "MARKET", kind: "mkt", msg: "Completed M30 EURUSD history study: session volatility 52 points." },
+          { time: "14:04:22", badge: "READY", kind: "ok", msg: "Profile “EUR · Range M30” synchronized with strategy catalog." },
+          { time: "13:50:15", badge: "STOP", kind: "sl", msg: "Risk rules verified: maximum risk per trade capped at 0.40%." }
+        ]
+      }
+    };
+
+    var PROFILES = isEn ? PROFILES_EN : PROFILES_RU;
     var currentProfileKey = "xau-h1";
     var tickIndex = 0;
     var prefersReducedMotion = false;
@@ -563,22 +896,22 @@
 
     function updateControlUI() {
       if (isManuallyPaused) {
-        toggleBtn.textContent = "Воспроизвести";
+        toggleBtn.textContent = I18N.playBtn;
         toggleBtn.setAttribute("aria-pressed", "true");
         if (statusWrap) {
           statusWrap.classList.add("is-paused");
         }
         if (statusText) {
-          statusText.textContent = "Демо-анимация на паузе";
+          statusText.textContent = I18N.statusPaused;
         }
       } else {
-        toggleBtn.textContent = "Пауза";
+        toggleBtn.textContent = I18N.pauseBtn;
         toggleBtn.setAttribute("aria-pressed", "false");
         if (statusWrap) {
           statusWrap.classList.remove("is-paused");
         }
         if (statusText) {
-          statusText.textContent = "Демо-обновление активно";
+          statusText.textContent = I18N.statusActive;
         }
       }
     }

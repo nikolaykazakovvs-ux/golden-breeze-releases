@@ -6,6 +6,10 @@
   <title>Golden Breeze — Мультиагентная платформа для трейдинга</title>
   <meta name="description" content="Golden Breeze — мультиагентная платформа для трейдинга на Windows x64: совместная работа специализированных ИИ-агентов от анализа рынка и торговых решений до исполнения, сопровождения позиций и контроля риска под управлением пользователя.">
   <meta name="theme-color" content="#FAF6EC">
+  <link rel="canonical" href="https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/">
+  <link rel="alternate" hreflang="ru" href="https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/">
+  <link rel="alternate" hreflang="en" href="https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/en/">
+  <link rel="alternate" hreflang="x-default" href="https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/">
   <link rel="icon" type="image/svg+xml" href="./assets/brand/favicon.svg">
   <link rel="stylesheet" href="./styles.css">
 </head>
@@ -49,13 +53,33 @@
 
       <!-- Постоянные действия в шапке (всегда видны ВНЕ выпадающего списка разделов) -->
       <div class="site-header__actions">
+        <div class="lang-switch" role="group" aria-label="Выбор языка страницы">
+          <a
+            class="lang-switch__link is-active"
+            href="./"
+            lang="ru"
+            hreflang="ru"
+            aria-current="page"
+            aria-label="Русская версия (текущая)"
+            data-lang-switch="ru"
+          >RU</a>
+          <a
+            class="lang-switch__link"
+            href="./en/"
+            lang="en"
+            hreflang="en"
+            aria-label="Switch to English version"
+            data-lang-switch="en"
+          >EN</a>
+        </div>
+
         <a
           class="btn btn--primary btn--sm header-release-btn"
           href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.12.0-alpha"
           aria-label="Выпуск v0.12.0-alpha"
         >
           <span class="header-release-btn__full">Выпуск v0.12.0-alpha</span>
-          <span class="header-release-btn__short" aria-hidden="true">v0.12.0</span>
+          <span class="header-release-btn__short" aria-hidden="true">v0.12-alpha</span>
         </a>
 
         <button
@@ -1388,6 +1412,7 @@
             <li><a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/blob/main/docs/first-start.md">Установка и первый запуск</a></li>
             <li><a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/blob/main/docs/CONTENT-MAINTENANCE.md">Регламент актуализации витрины</a></li>
             <li><a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/blob/main/docs/github-pages.md">Памятка по GitHub Pages</a></li>
+            <li><a href="./en/" lang="en" hreflang="en" data-lang-switch="en">English Web Showcase (/en/)</a></li>
             <li><a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases">Репозиторий витрины и релизов</a></li>
           </ul>
         </div>
