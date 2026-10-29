@@ -460,6 +460,17 @@ code {
   color: var(--text-primary);
 }
 
+/* Локальная адаптация для английской витрины: заголовок в одну строку на десктопе */
+:lang(en) .hero__title {
+  font-size: clamp(2rem, 3.2vw, 2.6rem);
+}
+
+@media (min-width: 1201px) {
+  :lang(en) .hero__title {
+    white-space: nowrap;
+  }
+}
+
 .hero__lead {
   font-size: 1.125rem;
   color: var(--text-secondary);
