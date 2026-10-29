@@ -3,7 +3,8 @@
 **Актуализация: 28 октября 2026 года.** В каталоге `docs/` размещён статический лендинг продукта Golden Breeze (`docs/index.html`, `docs/styles.css`, `docs/app.js`, `docs/assets/`, `docs/.nojekyll`), опубликованный через **GitHub Pages** в репозитории витрины и релизов `nikolaykazakovvs-ux/golden-breeze-releases`.
 
 Публичный адрес витрины в GitHub Pages:
-- `https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/`
+- Русская версия: `https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/`
+- Английская версия: `https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/en/`
 
 *(Развёртывание активно из `main:/docs`, статус: `built`.)*
 
@@ -13,11 +14,11 @@
 
 Лендинг реализован на чистом HTML, CSS и компактном JavaScript без сборщиков, сторонней аналитики и внешних CDN:
 
-- **Точка входа:** `docs/index.html`
-- **Стили и адаптивность:** `docs/styles.css` (поддержка десктопа, планшетов и мобильных экранов, компактное меню навигации при `<= 1200px`, учёт `scroll-padding-top` для фиксированной шапки и `prefers-reduced-motion`).
-- **Интерактивность:** `docs/app.js` (мобильное меню навигации, фильтрация направлений дорожной карты по статусам и копирование `SHA-256` / команды PowerShell).
+- **Точки входа:** `docs/index.html` (русская версия `/golden-breeze-releases/`) и `docs/en/index.html` (английская версия `/golden-breeze-releases/en/`).
+- **Стили и адаптивность:** `docs/styles.css` (поддержка десктопа, планшетов и мобильных экранов, компактное меню навигации при `<= 1200px` с сохранением кнопок выпуска и переключателя `RU / EN`, учёт `scroll-padding-top` для фиксированной шапки и `prefers-reduced-motion`).
+- **Интерактивность:** `docs/app.js` (мобильное меню навигации, явное переключение языка `RU / EN` с сохранением текущего раздела/query/hash без автоматических редиректов, фильтрация направлений дорожной карты по статусам и копирование `SHA-256` / команды PowerShell, локализованный интерактивный макет Пульта).
 - **Отключение Jekyll:** пустой файл `docs/.nojekyll` гарантирует прямую раздачу статических файлов без перезаписи путей генератором Jekyll.
-- **Ссылки на документацию:** поскольку при включённом `.nojekyll` прямые переходы на `.md`-файлы внутри GitHub Pages открывают необработанный текст, ссылки из HTML-лендинга на подробные документы (`roadmap.md`, `first-start.md`, `github-pages.md`) ведут на отрисованные страницы GitHub (`blob/main/docs/...`). Все локальные медиа-ресурсы (`./styles.css`, `./app.js`, `./assets/...`) подключены относительными путями и одинаково работают локально и по проектному префиксу `/golden-breeze-releases/`.
+- **Ссылки на документацию:** поскольку при включённом `.nojekyll` прямые переходы на `.md`-файлы внутри GitHub Pages открывают необработанный текст, ссылки из HTML-лендинга на подробные документы (`roadmap.md`, `first-start.md`, `en/roadmap.md`, `en/first-start.md`, `github-pages.md`, `CONTENT-MAINTENANCE.md`) ведут на отрисованные страницы GitHub (`blob/main/docs/...`). Все локальные медиа-ресурсы (`./styles.css` и `../styles.css`, `./app.js` и `../app.js`, `./assets/...` и `../assets/...`) подключены относительными путями и одинаково работают локально и по проектному префиксу `/golden-breeze-releases/` и `/golden-breeze-releases/en/`.
 
 ---
 

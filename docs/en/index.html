@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Golden Breeze — Multi-Agent Trading Platform</title>
+  <meta name="description" content="Golden Breeze is a multi-agent trading platform for Windows x64: collaborative work of specialized AI agents from market analysis and trading decisions to execution, position management, and risk control under user governance.">
+  <meta name="theme-color" content="#FAF6EC">
+  <link rel="canonical" href="https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/en/">
+  <link rel="alternate" hreflang="ru" href="https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/">
+  <link rel="alternate" hreflang="en" href="https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/en/">
+  <link rel="alternate" hreflang="x-default" href="https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/">
+  <link rel="icon" type="image/svg+xml" href="../assets/brand/favicon.svg">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Current release banner -->
+  <div class="access-banner" role="region" aria-label="Current release information">
+    <div class="container access-banner__inner">
+      <span class="access-banner__badge">
+        <span class="access-banner__dot" aria-hidden="true"></span>
+        Multi-Agent Trading Platform · Windows x64 · Snapshot as of October 28, 2026
+      </span>
+      <span>
+        Current release: <strong>v0.12.0-alpha</strong> (Pre-release, FirstInstall, verified 28.10.2026) · <a href="#download">Download &amp; verify SHA-256</a>
+      </span>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand-logo" href="#top" aria-label="Golden Breeze — back to top">
+        <span class="brand-logo__mark" aria-hidden="true">GB</span>
+        <span class="brand-logo__text">
+          Golden Breeze
+          <span class="brand-logo__meta">Multi-Agent Trading · Windows x64</span>
+        </span>
+      </a>
+
+      <!-- Main section navigation -->
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="#capabilities">Capabilities</a></li>
+          <li><a class="site-nav__link" href="#user-journey">User Journey</a></li>
+          <li><a class="site-nav__link" href="#roadmap">Status &amp; Roadmap</a></li>
+          <li><a class="site-nav__link" href="#download">Download &amp; Start</a></li>
+          <li><a class="site-nav__link" href="#partners">Partners</a></li>
+        </ul>
+      </nav>
+
+      <!-- Persistent header actions (always visible outside the collapsible section menu) -->
+      <div class="site-header__actions">
+        <div class="lang-switch" role="group" aria-label="Page language switcher">
+          <a
+            class="lang-switch__link"
+            href="../"
+            lang="ru"
+            hreflang="ru"
+            aria-label="Переключить на русскую версию"
+            data-lang-switch="ru"
+          >RU</a>
+          <a
+            class="lang-switch__link is-active"
+            href="./"
+            lang="en"
+            hreflang="en"
+            aria-current="page"
+            aria-label="English version (current)"
+            data-lang-switch="en"
+          >EN</a>
+        </div>
+
+        <a
+          class="btn btn--primary btn--sm header-release-btn"
+          href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.12.0-alpha"
+          aria-label="Release v0.12.0-alpha"
+        >
+          <span class="header-release-btn__full">Release v0.12.0-alpha</span>
+          <span class="header-release-btn__short" aria-hidden="true">v0.12-alpha</span>
+        </a>
+
+        <button
+          id="nav-toggle"
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Toggle section navigation menu"
+        >
+          <span class="nav-toggle__icon" aria-hidden="true">☰</span>
+          <span class="nav-toggle__text">Menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- HERO -->
+    <section id="top" class="hero" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div>
+          <div class="hero__eyebrow">Multi-Agent Trading Platform · Windows x64</div>
+          <h1 id="hero-title" class="hero__title">
+            Multi-Agent Trading Platform
+          </h1>
+          <p class="hero__lead">
+            Golden Breeze is built for collaborative work of specialized AI agents in trading — from market analysis and trading decisions to execution, position management, and risk control. From a single Control Desk, the user governs agents, their tasks, and access to connected trading accounts.
+          </p>
+
+          <div class="hero__Chips" aria-label="Key platform characteristics">
+            <span class="chip">Specialized trading agents</span>
+            <span class="chip">Market analysis &amp; trading decisions</span>
+            <span class="chip">Execution, position management &amp; risk</span>
+            <span class="chip">Research &amp; strategy versions</span>
+            <span class="chip">Control Desk &amp; MT5</span>
+          </div>
+
+          <div class="hero__actions">
+            <a
+              class="btn btn--primary"
+              href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.12.0-alpha/GoldenBreeze-FirstInstall-0.12.0-alpha.exe"
+            >
+              Download for Windows
+            </a>
+            <a
+              class="btn btn--secondary"
+              href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.12.0-alpha"
+            >
+              Release v0.12.0-alpha (Alpha)
+            </a>
+            <a class="btn btn--ghost" href="#roadmap">
+              Capability Status
+            </a>
+          </div>
+
+          <p class="hero__note">
+            Pre-release <strong>v0.12.0-alpha</strong> (<code>stable</code> channel, Windows x64). The installer bundles its own runtime environment and never starts trading automatically.
+          </p>
+        </div>
+
+        <!-- Published release card -->
+        <aside class="release-card" aria-labelledby="release-card-heading">
+          <div class="release-card__header">
+            <div>
+              <p class="release-card__meta">Published Release · Channel stable</p>
+              <h2 id="release-card-heading" class="release-card__title">Golden Breeze v0.12.0-alpha</h2>
+            </div>
+            <span class="badge badge--released">Alpha · 17.10.2026</span>
+          </div>
+
+          <div class="release-card__specs">
+            <div class="spec-box">
+              <span class="spec-box__label">Installer Package</span>
+              <span class="spec-box__value">FirstInstall (Windows x64)</span>
+            </div>
+            <div class="spec-box">
+              <span class="spec-box__label">File Size</span>
+              <span class="spec-box__value">365.5 MiB (383,300,782 B)</span>
+            </div>
+            <div class="spec-box">
+              <span class="spec-box__label">Trading Connection</span>
+              <span class="spec-box__value">MT5 (TradeLocker — planned)</span>
+            </div>
+            <div class="spec-box">
+              <span class="spec-box__label">Cycle Status</span>
+              <span class="spec-box__value">0.13–0.14 in live acceptance</span>
+            </div>
+          </div>
+
+          <div class="hash-box">
+            <div class="hash-box__header">
+              <span class="hash-box__label">SHA-256 for GoldenBreeze-FirstInstall-0.12.0-alpha.exe</span>
+              <button class="copy-btn" type="button" data-copy-target="hero-sha256">
+                Copy SHA-256
+              </button>
+            </div>
+            <code id="hero-sha256" class="hash-box__code">d4546bc1fe718020f78315bbe98e4b232db044fb80bdb1061f1d2fe44ffd60a2</code>
+          </div>
+
+          <p class="release-card__meta">
+            Verifying SHA-256 confirms an exact byte-for-byte match between the downloaded file and the published release artifact.
+          </p>
+
+          <div class="release-card__links">
+            <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.12.0-alpha/GoldenBreeze-FirstInstall-0.12.0-alpha.exe.sha256">.sha256 file</a>
+            <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.12.0-alpha/build-manifest.json">build-manifest.json</a>
+            <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.12.0-alpha/first-install.json">first-install.json</a>
+            <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.12.0-alpha/first-install.json.sig">Manifest signature .sig</a>
+            <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases">All Releases</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- UI SHOWCASE (INTERACTIVE CONTROL DESK PREVIEW WITH DEMO DATA) -->
+    <section class="showcase" aria-labelledby="showcase-heading">
+      <div class="container">
+        <div class="showcase__frame">
+          <div class="showcase__topbar">
+            <div class="showcase__title-group">
+              <div id="showcase-heading" class="showcase__title">
+                <span>Workspace: Golden Breeze Trading Agent Control Desk</span>
+              </div>
+              <span class="showcase__caption-tag">
+                Interactive preview · demonstration data
+              </span>
+            </div>
+            <div class="showcase__controls">
+              <span id="pult-anim-status" class="pult-demo__live-indicator" aria-live="polite">
+                <span class="pult-demo__live-dot" aria-hidden="true"></span>
+                <span id="pult-anim-status-text">Live demo feed active</span>
+              </span>
+              <button
+                id="pult-anim-toggle"
+                class="pult-demo__ctrl-btn"
+                type="button"
+                aria-pressed="false"
+                aria-label="Pause or play the Control Desk demonstration animation"
+              >
+                Pause
+              </button>
+            </div>
+          </div>
+
+          <!-- Native Control Desk composition -->
+          <div class="pult-demo" role="region" aria-label="Golden Breeze Control Desk demonstration layout">
+            <!-- Left narrow navigation rail -->
+            <aside class="pult-demo__rail" aria-hidden="true">
+              <div class="pult-demo__rail-top">
+                <div class="pult-demo__gb-logo">GB</div>
+                <div class="pult-demo__rail-btn" title="Agent Chat">&gt;_</div>
+                <div class="pult-demo__rail-btn pult-demo__rail-btn--active" title="Control Desk">⊞</div>
+                <div class="pult-demo__rail-btn" title="Agent Studio">◇</div>
+                <div class="pult-demo__rail-btn" title="Strategy Catalog">☰</div>
+                <div class="pult-demo__rail-btn" title="Rules &amp; Accounts">⚙</div>
+              </div>
+              <div class="pult-demo__rail-bottom">
+                <div class="pult-demo__rail-btn" title="Settings">⚙</div>
+              </div>
+            </aside>
+
+            <!-- Main Control Desk canvas -->
+            <div class="pult-demo__canvas">
+              <!-- Top system status bar -->
+              <div class="pult-demo__sysbar">
+                <div class="pult-demo__sys-pills">
+                  <span class="pult-sys-pill">AGENTS : <strong>3</strong></span>
+                  <span class="pult-sys-pill pult-sys-pill--ok">RUNNING : <strong id="pult-sys-running">1</strong></span>
+                  <span class="pult-sys-pill">SYSTEM : <strong>STABLE v0.12</strong></span>
+                  <span class="pult-sys-pill">DATA : <strong>MT5 SERVER</strong></span>
+                </div>
+                <div class="pult-demo__sys-right">
+                  <span class="pult-sys-pill">EN ▾</span>
+                  <span id="pult-demo-clock" class="pult-demo__clock">14:20:05</span>
+                  <span class="pult-sys-pill">View ▾</span>
+                </div>
+              </div>
+
+              <!-- Active strategy notice bar -->
+              <div class="pult-demo__notice-bar">
+                <span id="pult-studio-banner">
+                  Active strategy version <strong>Momentum-Session v2.4.0 (+sourcefree)</strong> applied in Studio. All demo environment readiness checks passed.
+                </span>
+                <span class="pult-demo__notice-meta">Simulated demo environment</span>
+              </div>
+
+              <!-- TRADING AGENTS block -->
+              <div class="pult-demo__section-box">
+                <div class="pult-demo__section-head">
+                  <span class="pult-demo__section-label">TRADING AGENTS · SELECT PROFILE</span>
+                  <span class="pult-demo__section-hint">3 standard profiles in workspace</span>
+                </div>
+                <div class="pult-demo__agents-grid" role="tablist" aria-label="Demonstration trading agent profiles">
+                  <!-- Profile Card 1 -->
+                  <button
+                    type="button"
+                    role="tab"
+                    id="pult-tab-xau-h1"
+                    class="pult-agent-card is-selected"
+                    data-agent-profile="xau-h1"
+                    aria-selected="true"
+                  >
+                    <div class="pult-agent-card__top">
+                      <span class="pult-agent-card__avatar">GB</span>
+                      <div class="pult-agent-card__titles">
+                        <span class="pult-agent-card__name">XAU · Momentum H1</span>
+                        <span class="pult-agent-card__sub">XAUUSD · H1 / M15 · FTMO Demo</span>
+                      </div>
+                    </div>
+                    <div class="pult-agent-card__bottom">
+                      <span class="pult-status-tag pult-status-tag--active">ACTIVE · DEMO</span>
+                      <span class="pult-agent-card__metric" id="pult-card-metric-xau-h1">BUY 0.20 · +$144</span>
+                    </div>
+                  </button>
+
+                  <!-- Profile Card 2 -->
+                  <button
+                    type="button"
+                    role="tab"
+                    id="pult-tab-xau-m15"
+                    class="pult-agent-card"
+                    data-agent-profile="xau-m15"
+                    aria-selected="false"
+                  >
+                    <div class="pult-agent-card__top">
+                      <span class="pult-agent-card__avatar">GB</span>
+                      <div class="pult-agent-card__titles">
+                        <span class="pult-agent-card__name">XAU · MeanRevert M15</span>
+                        <span class="pult-agent-card__sub">XAUUSD · M15 / H4 · FTMO Demo</span>
+                      </div>
+                    </div>
+                    <div class="pult-agent-card__bottom">
+                      <span class="pult-status-tag pult-status-tag--ready">READY TO START</span>
+                      <span class="pult-agent-card__metric">Awaiting signal</span>
+                    </div>
+                  </button>
+
+                  <!-- Profile Card 3 -->
+                  <button
+                    type="button"
+                    role="tab"
+                    id="pult-tab-eur-m30"
+                    class="pult-agent-card"
+                    data-agent-profile="eur-m30"
+                    aria-selected="false"
+                  >
+                    <div class="pult-agent-card__top">
+                      <span class="pult-agent-card__avatar">GB</span>
+                      <div class="pult-agent-card__titles">
+                        <span class="pult-agent-card__name">EUR · Range M30</span>
+                        <span class="pult-agent-card__sub">EURUSD · M30 · MT5 Demo</span>
+                      </div>
+                    </div>
+                    <div class="pult-agent-card__bottom">
+                      <span class="pult-status-tag pult-status-tag--paused">PAUSED · STUDY</span>
+                      <span class="pult-agent-card__metric">Bars loaded</span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Selected agent passport -->
+              <div class="pult-demo__section-box pult-demo__passport">
+                <div class="pult-demo__passport-top">
+                  <div class="pult-demo__passport-id">
+                    <span class="pult-agent-card__avatar">GB</span>
+                    <strong id="pult-active-name" class="pult-demo__passport-name">“XAU · Momentum H1”</strong>
+                    <span id="pult-active-badge" class="pult-status-tag pult-status-tag--active">ACTIVE · DEMO SESSION</span>
+                  </div>
+                  <span class="pult-demo__studio-pill">Configure Agent in Studio →</span>
+                </div>
+
+                <div class="pult-demo__specs-row">
+                  <div class="pult-spec-cell">
+                    <span class="pult-spec-cell__label">INSTRUMENT</span>
+                    <strong id="pult-spec-symbol" class="pult-spec-cell__val">XAUUSD</strong>
+                  </div>
+                  <div class="pult-spec-cell">
+                    <span class="pult-spec-cell__label">TIMEFRAME</span>
+                    <strong id="pult-spec-tf" class="pult-spec-cell__val">H1 (conf. M15)</strong>
+                  </div>
+                  <div class="pult-spec-cell">
+                    <span class="pult-spec-cell__label">ACCOUNT</span>
+                    <strong id="pult-spec-account" class="pult-spec-cell__val">MT5 Demo · DEMO-01</strong>
+                  </div>
+                  <div class="pult-spec-cell">
+                    <span class="pult-spec-cell__label">TRADING MODE</span>
+                    <strong id="pult-spec-contour" class="pult-spec-cell__val">Demo (MT5)</strong>
+                  </div>
+                  <div class="pult-spec-cell">
+                    <span class="pult-spec-cell__label">TERMINAL</span>
+                    <strong id="pult-spec-terminal" class="pult-spec-cell__val">MT5 · Connected</strong>
+                  </div>
+                  <div class="pult-spec-cell">
+                    <span class="pult-spec-cell__label">LANGUAGE CORE</span>
+                    <strong id="pult-spec-llm" class="pult-spec-cell__val">Selected model · Demo</strong>
+                  </div>
+                  <div class="pult-spec-cell">
+                    <span class="pult-spec-cell__label">STRATEGY</span>
+                    <strong id="pult-spec-strategy" class="pult-spec-cell__val">Momentum v2.4.0 (+sourcefree)</strong>
+                  </div>
+                  <div class="pult-spec-cell">
+                    <span class="pult-spec-cell__label">RISK PROFILE</span>
+                    <strong id="pult-spec-risk" class="pult-spec-cell__val">0.5% / trade · SL mandatory</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Middle row: MARKET + ACCOUNT & RISK -->
+              <div class="pult-demo__mid-grid">
+                <!-- MARKET panel -->
+                <div class="pult-demo__section-box pult-demo__market-box">
+                  <div class="pult-demo__market-head">
+                    <div class="pult-demo__market-title">
+                      <span class="pult-demo__section-label" id="pult-market-label">MARKET · XAUUSD (GOLD / US DOLLAR)</span>
+                      <div class="pult-demo__quote-row">
+                        <strong id="pult-market-price" class="pult-demo__price">2 648.40</strong>
+                        <span id="pult-market-delta" class="pult-demo__delta pult-demo__delta--up">+0.42% (+11.10)</span>
+                      </div>
+                    </div>
+                    <span id="pult-market-state" class="pult-status-tag pult-status-tag--active">FEED ACTIVE · CLOSED BARS + TICK</span>
+                  </div>
+
+                  <!-- Inline SVG price chart with candlesticks, EMA, entry, and protective stop -->
+                  <div class="pult-demo__chart-wrap">
+                    <svg
+                      id="pult-chart-svg"
+                      class="pult-demo__chart-svg"
+                      viewBox="0 0 620 176"
+                      role="img"
+                      aria-label="Demonstration price chart showing closed bars, EMA-21 line, entry level, and protective stop-loss"
+                    >
+                      <!-- Horizontal grid -->
+                      <line x1="12" y1="26" x2="545" y2="26" stroke="#E4DAC4" stroke-dasharray="3 3" />
+                      <line x1="12" y1="68" x2="545" y2="68" stroke="#E4DAC4" stroke-dasharray="3 3" />
+                      <line x1="12" y1="110" x2="545" y2="110" stroke="#E4DAC4" stroke-dasharray="3 3" />
+                      <line x1="12" y1="152" x2="545" y2="152" stroke="#E4DAC4" stroke-dasharray="3 3" />
+
+                      <!-- Take-profit and protective stop bands -->
+                      <rect id="pult-chart-tp-band" x="340" y="18" width="205" height="66" fill="rgba(31, 107, 67, 0.06)" />
+                      <rect id="pult-chart-sl-band" x="340" y="84" width="205" height="28" fill="rgba(184, 137, 51, 0.08)" />
+
+                      <!-- BUY entry level -->
+                      <line id="pult-chart-entry-line" x1="320" y1="84" x2="545" y2="84" stroke="#7A5618" stroke-width="1.2" stroke-dasharray="4 3" />
+                      <text id="pult-chart-entry-text" x="324" y="79" fill="#7A5618" font-size="9.5" font-family="Consolas, monospace" font-weight="600">BUY 0.20 @ 2641.20</text>
+
+                      <!-- Protective stop level (Trailing SL) -->
+                      <line id="pult-chart-sl-line" x1="360" y1="72" x2="545" y2="72" stroke="#1F6B43" stroke-width="1.2" stroke-dasharray="2 2" />
+                      <text id="pult-chart-sl-text" x="364" y="67" fill="#1F6B43" font-size="9.5" font-family="Consolas, monospace" font-weight="600">Trailing SL @ 2643.50 (breakeven+)</text>
+
+                      <!-- Smooth EMA-21 curve -->
+                      <path
+                        id="pult-chart-ema"
+                        d="M 28 142 Q 95 136, 155 122 T 285 98 T 415 76 T 518 56"
+                        fill="none"
+                        stroke="#B88933"
+                        stroke-width="2"
+                      />
+
+                      <!-- Candlesticks -->
+                      <g id="pult-chart-candles">
+                        <line x1="34" y1="132" x2="34" y2="156" stroke="#8C8270" stroke-width="1.4" />
+                        <rect x="28" y="138" width="12" height="12" rx="1.5" fill="#C97A63" />
+                        <line x1="68" y1="124" x2="68" y2="150" stroke="#1F6B43" stroke-width="1.4" />
+                        <rect x="62" y="128" width="12" height="16" rx="1.5" fill="#2D8655" />
+                        <line x1="102" y1="116" x2="102" y2="140" stroke="#1F6B43" stroke-width="1.4" />
+                        <rect x="96" y="120" width="12" height="14" rx="1.5" fill="#2D8655" />
+                        <line x1="136" y1="118" x2="136" y2="138" stroke="#8C8270" stroke-width="1.4" />
+                        <rect x="130" y="122" width="12" height="10" rx="1.5" fill="#C97A63" />
+                        <line x1="170" y1="104" x2="170" y2="130" stroke="#1F6B43" stroke-width="1.4" />
+                        <rect x="164" y="108" width="12" height="16" rx="1.5" fill="#2D8655" />
+                        <line x1="204" y1="94" x2="204" y2="118" stroke="#1F6B43" stroke-width="1.4" />
+                        <rect x="198" y="98" width="12" height="14" rx="1.5" fill="#2D8655" />
+                        <line x1="238" y1="96" x2="238" y2="116" stroke="#8C8270" stroke-width="1.4" />
+                        <rect x="232" y="100" width="12" height="9" rx="1.5" fill="#C97A63" />
+                        <line x1="272" y1="84" x2="272" y2="108" stroke="#1F6B43" stroke-width="1.4" />
+                        <rect x="266" y="88" width="12" height="14" rx="1.5" fill="#2D8655" />
+                        <line x1="306" y1="76" x2="306" y2="98" stroke="#1F6B43" stroke-width="1.4" />
+                        <rect x="300" y="80" width="12" height="12" rx="1.5" fill="#2D8655" />
+                        <line x1="340" y1="68" x2="340" y2="92" stroke="#1F6B43" stroke-width="1.4" />
+                        <rect x="334" y="72" width="12" height="14" rx="1.5" fill="#2D8655" />
+                        <line x1="374" y1="60" x2="374" y2="82" stroke="#1F6B43" stroke-width="1.4" />
+                        <rect x="368" y="64" width="12" height="12" rx="1.5" fill="#2D8655" />
+                        <line x1="408" y1="62" x2="408" y2="80" stroke="#8C8270" stroke-width="1.4" />
+                        <rect x="402" y="66" width="12" height="8" rx="1.5" fill="#C97A63" />
+                        <line x1="442" y1="48" x2="442" y2="72" stroke="#1F6B43" stroke-width="1.4" />
+                        <rect x="436" y="54" width="12" height="14" rx="1.5" fill="#2D8655" />
+                        <line x1="476" y1="42" x2="476" y2="64" stroke="#1F6B43" stroke-width="1.4" />
+                        <rect x="470" y="46" width="12" height="12" rx="1.5" fill="#2D8655" />
+                        <line id="pult-live-wick" x1="510" y1="32" x2="510" y2="56" stroke="#1F6B43" stroke-width="1.6" />
+                        <rect id="pult-live-body" x="504" y="36" width="12" height="14" rx="1.5" fill="#1F6B43" />
+                      </g>
+
+                      <!-- Current demo price line and right tag -->
+                      <line id="pult-price-line" x1="12" y1="38" x2="545" y2="38" stroke="#1F6B43" stroke-width="1" stroke-dasharray="2 2" />
+                      <rect id="pult-price-tag-bg" x="546" y="28" width="68" height="20" rx="4" fill="#1F6B43" />
+                      <text id="pult-price-tag-txt" x="580" y="42" fill="#FFFFFF" font-size="10" font-family="Consolas, monospace" font-weight="700" text-anchor="middle">2648.40</text>
+
+                      <!-- Price scale on the right -->
+                      <text x="552" y="24" fill="#6E6658" font-size="9.5" font-family="Consolas, monospace">2655.00</text>
+                      <text x="552" y="71" fill="#6E6658" font-size="9.5" font-family="Consolas, monospace">2643.50</text>
+                      <text x="552" y="113" fill="#6E6658" font-size="9.5" font-family="Consolas, monospace">2634.00</text>
+                      <text x="552" y="155" fill="#6E6658" font-size="9.5" font-family="Consolas, monospace">2624.00</text>
+                    </svg>
+                  </div>
+
+                  <div class="pult-demo__market-foot">
+                    <span id="pult-market-session">Session: <strong>London / New York (02:00–22:00 UTC)</strong></span>
+                    <span id="pult-market-bars">Data: <strong>200 closed H1 bars · EMA-21 · ATR 14.2</strong></span>
+                  </div>
+                </div>
+
+                <!-- ACCOUNT & RISK panel -->
+                <div class="pult-demo__section-box pult-demo__account-box">
+                  <div class="pult-demo__account-head">
+                    <span class="pult-demo__section-label">ACCOUNT &amp; RISK</span>
+                    <span id="pult-acc-status" class="pult-status-tag pult-status-tag--active">MT5 DEMO · CONNECTED</span>
+                  </div>
+
+                  <dl class="pult-demo__acc-list">
+                    <div class="pult-demo__acc-row">
+                      <dt>Account</dt>
+                      <dd id="pult-acc-id">MT5 Demo · DEMO-01</dd>
+                    </div>
+                    <div class="pult-demo__acc-row">
+                      <dt>Balance</dt>
+                      <dd id="pult-acc-balance">$100 000.00</dd>
+                    </div>
+                    <div class="pult-demo__acc-row">
+                      <dt>Equity</dt>
+                      <dd id="pult-acc-equity" class="pult-demo__acc-val--up">$100 144.00 (+0.14%)</dd>
+                    </div>
+                    <div class="pult-demo__acc-row">
+                      <dt>Positions</dt>
+                      <dd id="pult-acc-pos">1 open (BUY 0.20 XAUUSD)</dd>
+                    </div>
+                    <div class="pult-demo__acc-row">
+                      <dt>Daily Risk</dt>
+                      <dd id="pult-acc-dd">0.38% of 5.00% (within limit)</dd>
+                    </div>
+                    <div class="pult-demo__acc-row">
+                      <dt>Trade Limit</dt>
+                      <dd id="pult-acc-limit">up to 2 concurrent · SL mandatory</dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+
+              <!-- ACTIONS panel -->
+              <div class="pult-demo__section-box pult-demo__actions-box">
+                <div class="pult-demo__actions-head">
+                  <span id="pult-actions-title" class="pult-demo__section-label">ACTIONS · XAU · MOMENTUM H1</span>
+                  <span class="pult-demo__actions-hint">Explicit separation of market study, readiness check, and session start</span>
+                </div>
+
+                <div class="pult-demo__actions-bar">
+                  <div class="pult-action-pill pult-action-pill--done">
+                    <span>Study Market</span>
+                    <span class="pult-action-check" aria-hidden="true">✓</span>
+                  </div>
+                  <div class="pult-action-pill pult-action-pill--done">
+                    <span>Check Readiness</span>
+                    <span class="pult-action-check" aria-hidden="true">✓</span>
+                  </div>
+                  <div class="pult-mode-switch" aria-label="Account mode: Demo selected">
+                    <span class="pult-mode-switch__item is-active">Demo</span>
+                    <span class="pult-mode-switch__item">Real</span>
+                  </div>
+                  <div id="pult-run-state-pill" class="pult-run-pill pult-run-pill--running">
+                    <span>● Trading session active (Demo)</span>
+                  </div>
+                  <span class="pult-server-ok">Server response OK · checks 6/6</span>
+                </div>
+
+                <div class="pult-demo__ops-summary" id="pult-ops-summary">
+                  <strong>OPERATION RESULTS:</strong> Study Market: 200 closed H1 bars read, trend bullish · Check Readiness: MT5 terminal connected, Algo Trading allowed, spread 18 pts normal.
+                </div>
+              </div>
+
+              <!-- LATEST DECISION bar -->
+              <div class="pult-demo__section-box pult-demo__decision-bar">
+                <div class="pult-demo__decision-content">
+                  <span class="pult-demo__section-label">LATEST DECISION</span>
+                  <p id="pult-decision-text" class="pult-demo__decision-text">
+                    14:20:05 · Holding BUY 0.20 XAUUSD (entry 2 641.20): H1 closed above EMA-21 (2 641.80), protective stop moved to +2.30 pts (2 643.50, trailing-stop active).
+                  </p>
+                </div>
+                <span class="pult-demo__decision-tag">Behavior Review: passed</span>
+              </div>
+
+              <!-- Bottom row: AGENT LOG + POSITIONS / ORDERS -->
+              <div class="pult-demo__bottom-grid">
+                <!-- Agent Log -->
+                <div class="pult-demo__section-box">
+                  <div class="pult-demo__subhead">
+                    <span id="pult-log-title" class="pult-demo__section-label">AGENT LOG · XAU · MOMENTUM H1</span>
+                    <span class="pult-demo__sublink">demo session records</span>
+                  </div>
+                  <ul id="pult-log-list" class="pult-demo__log-list" aria-live="off">
+                    <li class="pult-log-item is-fresh">
+                      <span class="pult-log-item__time">14:20:05</span>
+                      <span class="pult-log-item__badge pult-log-item__badge--sl">STOP</span>
+                      <span class="pult-log-item__msg">Trailing-stop moved to <strong>2 643.50</strong> (+2.30 pts above entry price).</span>
+                    </li>
+                    <li class="pult-log-item">
+                      <span class="pult-log-item__time">14:05:12</span>
+                      <span class="pult-log-item__badge pult-log-item__badge--exec">ORDER</span>
+                      <span class="pult-log-item__msg">Opened demo position <strong>BUY 0.20 XAUUSD @ 2 641.20</strong>, SL 2 634.00, TP 2 662.00.</span>
+                    </li>
+                    <li class="pult-log-item">
+                      <span class="pult-log-item__time">14:00:04</span>
+                      <span class="pult-log-item__badge pult-log-item__badge--mkt">MARKET</span>
+                      <span class="pult-log-item__msg">Study Market: H1 bar closed (2 640.90), breakout above session local high.</span>
+                    </li>
+                    <li class="pult-log-item">
+                      <span class="pult-log-item__time">13:58:40</span>
+                      <span class="pult-log-item__badge pult-log-item__badge--ok">READY</span>
+                      <span class="pult-log-item__msg">Readiness check passed (6/6): account MT5 Demo · DEMO-01, risk limit 0.5%.</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Positions / Orders -->
+                <div class="pult-demo__section-box">
+                  <div class="pult-demo__subhead">
+                    <span class="pult-demo__section-label">POSITIONS / ORDERS (DEMO MODE)</span>
+                    <span id="pult-pos-badge" class="pult-status-tag pult-status-tag--active">Risk protected · Trailing SL</span>
+                  </div>
+
+                  <div id="pult-pos-card" class="pult-demo__pos-card">
+                    <div class="pult-demo__pos-top">
+                      <div>
+                        <strong id="pult-pos-instrument" class="pult-demo__pos-sym">XAUUSD · BUY 0.20 lots</strong>
+                        <span id="pult-pos-ticket" class="pult-demo__pos-ticket">Ticket #DEMO-01 · MT5 Demo</span>
+                      </div>
+                      <strong id="pult-pos-pnl" class="pult-demo__pos-pnl pult-demo__pos-pnl--up">+$144.00</strong>
+                    </div>
+
+                    <div class="pult-demo__pos-grid">
+                      <div class="pult-pos-cell">
+                        <span>Entry Price</span>
+                        <strong id="pult-pos-entry">2 641.20</strong>
+                      </div>
+                      <div class="pult-pos-cell">
+                        <span>Current Price</span>
+                        <strong id="pult-pos-current">2 648.40</strong>
+                      </div>
+                      <div class="pult-pos-cell">
+                        <span>Protective Stop (SL)</span>
+                        <strong id="pult-pos-sl" class="pult-pos-cell--ok">2 643.50 (breakeven+)</strong>
+                      </div>
+                      <div class="pult-pos-cell">
+                        <span>Target (TP)</span>
+                        <strong id="pult-pos-tp">2 662.00</strong>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLATFORM CAPABILITIES & ARCHITECTURE -->
+    <section id="capabilities" class="section section--alt" aria-labelledby="capabilities-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">Trading Platform Architecture</span>
+          <h2 id="capabilities-title" class="section__title">
+            Core Modules of the Golden Breeze Platform
+          </h2>
+          <p class="section__subtitle">
+            A single Windows application unifies trading agent governance, account and risk rule connections, market study, position management, and strategy engineering tools.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+          <!-- Card 1 -->
+          <article class="feature-card">
+            <div class="feature-card__top">
+              <div class="feature-card__header">
+                <h3 class="feature-card__title">Control Desk &amp; Agent Studio</h3>
+                <span class="badge badge--released">In Release v0.12</span>
+              </div>
+              <p class="feature-card__desc">
+                Command center for trading agents: assigning instruments, accounts, and risk boundaries in Studio, studying the market over closed broker bars, checking trading setup readiness, and starting or stopping sessions with a full decision and trade log.
+              </p>
+            </div>
+            <p class="feature-card__boundary">
+              <strong>Status:</strong> available in v0.12.0-alpha; the 0.13–0.14 cycle adds closed-market analysis on the FTMO schedule, weekly bar dating by verified server timezone, and MT5 symbol auto-sync (in acceptance).
+            </p>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="feature-card">
+            <div class="feature-card__top">
+              <div class="feature-card__header">
+                <h3 class="feature-card__title">Chat, Knowledge Library &amp; Researcher</h3>
+                <span class="badge badge--inprogress">v0.12 + 0.13–0.14</span>
+              </div>
+              <p class="feature-card__desc">
+                Tasking environment for the main agent (via Claude CLI in v0.12, and also via Codex CLI / ChatGPT sign-in in the 0.13–0.14 cycle): multi-chat management, reasoning levels, multimodal attachments (images, PDF/DOCX, video frames), Knowledge Library with page citations, web search, and a child researcher subagent.
+              </p>
+            </div>
+            <p class="feature-card__boundary">
+              <strong>Status:</strong> multi-chat and model controls are in v0.12.0-alpha; Knowledge Library, attachments, web search, and GPT main chat are implemented in 0.13–0.14 and undergoing acceptance (live rig check of the child researcher is still pending).
+            </p>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="feature-card">
+            <div class="feature-card__top">
+              <div class="feature-card__header">
+                <h3 class="feature-card__title">Accounts, Risk Control &amp; Execution (MT5)</h3>
+                <span class="badge badge--inprogress">In Progress / Acceptance</span>
+              </div>
+              <p class="feature-card__desc">
+                Core trading integration of the platform: connecting Demo and Real accounts via MetaTrader 5, prop-firm and account cards, reconciling FTMO portal objectives with the terminal, diagnostic demo test route for Studio agents, and protective stop management.
+              </p>
+            </div>
+            <p class="feature-card__boundary">
+              <strong>Status:</strong> MT5 is the active trading connector (<code>Demo</code> and <code>Real</code>). The end-to-end acceptance demo cycle with orders and trailing-stop on the rig is still in progress (acceptance not yet complete); live trading acceptance on Real accounts is not claimed.
+            </p>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="feature-card">
+            <div class="feature-card__top">
+              <div class="feature-card__header">
+                <h3 class="feature-card__title">Executable Logic &amp; In-Chat Strategy Release</h3>
+                <span class="badge badge--inprogress">Implemented in 0.13 / Acceptance</span>
+              </div>
+              <p class="feature-card__desc">
+                Built-in workflow for trading logic: binding a strategy version to an agent profile ("Behavior Review", including <code>+sourcefree</code>), and in the 0.13–0.14 cycle — writing Python strategy code in chat, isolated verification on synthetic bars, and one-click registration into the Studio catalog.
+              </p>
+            </div>
+            <p class="feature-card__boundary">
+              <strong>Status:</strong> catalog and version assignment are in v0.12.0-alpha; in-chat code generation and isolated verification are implemented in 0.13–0.14 and undergoing acceptance (standalone code editor and deep backtester are deferred).
+            </p>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="feature-card">
+            <div class="feature-card__top">
+              <div class="feature-card__header">
+                <h3 class="feature-card__title">FirstInstall Package &amp; Auto-Update</h3>
+                <span class="badge badge--released">In Release v0.12</span>
+              </div>
+              <p class="feature-card__desc">
+                Standalone Windows x64 distribution and direct one-click HTTPS updates with Ed25519 manifest signature verification, safe child process termination, build revision stamp verification, and preservation of agent profiles, accounts, and history.
+              </p>
+            </div>
+            <p class="feature-card__boundary">
+              <strong>Status:</strong> clean FirstInstall setup and <code>stable</code> channel updates are verified; functional acceptance of trading scenarios is tracked separately.
+            </p>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="feature-card">
+            <div class="feature-card__top">
+              <div class="feature-card__header">
+                <h3 class="feature-card__title">Multiple Trading Executors &amp; Portfolio</h3>
+                <span class="badge badge--planned">Planned</span>
+              </div>
+              <p class="feature-card__desc">
+                Scaling multi-agent trading: parallel coordination of multiple trading executor agents across instruments and sessions, capital allocation, end-to-end portfolio drawdown control, TradeLocker connector, and licensing architecture.
+              </p>
+            </div>
+            <p class="feature-card__boundary">
+              <strong>Status:</strong> builds upon current Control Desk profiles and the researcher subagent; portfolio coordination of trading executors, TradeLocker, and access tiers are planned milestones.
+            </p>
+          </article>
+        </div>
+
+        <p class="section__subtitle" style="margin-top: 28px; margin-bottom: 0;">
+          Here is how these modules work together during a real trading workflow:
+        </p>
+      </div>
+    </section>
+
+    <!-- USER JOURNEY -->
+    <section id="user-journey" class="section" aria-labelledby="journey-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">Trading Workflow Logic</span>
+          <h2 id="journey-title" class="section__title">
+            From Account Setup &amp; Agent Tasks to Execution &amp; Risk Governance
+          </h2>
+          <p class="section__subtitle">
+            The user defines accounts, risk boundaries, and tasks from the Control Desk, while agents analyze the market, formulate decisions, and manage positions within granted permissions. In release v0.12, management operates across agent profiles with MT5; the 0.13–0.14 cycle adds the Knowledge Library, child researcher, and in-chat strategy code release, while multi-executor portfolio coordination advances in subsequent stages.
+          </p>
+        </div>
+
+        <div class="journey-steps" role="list">
+          <div class="step-card" role="listitem">
+            <span class="step-card__num">1</span>
+            <h3 class="step-card__title">Trading Connection, Account &amp; Risk</h3>
+            <p class="step-card__text">
+              Connect a MetaTrader 5 terminal and account (Demo or Real) and optionally a prop-firm profile (FTMO) reconciling portal objectives with the terminal. Set maximum drawdown, risk per trade, and position limits that the agent is never allowed to exceed.
+            </p>
+          </div>
+
+          <div class="step-card" role="listitem">
+            <span class="step-card__num">2</span>
+            <h3 class="step-card__title">Agent Profile, Knowledge &amp; Strategy</h3>
+            <p class="step-card__text">
+              In Agent Studio and chat, configure the trading instrument (e.g., XAUUSD), timeframes, language core (Claude CLI in v0.12; also Codex CLI / ChatGPT in the 0.13–0.14 cycle), and strategy version. In 0.13–0.14, you can study Knowledge Library materials in chat, generate and verify strategy code in isolation, and register it into the Studio catalog.
+            </p>
+          </div>
+
+          <div class="step-card" role="listitem">
+            <span class="step-card__num">3</span>
+            <h3 class="step-card__title">Market Study &amp; Readiness Check</h3>
+            <p class="step-card__text">
+              Via <strong>"Study Market"</strong> and <strong>"Check Readiness"</strong>, the agent evaluates closed bars (including closed-market analysis on the FTMO schedule and verified server timezone), while the Control Desk verifies MT5 terminal connectivity, symbol synchronization, and Algo Trading permission.
+            </p>
+          </div>
+
+          <div class="step-card" role="listitem">
+            <span class="step-card__num">4</span>
+            <h3 class="step-card__title">Trading Session &amp; Execution</h3>
+            <p class="step-card__text">
+              Once the user clicks <strong>"Start Trading"</strong>, the agent acts within its assigned strategy and risk profile: formulating decisions, submitting orders, and enforcing mandatory protective stops via MT5.
+            </p>
+          </div>
+
+          <div class="step-card" role="listitem">
+            <span class="step-card__num">5</span>
+            <h3 class="step-card__title">Position Management &amp; Control</h3>
+            <p class="step-card__text">
+              Throughout the session, the agent manages open positions (including moving stops to breakeven and trailing-stop) and logs every decision in the Control Desk journal. The user monitors account state and can stop trading at any moment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAPABILITY STATUS & ROADMAP MATRIX -->
+    <section id="roadmap" class="section section--alt" aria-labelledby="roadmap-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">Track Statuses · October 28, 2026</span>
+          <h2 id="roadmap-title" class="section__title">
+            Available in v0.12, Implemented in 0.13–0.14 &amp; Planned Next
+          </h2>
+          <p class="section__subtitle">
+            Multi-agent trading platform roadmap matrix: we transparently separate what is already included in the published <code>v0.12.0-alpha</code> installer (<code>stable</code> channel), what is implemented on the main branch in the <code>0.13–0.14-alpha</code> cycle and undergoing live functional acceptance on the dedicated rig, and which trading and platform modules are planned next.
+          </p>
+        </div>
+
+        <!-- Status legend -->
+        <div class="status-legend" aria-label="Readiness status legend">
+          <div class="legend-item">
+            <span class="badge badge--released">In Release v0.12</span>
+            <strong>Published in v0.12.0-alpha (stable)</strong>
+            Included in the published FirstInstall package and verified by baseline or profile tests.
+          </div>
+          <div class="legend-item">
+            <span class="badge badge--inprogress">Implemented in 0.13–0.14 / In Acceptance</span>
+            <strong>Integrated &amp; Undergoing Acceptance</strong>
+            Already implemented in the codebase after <code>v0.12.0-alpha</code> and undergoing end-to-end live acceptance on the dedicated rig before release to <code>stable</code>.
+          </div>
+          <div class="legend-item">
+            <span class="badge badge--planned">Planned</span>
+            <strong>Next Milestones &amp; Design Stage</strong>
+            Platform development tracks and architectural modules in the design stage scheduled for upcoming milestones.
+          </div>
+          <div class="legend-item">
+            <span class="badge badge--deferred">Deferred</span>
+            <strong>Separate Future Decisions</strong>
+            Standalone modules and options intentionally set outside the scope of near-term releases.
+          </div>
+        </div>
+
+        <!-- Filter buttons -->
+        <div class="filter-bar">
+          <div class="filter-buttons" role="group" aria-label="Filter tracks by readiness status">
+            <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All tracks (10)</button>
+            <button class="filter-btn" type="button" data-filter="released" aria-pressed="false">In Release v0.12 (3)</button>
+            <button class="filter-btn" type="button" data-filter="inprogress" aria-pressed="false">Implemented in 0.13–0.14 / In Acceptance (4)</button>
+            <button class="filter-btn" type="button" data-filter="planned" aria-pressed="false">Planned (2)</button>
+            <button class="filter-btn" type="button" data-filter="deferred" aria-pressed="false">Deferred (1)</button>
+          </div>
+          <span id="filter-count" class="filter-count" aria-live="polite">Showing tracks: 10 of 10</span>
+        </div>
+
+        <!-- Matrix list -->
+        <div class="matrix-list">
+          <!-- 1 -->
+          <article class="matrix-item" data-status="released">
+            <div class="matrix-item__head">
+              <span class="badge badge--released">In Release v0.12</span>
+              <h3 class="matrix-item__title">FirstInstall Installer &amp; Swap Auto-Update</h3>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Available in Release</span>
+              <p class="matrix-item__text">
+                Primary installer package <code>GoldenBreeze-FirstInstall-0.12.0-alpha.exe</code> (<code>stable</code> channel). Subsequent updates are delivered directly from the HTTPS server with Ed25519 manifest signature verification, child process tree termination via Job Object, build revision verification, and short anonymized failure reports.
+              </p>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Readiness Boundary</span>
+              <p class="matrix-item__text">
+                Clean installation and one-click update preserving agent profiles, accounts, and history are verified. Build delivery and live acceptance of trading scenarios are tracked separately.
+              </p>
+            </div>
+          </article>
+
+          <!-- 2 -->
+          <article class="matrix-item" data-status="released">
+            <div class="matrix-item__head">
+              <span class="badge badge--released">In Release v0.12</span>
+              <h3 class="matrix-item__title">Multi-Conversation Core Chat &amp; Model Selection</h3>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Available in Release</span>
+              <p class="matrix-item__text">
+                Workspace for tasking the main agent and analyzing market situations: creating, renaming, archiving, and restoring conversations, grouping, draft isolation, selecting model and reasoning level (thinking effort), and displaying requested vs. actual model in execution details.
+              </p>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Readiness Boundary</span>
+              <p class="matrix-item__text">
+                Core conversation management is included in <code>v0.12.0-alpha</code> (where the main chat runs via Claude CLI, while Codex CLI sign-in is already supported in Settings). The <code>0.13–0.14-alpha</code> cycle adds full main chat operation via Codex CLI (ChatGPT), Markdown formatting, multimodal attachments, and the Knowledge Library (undergoing acceptance).
+              </p>
+            </div>
+          </article>
+
+          <!-- 3 -->
+          <article class="matrix-item" data-status="released">
+            <div class="matrix-item__head">
+              <span class="badge badge--released">In Release v0.12</span>
+              <h3 class="matrix-item__title">Trilingual Interface (RU · UA · EN)</h3>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Available in Release</span>
+              <p class="matrix-item__text">
+                Switching between Russian, Ukrainian, and English across the Control Desk, Agent Studio, agent chat, memory, prop-firm cards, and update notifications, persisting language and theme selection across restarts.
+              </p>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Readiness Boundary</span>
+              <p class="matrix-item__text">
+                In the published <code>v0.12.0-alpha</code> build, several FTMO card labels and account registration messages remained in Russian; the <code>0.13–0.14-alpha</code> cycle localized the "FTMO Conditions" card, terminal reconciliation block, and Control Desk statuses.
+              </p>
+            </div>
+          </article>
+
+          <!-- 4 -->
+          <article class="matrix-item" data-status="inprogress">
+            <div class="matrix-item__head">
+              <span class="badge badge--inprogress">Implemented in 0.13–0.14 / Acceptance</span>
+              <h3 class="matrix-item__title">Closed-History Analysis, Server Timezones &amp; Control Desk Readiness</h3>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Implemented in 0.13–0.14 &amp; In Acceptance</span>
+              <p class="matrix-item__text">
+                Immediate analysis of closed bar history when the market is closed without waiting for a live tick, history persistence across session breaks, "Market State" block following the official FTMO schedule, weekly bar dating by server timezone (including DST transitions), auto-synchronization of symbols in MT5 "Market Watch", and background verification of broker server time.
+              </p>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Readiness Boundary</span>
+              <p class="matrix-item__text">
+                Integrated into the main development branch (bars without verified UTC are never passed into the trading pipeline) and undergoing live acceptance on the dedicated rig ahead of the next public release (alongside manual review of 6 Figma visual baselines).
+              </p>
+            </div>
+          </article>
+
+          <!-- 5 -->
+          <article class="matrix-item" data-status="inprogress">
+            <div class="matrix-item__head">
+              <span class="badge badge--inprogress">Implemented in 0.13–0.14 / Acceptance</span>
+              <h3 class="matrix-item__title">MT5 Technical Demo Cycle, Diagnostic Demo Route &amp; FTMO</h3>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Implemented &amp; Currently Verified</span>
+              <p class="matrix-item__text">
+                On top of account and prop-firm cards, <code>0.13–0.14-alpha</code> adds: a "Connect now" toggle and automatic adapter selection by platform family, non-activating window placement and auto-termination of the dedicated MT5 terminal on exit, reconciliation of FTMO portal objectives with the terminal, and a diagnostic/acceptance route (manually enabling execution in Diagnostics, execution test, and verification <code>BUY</code>/<code>SELL</code> trades) for Studio agents in broker mode.
+              </p>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Readiness Boundary</span>
+              <p class="matrix-item__text">
+                General platform support for both Demo and Real accounts remains intact, while the diagnostic/acceptance test route operates strictly on demo accounts with fresh dual verification of demo status from the MT5 terminal. The end-to-end 111-check acceptance run on the rig is not yet complete: on the last run of the previous candidate, 84 checks passed, 4 failed, 10 were not run, 6 require manual Figma review, and 7 await external checks. Those results belong to the previous candidate; fixes merged after it require re-acceptance. Live acceptance on Real accounts is not claimed.
+              </p>
+            </div>
+          </article>
+
+          <!-- 6 -->
+          <article class="matrix-item" data-status="inprogress">
+            <div class="matrix-item__head">
+              <span class="badge badge--inprogress">Implemented in 0.13 / Acceptance</span>
+              <h3 class="matrix-item__title">From Chat Idea to Strategy Code &amp; Studio Catalog</h3>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Implemented in 0.13 &amp; In Acceptance</span>
+              <p class="matrix-item__text">
+                The main agent writes and refines Python strategy code directly in chat: the application validates the code against a construct whitelist, runs it in an isolated memory-limited process on synthetic bars, and renders a strategy card with code preview and an <strong>"Add to catalog"</strong> button for immediate selection in Agent Studio.
+              </p>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Readiness Boundary</span>
+              <p class="matrix-item__text">
+                Implemented in the <code>0.13.0-alpha</code> codebase and undergoing end-to-end acceptance (not yet included in the published <code>v0.12.0-alpha</code> installer). The in-chat run checks executability and invariants on synthetic bars; a standalone code editor in Studio and a deep historical dataset backtester are deferred.
+              </p>
+            </div>
+          </article>
+
+          <!-- 7 -->
+          <article class="matrix-item" data-status="inprogress">
+            <div class="matrix-item__head">
+              <span class="badge badge--inprogress">Implemented in 0.13 / Acceptance</span>
+              <h3 class="matrix-item__title">Knowledge Library, Multimodal Attachments &amp; Researcher Agent</h3>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Implemented in 0.13 &amp; In Acceptance</span>
+              <p class="matrix-item__text">
+                Chat supports multimodal attachments (screenshots, tables, text, <code>PDF</code>, <code>DOCX</code>, frame extraction from videos up to 10 MB / 10 min), a built-in <strong>Knowledge Library</strong> (saving materials, searching, and reading with source and page citations), live <strong>web search</strong>, and delegation of research questions to a <strong>child researcher subagent</strong>.
+              </p>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Readiness Boundary</span>
+              <p class="matrix-item__text">
+                Implemented in <code>0.13–0.14-alpha</code> and undergoing acceptance on the rig (live acceptance verification of delegation to the child researcher is still pending). The child researcher has access only to the Knowledge Library and web search without trading account access; coordinating multiple <em>trading</em> executor subagents belongs to the planned portfolio milestone.
+              </p>
+            </div>
+          </article>
+
+          <!-- 8 -->
+          <article class="matrix-item" data-status="planned">
+            <div class="matrix-item__head">
+              <span class="badge badge--planned">Planned</span>
+              <h3 class="matrix-item__title">Dedicated TradeLocker Integration, Platform Catalog &amp; Access Design</h3>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Target Track</span>
+              <p class="matrix-item__text">
+                Developing the TradeLocker trading connector, onboarding additional prop firms via a unified extensible adapter registry, and designing the access key and closed beta tier architecture (<code>Free</code> / <code>Pro</code> / <code>Tester</code>).
+              </p>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Readiness Boundary</span>
+              <p class="matrix-item__text">
+                In the current release, MetaTrader 5 (MT5) is the active trading connector and FTMO is the supported prop-firm integration. TradeLocker integration is a planned stage, and licensing &amp; access tiers are in the design stage (plans, pricing, and sales terms are not yet approved).
+              </p>
+            </div>
+          </article>
+
+          <!-- 9 -->
+          <article class="matrix-item" data-status="planned">
+            <div class="matrix-item__head">
+              <span class="badge badge--planned">Planned</span>
+              <h3 class="matrix-item__title">Multiple Trading Executors, Saved Workflows &amp; Portfolio</h3>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Target Track</span>
+              <p class="matrix-item__text">
+                Scaling multi-agent trading: parallel coordination of multiple specialized trading agents across instruments and sessions, saved multi-step workflows, capital allocation, end-to-end portfolio risk governance, and market regime analytics.
+              </p>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Readiness Boundary</span>
+              <p class="matrix-item__text">
+                Builds upon the current Control Desk profile system and requires a dedicated capital allocation model, portfolio drawdown limits, and independent acceptance.
+              </p>
+            </div>
+          </article>
+
+          <!-- 10 -->
+          <article class="matrix-item" data-status="deferred">
+            <div class="matrix-item__head">
+              <span class="badge badge--deferred">Deferred</span>
+              <h3 class="matrix-item__title">Expanded Studio with Code Editor, Authenticode &amp; Custom Domain</h3>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">What Is Deferred</span>
+              <p class="matrix-item__text">
+                A standalone built-in code editor for manual programming in Studio and a custom deep historical backtesting engine with dataset management (baseline in-chat code generation and synthetic-bar verification are already implemented in 0.13), as well as purchasing a paid Authenticode certificate and a custom domain.
+              </p>
+            </div>
+            <div>
+              <span class="matrix-item__col-label">Current Policy</span>
+              <p class="matrix-item__text">
+                A paid Windows Authenticode certificate and custom domain are deferred until the product reaches profitability. Meanwhile, HTTPS update delivery and cryptographic manifest signature verification (Ed25519) operate as standard.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <p style="margin-top: 20px; margin-bottom: 0; font-size: 0.9rem; color: var(--text-secondary);">
+          Detailed repository documents:
+          <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/blob/main/docs/en/roadmap.md">Capabilities &amp; Roadmap (docs/en/roadmap.md)</a> ·
+          <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/blob/main/docs/en/first-start.md">Installation &amp; First Start (docs/en/first-start.md)</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD, QUICK START & INTEGRITY VERIFICATION -->
+    <section id="download" class="section" aria-labelledby="download-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">Windows x64 Distribution · Setup &amp; Updates</span>
+          <h2 id="download-title" class="section__title">
+            Download Golden Breeze &amp; Get Started
+          </h2>
+          <p class="section__subtitle">
+            Initial installation is performed using the standalone <strong>FirstInstall</strong> package for Windows 10/11 x64. GitHub's auto-generated <em>Source code (zip / tar.gz)</em> archives contain only the files of this web showcase and are not the application installer.
+          </p>
+        </div>
+
+        <div class="two-col-grid">
+          <!-- Left column: Download & verification -->
+          <div class="panel-card panel-card--highlight">
+            <h3 class="panel-card__title">1. Download &amp; SHA-256 Checksum Verification</h3>
+            <ul class="checklist">
+              <li>
+                <strong>Download the FirstInstall package:</strong><br>
+                <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.12.0-alpha/GoldenBreeze-FirstInstall-0.12.0-alpha.exe">
+                  GoldenBreeze-FirstInstall-0.12.0-alpha.exe
+                </a> (365.5 MiB) and the checksum file
+                <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.12.0-alpha/GoldenBreeze-FirstInstall-0.12.0-alpha.exe.sha256">
+                  .sha256
+                </a>.
+              </li>
+              <li>
+                <strong>Verify SHA-256 in PowerShell</strong> before launching (the hash confirms an exact byte-for-byte match between your downloaded file and the reference release artifact):
+              </li>
+            </ul>
+
+            <div class="cmd-block">
+              <div class="cmd-block__top">
+                <span>Windows PowerShell — SHA-256 check</span>
+                <button class="copy-btn" type="button" data-copy-target="ps-verify-cmd">
+                  Copy command
+                </button>
+              </div>
+              <pre id="ps-verify-cmd">Get-FileHash .\GoldenBreeze-FirstInstall-0.12.0-alpha.exe -Algorithm SHA256</pre>
+            </div>
+
+            <ul class="checklist" style="margin-bottom: 0;">
+              <li>
+                Reference SHA-256 for <code>v0.12.0-alpha</code>:<br>
+                <code>d4546bc1fe718020f78315bbe98e4b232db044fb80bdb1061f1d2fe44ffd60a2</code>
+              </li>
+              <li>
+                <strong>Windows SmartScreen prompt on first launch:</strong> the <code>.exe</code> file is not signed with a paid Windows Authenticode publisher certificate. Once SHA-256 matches, confirm launch manually: <em>"More info" → "Run anyway"</em> (see <a href="#faq">FAQ below</a> for details).
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right column: First start & auto-updates -->
+          <div class="panel-card">
+            <h3 class="panel-card__title">2. First Launch, Accounts &amp; Auto-Update</h3>
+            <ul class="checklist">
+              <li>
+                <strong>Bundled Runtime:</strong> the installer includes its own runtime environment and does not require installing Python, Node.js, or Git separately.
+              </li>
+              <li>
+                <strong>Connection Setup:</strong> select your interface language (<strong>RU / UA / EN</strong>), connect your AI provider in <em>Settings</em>, add a MetaTrader 5 trading account (Demo or Real), and configure risk boundaries. Never pass SSH keys, GitHub tokens, or developer secrets to the application.
+              </li>
+              <li>
+                <strong>Trading Workflow in the Control Desk:</strong><br>
+                select agent profile and account → <code>Study Market</code> → <code>Check Readiness</code> → <code>Start Trading</code> → position management within risk limits → <code>Stop</code>.
+              </li>
+              <li>
+                <strong>One-Click Auto-Update (stable channel):</strong> after initial installation, updates are delivered directly from Golden Breeze's HTTPS update server (without GitHub). The application verifies the <strong>Ed25519</strong> cryptographic manifest signature and notifies you: <em>"A new version has been downloaded"</em>.
+              </li>
+              <li>
+                <strong>Data Preservation:</strong> clicking <em>"Update now"</em> runs a safe transition (<code>Preparing → Updating → Launching</code>), terminating child processes while preserving agent profiles, accounts, and chat history.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Published releases history table -->
+        <div class="table-wrap" role="region" aria-label="History of published releases in the repository" tabindex="0">
+          <table class="releases-table">
+            <thead>
+              <tr>
+                <th scope="col">Release (Tag)</th>
+                <th scope="col">Published Date</th>
+                <th scope="col">Installer &amp; Channel</th>
+                <th scope="col">Key Release Highlights</th>
+                <th scope="col">Links</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <strong>0.13–0.14-alpha</strong><br>
+                  <span class="badge badge--inprogress">In Development / In Acceptance</span>
+                </td>
+                <td>18–28.10.2026</td>
+                <td>
+                  Acceptance rig builds<br>
+                  Not published to <code>stable</code>
+                </td>
+                <td>
+                  Knowledge Library, multimodal attachments (including video frames and PDF/DOCX), web search and child researcher subagent, main chat sign-in via Codex CLI (ChatGPT), in-chat strategy code generation and isolated verification with Studio catalog registration, closed-market analysis on the FTMO schedule, weekly bar dating by server timezone, MT5 symbol auto-sync, and diagnostic demo route in broker mode.
+                </td>
+                <td>
+                  <a href="#roadmap">Acceptance Matrix</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>v0.12.0-alpha</strong><br>
+                  <span class="badge badge--released">Current pre-release</span>
+                </td>
+                <td>17.10.2026</td>
+                <td>
+                  <code>GoldenBreeze-FirstInstall-0.12.0-alpha.exe</code><br>
+                  Channel: <code>stable</code> · Source SHA: <code>6f503017</code>
+                </td>
+                <td>
+                  Trading agent profiles in Control Desk and Studio, neutral prop-firm and MT5 account cards, multi-chat management (groups, archive, drafts), dynamic model and thinking effort selection, trilingual interface (RU/UA/EN), expanded platform catalog.
+                </td>
+                <td>
+                  <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.12.0-alpha">Release page</a><br>
+                  <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.12.0-alpha/GoldenBreeze-FirstInstall-0.12.0-alpha.exe">Download .exe</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>v0.11.2-alpha</strong>
+                </td>
+                <td>16.10.2026</td>
+                <td>
+                  <code>GoldenBreeze-FirstInstall-0.11.2-alpha.exe</code><br>
+                  Channel: <code>stable</code> · Source SHA: <code>373c17f1</code>
+                </td>
+                <td>
+                  Improved timeout reliability when downloading and verifying large update packages over slow connections and disks while preserving client state diagnostics.
+                </td>
+                <td>
+                  <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.11.2-alpha">Release page</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>v0.11.0-alpha</strong>
+                </td>
+                <td>15.10.2026</td>
+                <td>
+                  <code>GoldenBreeze-FirstInstall-0.11.0-alpha.exe</code><br>
+                  Channel: <code>stable</code> · Source SHA: <code>09738a1b</code>
+                </td>
+                <td>
+                  Transition to unified FirstInstall package and direct swap-update without an intermediate bridge; external process tree management via Job Object; short anonymized update failure reports; redesigned "Agent Chat" workspace.
+                </td>
+                <td>
+                  <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.11.0-alpha">Release page</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>v0.10.0-alpha</strong> · <strong>v0.9.0-alpha</strong>
+                </td>
+                <td>10–14.10.2026</td>
+                <td>
+                  Early pre-release builds
+                </td>
+                <td>
+                  Archiving of completed FTMO accounts, recording "Behavior Review" for <code>+sourcefree</code> strategy versions, initial distribution channel packaging.
+                </td>
+                <td>
+                  <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases">Releases Archive</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTNERS & SPONSORS -->
+    <section id="partners" class="section section--alt" aria-labelledby="partners-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">Collaboration &amp; Ecosystem</span>
+          <h2 id="partners-title" class="section__title">
+            For Partners, Integrators &amp; Track Sponsors
+          </h2>
+          <p class="section__subtitle">
+            We develop trading connectors, multi-agent governance and risk modules, verification rigs, and domain workflows together with partners. Participation and sponsorship are tied to concrete roadmap deliverables and verifiable product outcomes.
+          </p>
+        </div>
+
+        <div class="partner-grid">
+          <article class="partner-card">
+            <h3 class="partner-card__title">Trading Platforms &amp; Data Providers</h3>
+            <p class="partner-card__text">
+              Joint engineering and testing of trading terminal and API connectors (including the planned TradeLocker integration, brokers, and prop firms), validating trading session schedules, execution rules, and market feeds.
+            </p>
+          </article>
+
+          <article class="partner-card">
+            <h3 class="partner-card__title">Independent Acceptance &amp; Pilot Scenarios</h3>
+            <p class="partner-card__text">
+              Participating in pilot verification of trading agents on Windows x64 systems, validating prop-firm risk rules on demo accounts, and evaluating the usability of the Control Desk, Agent Studio, and multilingual UI.
+            </p>
+          </article>
+
+          <article class="partner-card">
+            <h3 class="partner-card__title">Targeted Sponsorship of Roadmap Modules</h3>
+            <p class="partner-card__text">
+              Supporting specific engineering deliverables: multi-agent portfolio coordination and risk control, new trading adapters, the Knowledge Library with specialized subagents, or in-chat strategy engineering.
+            </p>
+          </article>
+
+          <article class="partner-card">
+            <h3 class="partner-card__title">Educational Materials &amp; Documentation</h3>
+            <p class="partner-card__text">
+              Producing verified methodological guides on configuring trading agents, managing risk on prop-firm accounts, analyzing market regimes, and validating strategies for the built-in Knowledge Library.
+            </p>
+          </article>
+        </div>
+
+        <div class="cta-banner">
+          <div class="cta-banner__content">
+            <h3 class="cta-banner__title">Discuss Partnership, Pilot Participation, or Feedback</h3>
+            <p class="cta-banner__text">
+              Inquiries and feedback are handled via <strong>Issues</strong> in this repository. Describe your collaboration focus and expected joint outcome. When reporting bugs, please include the application version and attach screenshots without passwords, API keys, or account numbers.
+            </p>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+            <a
+              class="btn btn--primary"
+              href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/issues"
+            >
+              Open GitHub Issues →
+            </a>
+            <a
+              class="btn btn--secondary"
+              href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases"
+            >
+              View Releases
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ & TECHNICAL REFERENCE -->
+    <section id="faq" class="section" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">FAQ &amp; Technical Reference</span>
+          <h2 id="faq-title" class="section__title">
+            Answers on Platform Governance, File Verification &amp; Updates
+          </h2>
+        </div>
+
+        <div class="details-list">
+          <details class="details-item">
+            <summary>How are responsibilities divided between the user and AI agents in the trading workflow?</summary>
+            <div class="details-item__body">
+              Golden Breeze is a multi-agent trading platform where the user sets operational boundaries and governs permissions from the <strong>Control Desk</strong>: selecting a connected trading account (<code>Demo</code> or <code>Real</code>), assigning an agent profile, a verified strategy version, and risk limits. Specialized agents analyze the market over closed bars, verify technical readiness of the trading setup, and—only after explicit session start—execute and manage positions (including protective stops and <code>trailing-stop</code>) within granted permissions. Every decision is recorded in the Control Desk log, and the user can stop the session at any moment. Installing or opening the application never starts trading automatically.
+            </div>
+          </details>
+
+          <details class="details-item">
+            <summary>How do SHA-256 verification, Ed25519 manifest signatures, and Windows Authenticode certificates differ?</summary>
+            <div class="details-item__body">
+              These three mechanisms serve distinct purposes:<br>
+              1) <strong>Installer SHA-256</strong> lets you verify that your downloaded <code>GoldenBreeze-FirstInstall-0.12.0-alpha.exe</code> binary matches the trusted release file byte for byte.<br>
+              2) <strong>Ed25519 cryptographic signature</strong> (<code>first-install.json.sig</code>) and <strong>HTTPS (TLS)</strong> are used by the application itself to verify the authenticity of the update manifest and packages during automatic updates from the update server.<br>
+              3) <strong>Windows Authenticode certificate</strong> is a paid publisher certificate for <code>.exe</code> binaries checked by Windows SmartScreen. The <code>.exe</code> binary is not currently signed with an Authenticode certificate (purchasing it is deferred until the project reaches profitability), so Windows requests manual confirmation on initial setup.
+            </div>
+          </details>
+
+          <details class="details-item">
+            <summary>Why do download links point to the specific tag v0.12.0-alpha rather than /releases/latest?</summary>
+            <div class="details-item__body">
+              Current Golden Breeze builds are published as pre-releases (<code>alpha</code>). On GitHub, the standard <code>/releases/latest</code> endpoint excludes pre-releases. Therefore, the showcase uses verified direct links to the <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.12.0-alpha">v0.12.0-alpha</a> tag and the full <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases">Releases</a> list.
+            </div>
+          </details>
+
+          <details class="details-item">
+            <summary>What is stored in this repository and where can I read detailed documentation?</summary>
+            <div class="details-item__body">
+              The <code>golden-breeze-releases</code> repository is the official distribution showcase for the <code>FirstInstall</code> installer, release notes, and user guides (the core platform source code is developed in a separate private repository). Detailed materials are available directly in the repository:
+              <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/blob/main/docs/en/first-start.md">Installation &amp; First Start (EN)</a>,
+              <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/blob/main/docs/en/roadmap.md">Capabilities &amp; Roadmap (EN)</a>,
+              <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/blob/main/docs/CONTENT-MAINTENANCE.md">Showcase Maintenance Policy (RU)</a>, and
+              <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/blob/main/docs/github-pages.md">GitHub Pages Publication Note (RU)</a>.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <div class="site-footer__title">Golden Breeze · Multi-Agent Trading Platform</div>
+          <p style="margin-bottom: 12px;">
+            Standalone Windows x64 application: collaborative work of specialized AI agents across the trading workflow, market analysis, execution and position management, account governance and risk control, plus strategy research and versioning.
+          </p>
+          <p style="margin: 0; font-size: 0.82rem; color: var(--text-muted);">
+            Published release: <code>v0.12.0-alpha</code> (17.10.2026, verified 28.10.2026) · Roadmap snapshot: 28.10.2026
+          </p>
+        </div>
+
+        <div>
+          <div class="site-footer__title">Documentation</div>
+          <ul class="site-footer__links">
+            <li><a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/blob/main/docs/en/roadmap.md">Capabilities &amp; Roadmap (EN)</a></li>
+            <li><a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/blob/main/docs/en/first-start.md">Installation &amp; First Start (EN)</a></li>
+            <li><a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/blob/main/docs/CONTENT-MAINTENANCE.md">Showcase Maintenance Policy (RU)</a></li>
+            <li><a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/blob/main/docs/github-pages.md">GitHub Pages Note (RU)</a></li>
+            <li><a href="../" lang="ru" hreflang="ru" data-lang-switch="ru">Русская версия витрины (/)</a></li>
+            <li><a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases">Releases &amp; Showcase Repository</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="site-footer__title">Releases &amp; Feedback</div>
+          <ul class="site-footer__links">
+            <li><a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.12.0-alpha">Release v0.12.0-alpha (FirstInstall)</a></li>
+            <li><a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases">All Releases</a></li>
+            <li><a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/issues">Questions, Bug Reports &amp; Partnerships (Issues)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="disclaimer-box">
+        <strong>Risk Disclaimer:</strong> Golden Breeze is a software platform for trading and does not guarantee profits or financial returns. Results of closed-history analysis, strategy checks, or trading agent operation on a demo account (Demo) do not promise similar outcomes when trading on a live account (Real). All decisions regarding connecting accounts, authorizing agents, and configuring risk parameters are made solely by the user.
+      </div>
+    </div>
+  </footer>
+
+  <script src="../app.js" defer></script>
+</body>
+</html>
