@@ -1,11 +1,13 @@
-"""Compact re-runnable RU/EN showcase parity check (stdlib only).
+"""Compact re-runnable showcase parity check (stdlib only).
 
 Extracts and compares actual release facts and link targets across bilingual
-pairs (RU vs EN) rather than matching hardcoded version/hash literals:
+docs pairs (RU vs EN) and all active README language versions:
+  - Five required README editions: EN, RU, ES, PT-BR, ZH-CN
   - FirstInstall versions and download links
   - Release tag URLs
   - SHA-256 installer checksums (cross-pair parity & intra-file consistency)
-  - Installer byte sizes (normalized digits)
+  - Installer byte sizes (normalized digits, supporting local notations and '字节')
+  - Language switcher mutual links and active language highlighting
   - HTML data-status counts, DOM IDs, lang / hreflang / canonical tags
   - Compact release label dynamically matching the active release tag and alpha status
   - Relative links and anchor validity
@@ -21,8 +23,16 @@ import unicodedata
 from urllib.parse import urlsplit, unquote
 
 ROOT = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else ".").resolve()
-PAIRS = [
-    ("README.ru.md", "README.md"),
+
+README_LANGS = [
+    ("README.md", "English"),
+    ("README.ru.md", "Русский"),
+    ("README.es.md", "Español"),
+    ("README.pt-BR.md", "Português (Brasil)"),
+    ("README.zh-CN.md", "简体中文"),
+]
+
+DOC_PAIRS = [
     ("docs/index.html", "docs/en/index.html"),
     ("docs/roadmap.md", "docs/en/roadmap.md"),
     ("docs/first-start.md", "docs/en/first-start.md"),
@@ -36,6 +46,11 @@ BANNED_EN_CALQUES = [
 ]
 CYR = re.compile(r"[\u0400-\u04FF]")
 errors, warns = [], []
+
+existing_readmes = [p for p, _ in README_LANGS if (ROOT / p).exists()]
+pending_readmes = [p for p, _ in README_LANGS if not (ROOT / p).exists()]
+if pending_readmes:
+    errors.append(f"Missing required README translations: {', '.join(pending_readmes)}")
 
 
 def text(p):
@@ -89,7 +104,7 @@ def extract_release_tags(t):
 
 def extract_byte_sizes(t):
     raw_sizes = re.findall(
-        r"(\d[\d\s\u00a0,.]*\d)\s*(?:байт\w*|bytes?|Б|B)\b", t, re.IGNORECASE
+        r"(\d[\d\s\u00a0,.]*\d)\s*(?:байт\w*|bytes?|Б|B|字节)\b", t, re.IGNORECASE
     )
     cleaned = set()
     for s in raw_sizes:
@@ -122,7 +137,8 @@ def extract_active_release(t, fi_versions, release_tags):
 
 
 all_docs = sorted(
-    {x for pair in PAIRS for x in pair}
+    set(existing_readmes)
+    | {x for pair in DOC_PAIRS for x in pair}
     | {"docs/github-pages.md", "docs/CONTENT-MAINTENANCE.md"}
 )
 
@@ -136,9 +152,10 @@ for p in all_docs:
         if u.scheme or l.startswith("mailto:"):
             continue
         target = (base / unquote(u.path)).resolve() if u.path else (ROOT / p).resolve()
-        if u.path and not target.exists():
-            errors.append(f"{p}: broken relative link {l}")
-            continue
+        if u.path:
+            if not target.exists():
+                errors.append(f"{p}: broken relative link {l}")
+                continue
         if (
             p.startswith("docs/")
             and u.path
@@ -159,8 +176,52 @@ for p in all_docs:
             if ids is not None and u.fragment not in ids:
                 errors.append(f"{p}: missing anchor #{u.fragment} in {rel}")
 
-# 2. Dynamic fact parity and consistency across RU / EN pairs
-for ru, en in PAIRS:
+# 2. Language switcher and mutual links validation in existing READMEs
+for p, my_lang in README_LANGS:
+    if p not in existing_readmes:
+        continue
+    t = text(p)
+    for target_p, lang_name in README_LANGS:
+        if target_p == p:
+            if f"<strong>{lang_name}</strong>" not in t and f"<b>{lang_name}</b>" not in t:
+                errors.append(f"{p}: active language '{lang_name}' must be formatted with strong/b without link")
+        else:
+            if f'href="{target_p}"' not in t:
+                errors.append(f"{p}: missing link to {target_p} ({lang_name})")
+
+# 3. Dynamic fact parity across all active READMEs
+if existing_readmes:
+    ref_r = "README.md" if "README.md" in existing_readmes else existing_readmes[0]
+    ref_t = text(ref_r)
+    ref_shas = set(extract_shas(ref_t))
+    ref_fi = set(extract_first_install_versions(ref_t))
+    ref_tags = set(extract_release_tags(ref_t))
+    ref_bytes = extract_byte_sizes(ref_t)
+
+    for r in existing_readmes:
+        tr = text(r)
+        r_shas = set(extract_shas(tr))
+        if len(r_shas) > 1:
+            errors.append(f"{r}: multiple conflicting SHA-256 checksums within file: {r_shas}")
+        if r_shas != ref_shas:
+            errors.append(f"SHA-256 mismatch between {r} ({r_shas}) and {ref_r} ({ref_shas})")
+
+        r_fi = set(extract_first_install_versions(tr))
+        if len(r_fi) > 1:
+            errors.append(f"{r}: multiple conflicting FirstInstall versions: {r_fi}")
+        if r_fi != ref_fi:
+            errors.append(f"FirstInstall versions mismatch between {r} ({r_fi}) and {ref_r} ({ref_fi})")
+
+        r_tags = set(extract_release_tags(tr))
+        if r_tags != ref_tags:
+            errors.append(f"Release tags mismatch between {r} ({r_tags}) and {ref_r} ({ref_tags})")
+
+        r_bytes = extract_byte_sizes(tr)
+        if r_bytes != ref_bytes:
+            errors.append(f"Installer byte size mismatch between {r} ({r_bytes}) and {ref_r} ({ref_bytes})")
+
+# 4. Dynamic fact parity and consistency across documentation pairs (RU vs EN)
+for ru, en in DOC_PAIRS:
     tr, te = text(ru), text(en)
 
     # --- SHA-256 Checksums ---
@@ -169,13 +230,13 @@ for ru, en in PAIRS:
     set_shas_ru = set(shas_ru)
     set_shas_en = set(shas_en)
 
-    # Intra-file consistency: multiple occurrences in a document must not conflict
+    # Intra-file consistency: multiple occurrences in a document must not conflict.
     if len(set_shas_ru) > 1:
         errors.append(f"{ru}: multiple conflicting SHA-256 checksums within file: {set_shas_ru}")
     if len(set_shas_en) > 1:
         errors.append(f"{en}: multiple conflicting SHA-256 checksums within file: {set_shas_en}")
 
-    # Cross-pair parity
+    # Cross-pair parity.
     if set_shas_ru != set_shas_en:
         errors.append(f"SHA-256 mismatch between {ru} ({set_shas_ru}) and {en} ({set_shas_en})")
 
@@ -185,7 +246,7 @@ for ru, en in PAIRS:
     set_fi_ru = set(fi_ru)
     set_fi_en = set(fi_en)
 
-    # In single-release documents, repetitions must be consistent
+    # In single-release documents, repetitions must be consistent.
     if not ru.endswith(".html"):
         if len(set_fi_ru) > 1:
             errors.append(f"{ru}: multiple conflicting FirstInstall versions: {set_fi_ru}")
