@@ -1,7 +1,7 @@
 # Golden Breeze
 
 <p align="center">
-  <strong>English</strong> · <a href="README.ru.md">Русский</a> · <a href="README.es.md">Español</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.zh-CN.md">简体中文</a>
+  <strong>English</strong> · <a href="README.uk.md">Українська</a> · <a href="README.ru.md">Русский</a> · <a href="README.es.md">Español</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.zh-CN.md">简体中文</a>
 </p>
 
 ![Golden Breeze — Multi-Agent Trading Platform](assets/brand/golden-breeze-banner-en.svg)

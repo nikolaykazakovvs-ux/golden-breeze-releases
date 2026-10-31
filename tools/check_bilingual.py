@@ -2,7 +2,7 @@
 
 Extracts and compares actual release facts and link targets across bilingual
 docs pairs (RU vs EN) and all active README language versions:
-  - Five required README editions: EN, RU, ES, PT-BR, ZH-CN
+  - Six required README editions: EN, UK, RU, ES, PT-BR, ZH-CN
   - FirstInstall versions and download links
   - Release tag URLs
   - SHA-256 installer checksums (cross-pair parity & intra-file consistency)
@@ -26,6 +26,7 @@ ROOT = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else ".").resolve()
 
 README_LANGS = [
     ("README.md", "English"),
+    ("README.uk.md", "Українська"),
     ("README.ru.md", "Русский"),
     ("README.es.md", "Español"),
     ("README.pt-BR.md", "Português (Brasil)"),
