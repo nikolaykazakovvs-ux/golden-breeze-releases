@@ -1,6 +1,8 @@
 # Golden Breeze
 
-**Язык / Language:** [English (README.md)](README.md) · **Русский (README.ru.md)**
+<p align="center">
+  <a href="README.md">English</a> · <strong>Русский</strong> · <a href="README.es.md">Español</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.zh-CN.md">简体中文</a>
+</p>
 
 ![Golden Breeze — мультиагентная платформа для трейдинга](assets/brand/golden-breeze-banner.svg)
 
