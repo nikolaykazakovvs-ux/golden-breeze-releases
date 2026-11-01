@@ -1,12 +1,13 @@
 /* ==========================================================================
    Golden Breeze — Независимый клиентский скрипт витрины (без сборщиков и CDN)
-   Поддерживает русскую (/golden-breeze-releases/) и английскую (/golden-breeze-releases/en/) версии.
+   Поддерживает русскую (/golden-breeze-releases/), украинскую (/golden-breeze-releases/uk/)
+   и английскую (/golden-breeze-releases/en/) версии.
    Возможности:
-   1. Адаптивная навигация шапки (<= 1200px меню разделов, кнопки выпуска и RU/EN всегда видны, Escape, resize)
-   2. Явное переключение языка RU / EN с сохранением текущего раздела, query и hash без авто-редиректов
-   3. Фильтрация матрицы направлений по честным статусам готовности (RU / EN)
-   4. Копирование SHA-256 и команд PowerShell с понятным подтверждением (RU / EN)
-   5. Интерактивный демонстрационный блок Пульта управления (профили + пауза/воспроизведение, RU / EN)
+   1. Адаптивная навигация шапки (<= 1280px меню разделов, кнопки выпуска и RU/UA/EN всегда видны, Escape, resize)
+   2. Явное переключение языка RU / UA / EN с сохранением текущего раздела, query и hash без авто-редиректов
+   3. Фильтрация матрицы направлений по честным статусам готовности (RU / UK / EN)
+   4. Копирование SHA-256 и команд PowerShell с понятным подтверждением (RU / UK / EN)
+   5. Интерактивный демонстрационный блок Пульта управления (профили + пауза/воспроизведение, RU / UK / EN)
    ========================================================================== */
 
 (function () {
@@ -14,6 +15,7 @@
 
   var docLang = (document.documentElement.getAttribute("lang") || "ru").toLowerCase();
   var isEn = docLang.indexOf("en") === 0;
+  var isUk = docLang.indexOf("uk") === 0 || docLang.indexOf("ua") === 0;
 
   var I18N = isEn
     ? {
@@ -26,6 +28,17 @@
         statusPaused: "Demo animation paused",
         statusActive: "Live demo feed active"
       }
+    : isUk
+    ? {
+        filterCountPrefix: "Показано напрямів: ",
+        filterCountMiddle: " з ",
+        copied: "Скопійовано",
+        copyError: "Помилка",
+        playBtn: "Відтворити",
+        pauseBtn: "Пауза",
+        statusPaused: "Демо-анімація на паузі",
+        statusActive: "Демо-оновлення активне"
+      }
     : {
         filterCountPrefix: "Показано направлений: ",
         filterCountMiddle: " из ",
@@ -37,7 +50,7 @@
         statusActive: "Демо-обновление активно"
       };
 
-  // 1. Адаптивная навигация шапки (порог 1200px)
+  // 1. Адаптивная навигация шапки (порог 1280px)
   var navToggle = document.getElementById("nav-toggle");
   var siteNav = document.getElementById("site-nav");
 
@@ -50,7 +63,7 @@
 
     siteNav.addEventListener("click", function (event) {
       var link = event.target.closest("a");
-      if (link && window.innerWidth <= 1200) {
+      if (link && window.innerWidth <= 1280) {
         navToggle.setAttribute("aria-expanded", "false");
         siteNav.classList.remove("is-open");
       }
@@ -65,7 +78,7 @@
     });
 
     window.addEventListener("resize", function () {
-      if (window.innerWidth > 1200 && siteNav.classList.contains("is-open")) {
+      if (window.innerWidth > 1280 && siteNav.classList.contains("is-open")) {
         navToggle.setAttribute("aria-expanded", "false");
         siteNav.classList.remove("is-open");
       }
@@ -728,7 +741,253 @@
       }
     };
 
-    var PROFILES = isEn ? PROFILES_EN : PROFILES_RU;
+    var PROFILES_UK = {
+      "xau-h1": {
+        name: "«XAU · Імпульс H1»",
+        badgeText: "АКТИВНИЙ · ДЕМО-СЕСІЯ",
+        badgeClass: "pult-status-tag pult-status-tag--active",
+        studioBanner: "Робоча версія стратегії <strong>Momentum-Session v2.4.0 (+sourcefree)</strong> застосована в Студії. Усі умови допуску демо-контуру виконано.",
+        symbol: "XAUUSD",
+        tf: "H1 (підтв. M15)",
+        account: "MT5 Demo · DEMO-01",
+        contour: "Демо (MT5)",
+        terminal: "MT5 · Підключено",
+        llm: "Обрана модель · Демо",
+        strategy: "Momentum v2.4.0 (+sourcefree)",
+        risk: "0.5% / угода · SL обов'язковий",
+        marketLabel: "РИНОК · XAUUSD (ЗОЛОТО / ДОЛАР США)",
+        marketState: "ПОТІК АКТИВНИЙ · ЗАКРИТІ БАРИ + ТІК",
+        marketSession: "Сесія: <strong>Лондон / Нью-Йорк (02:00–22:00 UTC)</strong>",
+        marketBars: "Дані: <strong>200 закритих барів H1 · EMA-21 · ATR 14.2</strong>",
+        accBalance: "$100 000.00",
+        accPos: "1 відкрита (BUY 0.20 XAUUSD)",
+        accDd: "0.38% із 5.00% (норма ризику)",
+        accLimit: "до 2 одночасних · SL обов'язковий",
+        actionsTitle: "ДІЇ · XAU · ІМПУЛЬС H1",
+        runPillText: "● Торгова сесія активна (Демо)",
+        opsSummary: "<strong>РЕЗУЛЬТАТИ ОПЕРАЦІЙ:</strong> Вивчення ринку: прочитано 200 закритих барів H1, тренд висхідний · Перевірити готовність: термінал MT5 підключено, Algo Trading дозволено, спред 18 п. у нормі.",
+        logTitle: "ЖУРНАЛ АГЕНТА · XAU · ІМПУЛЬС H1",
+        posBadge: "Ризик захищено · Trailing SL",
+        posInstrument: "XAUUSD · BUY 0.20 лота",
+        posTicket: "Тікет #DEMO-01 · MT5 Demo",
+        posEntry: "2 641.20",
+        posSl: "2 643.50 (беззбиток+)",
+        posTp: "2 662.00",
+        chartEntryLabel: "BUY 0.20 @ 2641.20",
+        chartSlLabel: "Trailing SL @ 2643.50 (беззбиток+)",
+        ticks: [
+          {
+            clock: "14:20:05",
+            price: "2 648.40",
+            tagPrice: "2648.40",
+            delta: "+0.42% (+11.10)",
+            equity: "$100 144.00 (+0.14%)",
+            pnl: "+$144.00",
+            cardMetric: "BUY 0.20 · +$144",
+            priceY: 38,
+            wickTop: 32,
+            bodyY: 36,
+            bodyH: 14,
+            decision: "14:20:05 · Утримання позиції BUY 0.20 XAUUSD (вхід 2 641.20): закриття H1 вище EMA-21 (2 641.80), захисний стоп переведено в +2.30 п. (2 643.50, trailing-stop активний).",
+            topLog: { time: "14:20:05", badge: "СТОП", kind: "sl", msg: "Trailing-stop підтягнуто на <strong>2 643.50</strong> (+2.30 п. вище ціни входу)." }
+          },
+          {
+            clock: "14:20:08",
+            price: "2 649.10",
+            tagPrice: "2649.10",
+            delta: "+0.45% (+11.80)",
+            equity: "$100 158.00 (+0.16%)",
+            pnl: "+$158.00",
+            cardMetric: "BUY 0.20 · +$158",
+            priceY: 34,
+            wickTop: 29,
+            bodyY: 33,
+            bodyH: 17,
+            decision: "14:20:08 · Супровід BUY 0.20 XAUUSD: котирування 2 649.10, імпульс зберігається вище локального рівня 2 646.00; дистанція до цілі TP 12.90 п.",
+            topLog: { time: "14:20:08", badge: "РИНОК", kind: "mkt", msg: "Оновлення котирування XAUUSD: <strong>2 649.10</strong> (спред 17 п., ліквідність у нормі)." }
+          },
+          {
+            clock: "14:20:11",
+            price: "2 648.75",
+            tagPrice: "2648.75",
+            delta: "+0.43% (+11.45)",
+            equity: "$100 151.00 (+0.15%)",
+            pnl: "+$151.00",
+            cardMetric: "BUY 0.20 · +$151",
+            priceY: 36,
+            wickTop: 30,
+            bodyY: 35,
+            bodyH: 15,
+            decision: "14:20:11 · Перевірка параметрів ризику MT5 Demo: плаваючий результат +$151.00, денний буфер просідання 4.62% вільний, стоп-ордер 2 643.50 підтверджено у брокера.",
+            topLog: { time: "14:20:11", badge: "ГОТОВИЙ", kind: "ok", msg: "Звірка захисного стоп-ордера у брокера: <strong>SL 2 643.50</strong> активний на сервері MT5." }
+          },
+          {
+            clock: "14:20:14",
+            price: "2 649.60",
+            tagPrice: "2649.60",
+            delta: "+0.47% (+12.30)",
+            equity: "$100 168.00 (+0.17%)",
+            pnl: "+$168.00",
+            cardMetric: "BUY 0.20 · +$168",
+            priceY: 31,
+            wickTop: 26,
+            bodyY: 31,
+            bodyH: 19,
+            decision: "14:20:14 · Імпульс XAUUSD триває (2 649.60): умова наступного кроку trailing-stop — закріплення вище 2 651.00.",
+            topLog: { time: "14:20:14", badge: "СТОП", kind: "sl", msg: "Моніторинг trailing-stop: наступне перенесення SL заплановано при досягненні <strong>2 651.00</strong>." }
+          }
+        ],
+        baseLogs: [
+          { time: "14:05:12", badge: "ОРДЕР", kind: "exec", msg: "Відкрито демо-позицію <strong>BUY 0.20 XAUUSD @ 2 641.20</strong>, SL 2 634.00, TP 2 662.00." },
+          { time: "14:00:04", badge: "РИНОК", kind: "mkt", msg: "Вивчення ринку: закрито бар H1 (2 640.90), пробій локального максимуму сесії." },
+          { time: "13:58:40", badge: "ГОТОВИЙ", kind: "ok", msg: "Перевірку готовності пройдено (6/6): рахунок MT5 Demo · DEMO-01, ліміт ризику 0.5%." }
+        ]
+      },
+      "xau-m15": {
+        name: "«XAU · Повернення M15»",
+        badgeText: "ГОТОВИЙ ДО СТАРТУ · ДЕМО",
+        badgeClass: "pult-status-tag pult-status-tag--ready",
+        studioBanner: "Робоча версія стратегії <strong>MeanRevert-Band v1.8.2 (+sourcefree)</strong> застосована в Студії. Агент очікує торкання нижньої межі каналу M15.",
+        symbol: "XAUUSD",
+        tf: "M15 (фільтр H4)",
+        account: "MT5 Demo · DEMO-01",
+        contour: "Демо (MT5)",
+        terminal: "MT5 · Підключено",
+        llm: "Обрана модель · Демо",
+        strategy: "MeanRevert v1.8.2 (+sourcefree)",
+        risk: "0.35% / угода · до 1 поз.",
+        marketLabel: "РИНОК · XAUUSD (КАНАЛ ПОВЕРНЕННЯ ДО СЕРЕДНЬОГО M15)",
+        marketState: "ГОТОВИЙ · ОЧІКУВАННЯ ЗОНИ ВХОДУ",
+        marketSession: "Сесія: <strong>Лондон / Нью-Йорк (02:00–22:00 UTC)</strong>",
+        marketBars: "Дані: <strong>300 закритих барів M15 · VWAP 2 642.10 · RSI 54.8</strong>",
+        accBalance: "$100 000.00",
+        accPos: "Очікування точки входу (ліміт 1)",
+        accDd: "0.38% із 5.00% (норма ризику)",
+        accLimit: "до 1 позиції · жорсткий SL 6.5 п.",
+        actionsTitle: "ДІЇ · XAU · ПОВЕРНЕННЯ M15",
+        runPillText: "● Готовий до запуску за сигналом (Демо)",
+        opsSummary: "<strong>РЕЗУЛЬТАТИ ОПЕРАЦІЙ:</strong> Вивчення ринку: прочитано 300 закритих барів M15, відхилення від VWAP +0.24% · Перевірити готовність: рахунок MT5 Demo · DEMO-01 підтверджено, конфлікт позицій виключено.",
+        logTitle: "ЖУРНАЛ АГЕНТА · XAU · ПОВЕРНЕННЯ M15",
+        posBadge: "План заявки · Лімітний розрахунок",
+        posInstrument: "XAUUSD · План BUY LIMIT 0.15",
+        posTicket: "Розрахунковий ордер · очікування рівня",
+        posEntry: "2 639.50 (зона VWAP)",
+        posSl: "2 633.00 (-6.50 п.)",
+        posTp: "2 649.00 (+9.50 п.)",
+        chartEntryLabel: "Зона входу M15 @ 2639.50",
+        chartSlLabel: "Розрахунковий SL @ 2633.00 (-0.35% ризику)",
+        ticks: [
+          {
+            clock: "14:20:05",
+            price: "2 648.40",
+            tagPrice: "2648.40",
+            delta: "Відхил. VWAP +6.30 п.",
+            equity: "$100 144.00 (спільний рахунок)",
+            pnl: "Очікування 2 639.50",
+            cardMetric: "Очікування сигналу",
+            priceY: 40,
+            wickTop: 34,
+            bodyY: 38,
+            bodyH: 13,
+            decision: "14:20:05 · Спостереження M15: ціна 2 648.40 перебуває в нейтральній зоні вище VWAP (2 642.10); вхід без підтвердженого відкату не виконується.",
+            topLog: { time: "14:20:05", badge: "РИНОК", kind: "mkt", msg: "Оцінка M15: поточна ціна <strong>2 648.40</strong>, до розрахункової зони відкату 8.90 п." }
+          },
+          {
+            clock: "14:20:08",
+            price: "2 648.10",
+            tagPrice: "2648.10",
+            delta: "Відхил. VWAP +6.00 п.",
+            equity: "$100 144.00 (спільний рахунок)",
+            pnl: "Очікування 2 639.50",
+            cardMetric: "Очікування сигналу",
+            priceY: 42,
+            wickTop: 35,
+            bodyY: 40,
+            bodyH: 11,
+            decision: "14:20:08 · Перевірка фільтра старшого таймфрейму H4: структура висхідна, короткі продажі проти тренду H4 заблоковано правилами стратегії.",
+            topLog: { time: "14:20:08", badge: "ГОТОВИЙ", kind: "ok", msg: "Фільтр H4 активний: дозволені лише купівлі від зони підтримки <strong>2 639.50</strong>." }
+          }
+        ],
+        baseLogs: [
+          { time: "14:15:00", badge: "РИНОК", kind: "mkt", msg: "Закрито бар M15: перераховано межі каналу повернення та рівень VWAP (2 642.10)." },
+          { time: "14:02:18", badge: "ГОТОВИЙ", kind: "ok", msg: "Перевірка готовності (6/6): профіль ризику 0.35%, термінал MT5 готовий." },
+          { time: "13:55:10", badge: "СТОП", kind: "sl", msg: "Перевірено правило обов'язкового захисного стопа: дистанцію 6.50 п. зафіксовано." }
+        ]
+      },
+      "eur-m30": {
+        name: "«EUR · Діапазон M30»",
+        badgeText: "ПАУЗА · ВИВЧЕННЯ ІСТОРІЇ",
+        badgeClass: "pult-status-tag pult-status-tag--paused",
+        studioBanner: "Робоча версія стратегії <strong>London-Range v1.3.0 (+sourcefree)</strong> завантажена. Виконано читання закритих барів M30 без запуску ордерів.",
+        symbol: "EURUSD",
+        tf: "M30 (сесія Лондон)",
+        account: "MT5 Demo · DEMO-02",
+        contour: "Демо (MT5)",
+        terminal: "MT5 · Підключено",
+        llm: "Обрана модель · Демо",
+        strategy: "London-Range v1.3.0",
+        risk: "0.4% / угода · до 1 поз.",
+        marketLabel: "РИНОК · EURUSD (ЄВРО / ДОЛАР США)",
+        marketState: "БАРИ ПРОЧИТАНО · РЕЖИМ ВИВЧЕННЯ",
+        marketSession: "Сесія: <strong>Європейська / Американська (07:00–20:00 UTC)</strong>",
+        marketBars: "Дані: <strong>240 закритих барів M30 · діапазон 1.0840–1.0892</strong>",
+        accBalance: "$50 000.00",
+        accPos: "0 відкритих позицій",
+        accDd: "0.00% із 4.00% (денний ліміт)",
+        accLimit: "до 1 позиції · очікування старту",
+        actionsTitle: "ДІЇ · EUR · ДІАПАЗОН M30",
+        runPillText: "⏸ На паузі (лише аналіз барів)",
+        opsSummary: "<strong>РЕЗУЛЬТАТИ ОПЕРАЦІЙ:</strong> Вивчення ринку: прочитано 240 закритих барів M30, межі ранкового діапазону 1.0840–1.0892 · Перевірити готовність: демо-рахунок MT5 Demo · DEMO-02 перевірено, торгівлю не запущено.",
+        logTitle: "ЖУРНАЛ АГЕНТА · EUR · ДІАПАЗОН M30",
+        posBadge: "Без відкритих угод",
+        posInstrument: "EURUSD · Позицій немає (режим вивчення)",
+        posTicket: "Рахунок MT5 Demo · DEMO-02",
+        posEntry: "1.0864 (межа)",
+        posSl: "1.0842 (розрахунковий)",
+        posTp: "1.0908 (розрахунковий)",
+        chartEntryLabel: "Верхня межа @ 1.0864",
+        chartSlLabel: "Розрахунковий SL @ 1.0842 (22 п.)",
+        ticks: [
+          {
+            clock: "14:20:05",
+            price: "1.0862",
+            tagPrice: "1.0862",
+            delta: "+0.18% (+0.0019)",
+            equity: "$50 000.00 (0.00%)",
+            pnl: "$0.00 (пауза)",
+            cardMetric: "Бари прочитано",
+            priceY: 44,
+            wickTop: 38,
+            bodyY: 42,
+            bodyH: 12,
+            decision: "14:20:05 · Режим вивчення ринку без торгівлі: сформовано зведення за 240 закритими барами M30 EURUSD, ключовий опір 1.0864.",
+            topLog: { time: "14:20:05", badge: "РИНОК", kind: "mkt", msg: "Зведення за закритими барами M30 збережено в журнал агента (котирування <strong>1.0862</strong>)." }
+          },
+          {
+            clock: "14:20:08",
+            price: "1.0863",
+            tagPrice: "1.0863",
+            delta: "+0.19% (+0.0020)",
+            equity: "$50 000.00 (0.00%)",
+            pnl: "$0.00 (пауза)",
+            cardMetric: "Бари прочитано",
+            priceY: 42,
+            wickTop: 36,
+            bodyY: 40,
+            bodyH: 13,
+            decision: "14:20:08 · Перевірка готовності: термінал і демо-рахунок MT5 Demo · DEMO-02 готові; для переходу до угод потрібна явна дія користувача «Запустити торгівлю».",
+            topLog: { time: "14:20:08", badge: "ГОТОВИЙ", kind: "ok", msg: "Готовність підтверджено: угоди не відкриваються автоматично без команди старту." }
+          }
+        ],
+        baseLogs: [
+          { time: "14:10:00", badge: "РИНОК", kind: "mkt", msg: "Завершено читання історії M30 EURUSD: волатильність сесії 52 пункти." },
+          { time: "14:04:22", badge: "ГОТОВИЙ", kind: "ok", msg: "Профіль «EUR · Діапазон M30» синхронізовано з каталогом стратегій." },
+          { time: "13:50:15", badge: "СТОП", kind: "sl", msg: "Правила ризику перевірено: максимальний ризик на угоду обмежено 0.40%." }
+        ]
+      }
+    };
+
+    var PROFILES = isEn ? PROFILES_EN : isUk ? PROFILES_UK : PROFILES_RU;
     var currentProfileKey = "xau-h1";
     var tickIndex = 0;
     var prefersReducedMotion = false;
