@@ -1,11 +1,12 @@
 """Compact re-runnable showcase parity check (stdlib only).
 
-Extracts and compares actual release facts and link targets across bilingual
-docs pairs (RU vs EN) and all active README language versions:
+Extracts and compares actual release facts and link targets across trilingual
+docs sets (RU vs UK vs EN) and all active README language versions:
   - Six required README editions: EN, UK, RU, ES, PT-BR, ZH-CN
+  - Three required docs locales: RU (docs/), UK (docs/uk/), EN (docs/en/)
   - FirstInstall versions and download links
   - Release tag URLs
-  - SHA-256 installer checksums (cross-pair parity & intra-file consistency)
+  - SHA-256 installer checksums (cross-locale parity & intra-file consistency)
   - Installer byte sizes (normalized digits, supporting local notations and '字节')
   - Language switcher mutual links and active language highlighting
   - HTML data-status counts, DOM IDs, lang / hreflang / canonical tags
@@ -33,10 +34,15 @@ README_LANGS = [
     ("README.zh-CN.md", "简体中文"),
 ]
 
-DOC_PAIRS = [
-    ("docs/index.html", "docs/en/index.html"),
-    ("docs/roadmap.md", "docs/en/roadmap.md"),
-    ("docs/first-start.md", "docs/en/first-start.md"),
+DOC_TRIPLETS = [
+    ("docs/index.html", "docs/uk/index.html", "docs/en/index.html"),
+    ("docs/roadmap.md", "docs/uk/roadmap.md", "docs/en/roadmap.md"),
+    ("docs/first-start.md", "docs/uk/first-start.md", "docs/en/first-start.md"),
+]
+
+# Keep DOC_PAIRS alias for compatibility if imported externally
+DOC_PAIRS = [(ru, en) for ru, _uk, en in DOC_TRIPLETS] + [
+    (ru, uk) for ru, uk, _en in DOC_TRIPLETS
 ]
 
 BANNED_EN_CALQUES = [
@@ -46,12 +52,19 @@ BANNED_EN_CALQUES = [
     r"\barming\b",
 ]
 CYR = re.compile(r"[\u0400-\u04FF]")
+RU_ONLY_LETTERS = re.compile(r"[ъыэёЪЫЭЁ]")
 errors, warns = [], []
 
 existing_readmes = [p for p, _ in README_LANGS if (ROOT / p).exists()]
 pending_readmes = [p for p, _ in README_LANGS if not (ROOT / p).exists()]
 if pending_readmes:
     errors.append(f"Missing required README translations: {', '.join(pending_readmes)}")
+
+missing_docs = [
+    p for triplet in DOC_TRIPLETS for p in triplet if not (ROOT / p).exists()
+]
+if missing_docs:
+    errors.append(f"Missing required docs files: {', '.join(missing_docs)}")
 
 
 def text(p):
@@ -139,7 +152,7 @@ def extract_active_release(t, fi_versions, release_tags):
 
 all_docs = sorted(
     set(existing_readmes)
-    | {x for pair in DOC_PAIRS for x in pair}
+    | {x for triplet in DOC_TRIPLETS for x in triplet if (ROOT / x).exists()}
     | {"docs/github-pages.md", "docs/CONTENT-MAINTENANCE.md"}
 )
 
@@ -221,52 +234,43 @@ if existing_readmes:
         if r_bytes != ref_bytes:
             errors.append(f"Installer byte size mismatch between {r} ({r_bytes}) and {ref_r} ({ref_bytes})")
 
-# 4. Dynamic fact parity and consistency across documentation pairs (RU vs EN)
-for ru, en in DOC_PAIRS:
-    tr, te = text(ru), text(en)
+# 4. Dynamic fact parity and consistency across documentation triplets (RU vs UK vs EN)
+for ru, uk, en in DOC_TRIPLETS:
+    if not ((ROOT / ru).exists() and (ROOT / uk).exists() and (ROOT / en).exists()):
+        continue
+    tr, tu, te = text(ru), text(uk), text(en)
+    locales = [(ru, tr, "ru"), (uk, tu, "uk"), (en, te, "en")]
 
     # --- SHA-256 Checksums ---
     shas_ru = extract_shas(tr)
-    shas_en = extract_shas(te)
     set_shas_ru = set(shas_ru)
-    set_shas_en = set(shas_en)
-
-    # Intra-file consistency: multiple occurrences in a document must not conflict.
-    if len(set_shas_ru) > 1:
-        errors.append(f"{ru}: multiple conflicting SHA-256 checksums within file: {set_shas_ru}")
-    if len(set_shas_en) > 1:
-        errors.append(f"{en}: multiple conflicting SHA-256 checksums within file: {set_shas_en}")
-
-    # Cross-pair parity.
-    if set_shas_ru != set_shas_en:
-        errors.append(f"SHA-256 mismatch between {ru} ({set_shas_ru}) and {en} ({set_shas_en})")
+    for loc_path, loc_text, _ in locales:
+        set_shas = set(extract_shas(loc_text))
+        if len(set_shas) > 1:
+            errors.append(f"{loc_path}: multiple conflicting SHA-256 checksums within file: {set_shas}")
+        if set_shas != set_shas_ru:
+            errors.append(f"SHA-256 mismatch between {ru} ({set_shas_ru}) and {loc_path} ({set_shas})")
 
     # --- FirstInstall Versions & Tags ---
     fi_ru = extract_first_install_versions(tr)
-    fi_en = extract_first_install_versions(te)
     set_fi_ru = set(fi_ru)
-    set_fi_en = set(fi_en)
-
-    # In single-release documents, repetitions must be consistent.
-    if not ru.endswith(".html"):
-        if len(set_fi_ru) > 1:
-            errors.append(f"{ru}: multiple conflicting FirstInstall versions: {set_fi_ru}")
-        if len(set_fi_en) > 1:
-            errors.append(f"{en}: multiple conflicting FirstInstall versions: {set_fi_en}")
-
-    if set_fi_ru != set_fi_en:
-        errors.append(f"FirstInstall versions mismatch between {ru} ({set_fi_ru}) and {en} ({set_fi_en})")
-
     tags_ru = set(extract_release_tags(tr))
-    tags_en = set(extract_release_tags(te))
-    if tags_ru != tags_en:
-        errors.append(f"Release tags mismatch between {ru} ({tags_ru}) and {en} ({tags_en})")
-
-    # --- Byte sizes (normalized digits) ---
     bytes_ru = extract_byte_sizes(tr)
-    bytes_en = extract_byte_sizes(te)
-    if bytes_ru != bytes_en:
-        errors.append(f"Installer byte size mismatch between {ru} ({bytes_ru}) and {en} ({bytes_en})")
+
+    for loc_path, loc_text, _ in locales:
+        set_fi = set(extract_first_install_versions(loc_text))
+        if not loc_path.endswith(".html") and len(set_fi) > 1:
+            errors.append(f"{loc_path}: multiple conflicting FirstInstall versions: {set_fi}")
+        if set_fi != set_fi_ru:
+            errors.append(f"FirstInstall versions mismatch between {ru} ({set_fi_ru}) and {loc_path} ({set_fi})")
+
+        tags_loc = set(extract_release_tags(loc_text))
+        if tags_loc != tags_ru:
+            errors.append(f"Release tags mismatch between {ru} ({tags_ru}) and {loc_path} ({tags_loc})")
+
+        bytes_loc = extract_byte_sizes(loc_text)
+        if bytes_loc != bytes_ru:
+            errors.append(f"Installer byte size mismatch between {ru} ({bytes_ru}) and {loc_path} ({bytes_loc})")
 
     # --- English quality checks (as non-blocking WARN) ---
     te_prose = re.sub(r"<[^>]+>", " ", te) if en.endswith(".html") else te
@@ -274,35 +278,57 @@ for ru, en in DOC_PAIRS:
         if re.search(pat, te_prose, flags=re.IGNORECASE):
             warns.append(f"{en}: literal calque/jargon warning matching {pat!r}")
 
+    # --- Ukrainian quality check (Russian-only letters in UK docs) ---
+    for i, line in enumerate(tu.splitlines(), 1):
+        if (
+            RU_ONLY_LETTERS.search(line)
+            and 'lang="ru"' not in line
+            and "Русск" not in line
+        ):
+            errors.append(f"{uk}:{i}: Russian-only letters [ъыэё] found in Ukrainian document")
+
     # --- HTML Structure & Metadata ---
     if ru.endswith(".html"):
         for st in ("released", "inprogress", "planned", "deferred"):
-            c1 = len(re.findall(f'data-status="{st}"', tr))
-            c2 = len(re.findall(f'data-status="{st}"', te))
-            if c1 != c2:
-                errors.append(f"data-status {st}: RU={c1} EN={c2}")
+            c_ru = len(re.findall(f'data-status="{st}"', tr))
+            c_uk = len(re.findall(f'data-status="{st}"', tu))
+            c_en = len(re.findall(f'data-status="{st}"', te))
+            if not (c_ru == c_uk == c_en):
+                errors.append(f"data-status {st}: RU={c_ru} UK={c_uk} EN={c_en}")
 
-        if set(re.findall(r'\bid="([^"]+)"', tr)) != set(re.findall(r'\bid="([^"]+)"', te)):
-            errors.append("DOM id sets differ between RU and EN index.html")
+        ids_ru = set(re.findall(r'\bid="([^"]+)"', tr))
+        ids_uk = set(re.findall(r'\bid="([^"]+)"', tu))
+        ids_en = set(re.findall(r'\bid="([^"]+)"', te))
+        if ids_ru != ids_uk:
+            errors.append(f"DOM id sets differ between RU and UK index.html: diff={ids_ru ^ ids_uk}")
+        if ids_ru != ids_en:
+            errors.append(f"DOM id sets differ between RU and EN index.html: diff={ids_ru ^ ids_en}")
 
-        if 'lang="ru"' not in tr[:200] or 'lang="en"' not in te[:200]:
-            errors.append("html lang attribute mismatch")
+        if 'lang="ru"' not in tr[:200] or 'lang="uk"' not in tu[:200] or 'lang="en"' not in te[:200]:
+            errors.append("html lang attribute mismatch across RU/UK/EN")
 
-        for req in ('rel="canonical"', 'hreflang="ru"', 'hreflang="en"', 'hreflang="x-default"'):
-            if req not in tr or req not in te:
-                errors.append(f"missing {req} in HTML pair")
+        for req in ('rel="canonical"', 'hreflang="ru"', 'hreflang="uk"', 'hreflang="en"', 'hreflang="x-default"'):
+            for loc_path, loc_text, _ in locales:
+                if req not in loc_text:
+                    errors.append(f"missing {req} in {loc_path}")
+
+        # --- Language Switcher Checks in HTML ---
+        for loc_path, loc_text, loc_code in locales:
+            for sw_code in ("ru", "uk", "en"):
+                if f'data-lang-switch="{sw_code}"' not in loc_text:
+                    errors.append(f"{loc_path}: missing data-lang-switch=\"{sw_code}\" in header switcher")
 
         # --- Dynamic Compact Release Label Validation ---
         label_ru = extract_compact_label(tr)
+        label_uk = extract_compact_label(tu)
         label_en = extract_compact_label(te)
-        if not label_ru:
-            errors.append("docs/index.html missing compact release label (.header-release-btn__short)")
-        if not label_en:
-            errors.append("docs/en/index.html missing compact release label (.header-release-btn__short)")
+        for loc_path, lbl in [(ru, label_ru), (uk, label_uk), (en, label_en)]:
+            if not lbl:
+                errors.append(f"{loc_path} missing compact release label (.header-release-btn__short)")
 
-        if label_ru and label_en:
-            if label_ru != label_en:
-                errors.append(f"Compact release label differs: RU='{label_ru}' vs EN='{label_en}'")
+        if label_ru and label_uk and label_en:
+            if not (label_ru == label_uk == label_en):
+                errors.append(f"Compact release label differs: RU='{label_ru}' UK='{label_uk}' EN='{label_en}'")
 
             active_ver = extract_active_release(tr, fi_ru, tags_ru)
             if active_ver:
@@ -323,8 +349,11 @@ for ru, en in DOC_PAIRS:
         if (
             CYR.search(line)
             and 'lang="ru"' not in line
+            and 'lang="uk"' not in line
             and "README.ru.md" not in line
+            and "README.uk.md" not in line
             and "Русск" not in line
+            and "Україн" not in line
         ):
             warns.append(f"{en}:{i}: Cyrillic in EN file")
 

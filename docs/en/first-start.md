@@ -1,10 +1,10 @@
 # Installation & First Start
 
-**Language / Язык:** **English** · [Русский (docs/first-start.md)](../first-start.md)
+**Language / Мова / Язык:** **English** · [Українська (docs/uk/first-start.md)](../uk/first-start.md) · [Русский (docs/first-start.md)](../first-start.md)
 
 **Status as of October 28, 2026** (available release in the `stable` channel verified on 28.10.2026). Pre-release **`v0.12.0-alpha`** is published in Releases (`stable` channel, standalone **`FirstInstall`** installer package for Windows 10/11 x64; enhancements from the `0.13.0-alpha`–`0.14.0-alpha` cycles are undergoing live acceptance on a dedicated rig ahead of the next `stable` channel update).
 
-[Repository Home (EN)](../../README.md) · [Главная страница (RU)](../../README.ru.md) · [Web Showcase (EN)](https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/en/) · [Release v0.12.0-alpha Page](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.12.0-alpha) · [Capabilities & Roadmap](./roadmap.md) · [Showcase Maintenance Policy (RU)](../CONTENT-MAINTENANCE.md)
+[Repository Home (EN)](../../README.md) · [Головна сторінка (UA)](../../README.uk.md) · [Главная страница (RU)](../../README.ru.md) · [Web Showcase (EN)](https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/en/) · [Release v0.12.0-alpha Page](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.12.0-alpha) · [Capabilities & Roadmap](./roadmap.md) · [Showcase Maintenance Policy (RU)](../CONTENT-MAINTENANCE.md)
 
 ## 1. Downloading & Verifying the FirstInstall Installer
 

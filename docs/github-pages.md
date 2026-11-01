@@ -4,6 +4,7 @@
 
 Публичный адрес витрины в GitHub Pages:
 - Русская версия: `https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/`
+- Украинская версия: `https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/uk/`
 - Английская версия: `https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/en/`
 
 *(Развёртывание активно из `main:/docs`, статус: `built`.)*
@@ -14,11 +15,11 @@
 
 Лендинг реализован на чистом HTML, CSS и компактном JavaScript без сборщиков, сторонней аналитики и внешних CDN:
 
-- **Точки входа:** `docs/index.html` (русская версия `/golden-breeze-releases/`) и `docs/en/index.html` (английская версия `/golden-breeze-releases/en/`).
-- **Стили и адаптивность:** `docs/styles.css` (поддержка десктопа, планшетов и мобильных экранов, компактное меню навигации при `<= 1200px` с сохранением кнопок выпуска и переключателя `RU / EN`, учёт `scroll-padding-top` для фиксированной шапки и `prefers-reduced-motion`).
-- **Интерактивность:** `docs/app.js` (мобильное меню навигации, явное переключение языка `RU / EN` с сохранением текущего раздела/query/hash без автоматических редиректов, фильтрация направлений дорожной карты по статусам и копирование `SHA-256` / команды PowerShell, локализованный интерактивный макет Пульта).
+- **Точки входа:** `docs/index.html` (русская версия `/golden-breeze-releases/`), `docs/uk/index.html` (украинская версия `/golden-breeze-releases/uk/`, код языка `uk`, видимая метка `UA`) и `docs/en/index.html` (английская версия `/golden-breeze-releases/en/`).
+- **Стили и адаптивность:** `docs/styles.css` (поддержка десктопа, планшетов и мобильных экранов вплоть до `320px`, компактное меню навигации при `<= 1280px` с сохранением кнопок выпуска и переключателя `RU / UA / EN`, учёт `scroll-padding-top` для фиксированной шапки и `prefers-reduced-motion`).
+- **Интерактивность:** `docs/app.js` (мобильное меню навигации, явное переключение языка `RU / UA / EN` с сохранением текущего раздела/query/hash без автоматических редиректов, фильтрация направлений дорожной карты по статусам и копирование `SHA-256` / команды PowerShell, локализованный интерактивный макет Пульта на трёх языках).
 - **Отключение Jekyll:** пустой файл `docs/.nojekyll` гарантирует прямую раздачу статических файлов без перезаписи путей генератором Jekyll.
-- **Ссылки на документацию:** поскольку при включённом `.nojekyll` прямые переходы на `.md`-файлы внутри GitHub Pages открывают необработанный текст, ссылки из HTML-лендинга на подробные документы (`roadmap.md`, `first-start.md`, `en/roadmap.md`, `en/first-start.md`, `github-pages.md`, `CONTENT-MAINTENANCE.md`) ведут на отрисованные страницы GitHub (`blob/main/docs/...`). Все локальные медиа-ресурсы (`./styles.css` и `../styles.css`, `./app.js` и `../app.js`, `./assets/...` и `../assets/...`) подключены относительными путями и одинаково работают локально и по проектному префиксу `/golden-breeze-releases/` и `/golden-breeze-releases/en/`.
+- **Ссылки на документацию:** поскольку при включённом `.nojekyll` прямые переходы на `.md`-файлы внутри GitHub Pages открывают необработанный текст, ссылки из HTML-лендинга на подробные документы (`roadmap.md`, `first-start.md`, `uk/roadmap.md`, `uk/first-start.md`, `en/roadmap.md`, `en/first-start.md`, `github-pages.md`, `CONTENT-MAINTENANCE.md`) ведут на отрисованные страницы GitHub (`blob/main/docs/...`). Все локальные медиа-ресурсы (`./styles.css` и `../styles.css`, `./app.js` и `../app.js`, `./assets/...` и `../assets/...`) подключены относительными путями и одинаково работают локально и по проектному префиксу `/golden-breeze-releases/`, `/golden-breeze-releases/uk/` и `/golden-breeze-releases/en/`.
 
 ---
 

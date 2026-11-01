@@ -1,10 +1,10 @@
 # Golden Breeze: Capabilities & Roadmap
 
-**Language / Язык:** **English** · [Русский (docs/roadmap.md)](../roadmap.md)
+**Language / Мова / Язык:** **English** · [Українська (docs/uk/roadmap.md)](../uk/roadmap.md) · [Русский (docs/roadmap.md)](../roadmap.md)
 
 **Status as of October 28, 2026** (available `v0.12.0-alpha` release in the `stable` channel verified on 28.10.2026). Golden Breeze is built as a multi-agent trading platform: collaborative work of specialized AI agents across the trading workflow — from market analysis and trading decisions to execution, position management, and risk control under user governance. Research, strategy development, versioning, and isolated strategy verification serve as a built-in engineering workflow of the platform, providing a transparent path from hypothesis to controlled execution.
 
-[Repository Home (EN)](../../README.md) · [Главная страница (RU)](../../README.ru.md) · [Web Showcase (EN)](https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/en/) · [Current Release v0.12.0-alpha](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.12.0-alpha) · [All Releases](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases) · [First Start Guide](./first-start.md) · [Showcase Maintenance Policy (RU)](../CONTENT-MAINTENANCE.md) · [Feedback & Partnerships](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/issues)
+[Repository Home (EN)](../../README.md) · [Головна сторінка (UA)](../../README.uk.md) · [Главная страница (RU)](../../README.ru.md) · [Web Showcase (EN)](https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/en/) · [Current Release v0.12.0-alpha](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.12.0-alpha) · [All Releases](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases) · [First Start Guide](./first-start.md) · [Showcase Maintenance Policy (RU)](../CONTENT-MAINTENANCE.md) · [Feedback & Partnerships](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/issues)
 
 ## How to Read Statuses
 
