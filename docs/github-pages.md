@@ -1,6 +1,6 @@
 # Памятка по публикации витрины на GitHub Pages (`docs/github-pages.md`)
 
-**Актуализация: 28 октября 2026 года.** В каталоге `docs/` размещён статический лендинг продукта Golden Breeze (`docs/index.html`, `docs/styles.css`, `docs/app.js`, `docs/assets/`, `docs/.nojekyll`), опубликованный через **GitHub Pages** в репозитории витрины и релизов `nikolaykazakovvs-ux/golden-breeze-releases`.
+**Актуализация: 12 ноября 2026 года.** В каталоге `docs/` размещён статический трёхъязычный лендинг продукта Golden Breeze (`docs/index.html`, `docs/uk/index.html`, `docs/en/index.html`, `docs/styles.css`, `docs/app.js`, `docs/assets/`, `docs/.nojekyll`), опубликованный через **GitHub Pages** в репозитории витрины и релизов `nikolaykazakovvs-ux/golden-breeze-releases`.
 
 Публичный адрес витрины в GitHub Pages:
 - Русская версия: `https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/`
@@ -31,7 +31,7 @@
 2. В настройках репозитория **Settings → Pages** в блоке **Build and deployment** выбирается:
    - **Source:** `Deploy from a branch`
    - **Branch:** `main`, папка `/docs` → **Save**.
-3. После завершения развёртывания проверяется открытие страницы по адресу `https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/` и работа ссылок на текущий выпуск `v0.12.0-alpha`.
+3. После завершения развёртывания проверяется открытие страницы по адресу `https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/` и работа ссылок на текущий выпуск `v0.14.0-alpha`.
 
 ---
 

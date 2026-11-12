@@ -60,7 +60,7 @@
             href="../"
             lang="ru"
             hreflang="ru"
-            aria-label="Переключить на русскую версию"
+            aria-label="Switch to Russian version"
             data-lang-switch="ru"
           >RU</a>
           <a
@@ -68,7 +68,7 @@
             href="../uk/"
             lang="uk"
             hreflang="uk"
-            aria-label="Перейти на українську версію"
+            aria-label="Switch to Ukrainian version"
             data-lang-switch="uk"
           >UA</a>
           <a
@@ -681,7 +681,7 @@
               </p>
             </div>
             <p class="feature-card__boundary">
-              <strong>Status:</strong> available in v0.14.0-alpha (stable); creation, validation, v1 publication, and configuration activation in Studio, plus readiness check and session start in the Control Desk, are verified live on the Windows x64 rig.
+              <strong>Status &amp; Acceptance:</strong> included in release v0.14.0-alpha (stable); creation, validation, publication, and activation of Studio configurations, the risk barrier rejecting weaker limits than program rules, and calculation/dry-run strategy evaluation with order pre-check are verified on the Windows x64 acceptance rig (visual comparison of remaining screens against Figma baselines continues separately).
             </p>
           </article>
 
@@ -697,7 +697,7 @@
               </p>
             </div>
             <p class="feature-card__boundary">
-              <strong>Status:</strong> included in v0.14.0-alpha; live main chat interaction is verified in the desktop UI during v0.14.0-alpha acceptance (a separate live rig check of child researcher delegation is scheduled as an additional follow-up).
+              <strong>Status &amp; Acceptance:</strong> included in release v0.14.0-alpha; live main chat interaction in the desktop UI via Claude CLI is verified on the Windows x64 acceptance rig (a separate live rig check of delegating tasks to the child researcher subagent is scheduled as a distinct follow-up step).
             </p>
           </article>
 
@@ -706,14 +706,14 @@
             <div class="feature-card__top">
               <div class="feature-card__header">
                 <h3 class="feature-card__title">Accounts, Risk Control &amp; Execution (MT5)</h3>
-                <span class="badge badge--inprogress">Demo Verified / Boundaries</span>
+                <span class="badge badge--released">In Release v0.14</span>
               </div>
               <p class="feature-card__desc">
                 Core trading integration of the platform: connecting Demo and Real accounts via MetaTrader 5, auto-provisioning and exit termination of the dedicated MT5 terminal, prop-firm and account cards, reconciling FTMO portal objectives with the terminal, diagnostic demo route, and protective stop management.
               </p>
             </div>
             <p class="feature-card__boundary">
-              <strong>Status:</strong> in v0.14.0-alpha on an FTMO-Demo account, MT5 connection, risk barrier, and a full XAUUSD demo trade lifecycle with server-side trailing-stop are verified live; completed live trading acceptance on Real accounts is not claimed.
+              <strong>Status &amp; Acceptance:</strong> on the acceptance build with an FTMO-Demo account, MT5 connection, FTMO program rule verification, ordinary strategy calculation/dry-run pass without order submission, and live XAUUSD demo trades with server-side trailing-stop via acceptance and diagnostic scenarios are verified. The platform supports connecting both Demo and Real accounts (the "demo-only" guard applies exclusively to the diagnostic test route); completed live trading acceptance on a Real account is not claimed.
             </p>
           </article>
 
@@ -725,11 +725,11 @@
                 <span class="badge badge--released">In Release v0.14</span>
               </div>
               <p class="feature-card__desc">
-                Built-in workflow for trading logic: binding a strategy version to an agent profile ("Behavior Review", including <code>+sourcefree</code>), writing Python strategy code directly in chat, isolated verification on synthetic bars, and one-click registration into the Studio catalog.
+                Built-in workflow for trading logic: binding a strategy version to an agent profile ("Behavior Review", including bundled strategies), writing Python strategy code directly in chat, isolated verification on synthetic bars, and one-click registration into the Studio catalog.
               </p>
             </div>
             <p class="feature-card__boundary">
-              <strong>Status:</strong> included in the published v0.14.0-alpha release (a standalone built-in code editor for manual programming and a deep historical dataset backtester are deferred).
+              <strong>Status &amp; Acceptance:</strong> included in release v0.14.0-alpha; signal calculation of the standard strategy with AI review and order pre-check in calculation/dry-run mode is verified on the acceptance rig (a standalone built-in code editor for manual programming and a deep historical dataset backtester are deferred).
             </p>
           </article>
 
@@ -741,11 +741,11 @@
                 <span class="badge badge--released">In Release v0.14</span>
               </div>
               <p class="feature-card__desc">
-                Standalone Windows x64 distribution and direct one-click HTTPS updates with Ed25519 manifest signature verification, safe child process termination, build revision stamp verification, rollback to the previous version, and preservation of agent profiles, accounts, and history.
+                Standalone Windows x64 distribution and direct one-click HTTPS updates with Ed25519 manifest signature verification, safe child process termination, embedded build revision stamp verification, recovery to the working version upon update failure (automatic if the new build fails to launch, or via the recovery window button), and preservation of agent profiles, accounts, and history.
               </p>
             </div>
             <p class="feature-card__boundary">
-              <strong>Status:</strong> clean v0.14.0-alpha setup, 0.13 → 0.14 update preserving user data, and rollback to the previous version are verified live on the Windows x64 rig.
+              <strong>Status &amp; Acceptance:</strong> for the published v0.14.0-alpha (stable) installer, clean installation, uninstallation, and 0.13 → 0.14 update preserving user data are verified in the cloud Windows environment; on the local Windows x64 rig using the acceptance build, update preserving the FTMO session and recovery to the working 0.14 build via the recovery window button upon a faulty test package are verified (rolling back the published stable build 0.14 → 0.13 was not separately tested).
             </p>
           </article>
 
@@ -838,7 +838,7 @@
             Available in Release v0.14, Live Acceptance Status &amp; Planned Next
           </h2>
           <p class="section__subtitle">
-            Multi-agent trading platform roadmap matrix: capabilities from the <code>0.13–0.14-alpha</code> cycle are delivered in the published <code>v0.14.0-alpha</code> installer (<code>stable</code> channel) and have passed live acceptance on an <code>FTMO-Demo</code> account, while we transparently separate the verified <code>Demo</code> environment from the unclaimed <code>Real</code> account scope and remaining follow-up checks.
+            Multi-agent trading platform roadmap matrix: capabilities from the <code>0.13–0.14-alpha</code> cycle are delivered in the published <code>v0.14.0-alpha</code> installer (<code>stable</code> channel). For each track, we explicitly separate delivery in the build from specific verified scenarios (cloud Windows environment for the product installer, local acceptance build on an <code>FTMO-Demo</code> account, calculation/dry-run pass for the ordinary strategy, and acceptance/diagnostic demo trades), while noting separate follow-up checks and that completed live trading acceptance on a connected <code>Real</code> account is not claimed for this release.
           </p>
         </div>
 
@@ -846,22 +846,22 @@
         <div class="status-legend" aria-label="Readiness status legend">
           <div class="legend-item">
             <span class="badge badge--released">In Release v0.14</span>
-            <strong>Published in v0.14.0-alpha (stable)</strong>
-            Included in the published FirstInstall package and verified by profile tests and live installation/update checks.
+            <strong>Delivered in Build v0.14.0-alpha (stable) — 7 Tracks</strong>
+            Included in the published FirstInstall package. The status reflects feature delivery in the current release and is always read alongside the explicit acceptance scope badge on each card.
           </div>
           <div class="legend-item">
-            <span class="badge badge--inprogress">Delivered in 0.13–0.14 / Acceptance Boundaries</span>
-            <strong>In Build v0.14 · Demo Verified / Scope Boundaries</strong>
-            Capabilities are included in <code>v0.14.0-alpha</code> and passed live demo acceptance on the Windows x64 rig with explicit separation from <code>Real</code> accounts and remaining follow-ups.
+            <span class="badge badge--inprogress">Acceptance Scope &amp; Boundaries</span>
+            <strong>Verified Route &amp; Follow-Ups (Second Badge on v0.14 Cards)</strong>
+            Indicates on every <code>v0.14</code> card which environment verified the scenario (cloud Windows CI, acceptance build on <code>FTMO-Demo</code>, calculation/dry-run mode, or diagnostic trades) and what is scheduled as a separate follow-up check.
           </div>
           <div class="legend-item">
             <span class="badge badge--planned">Planned</span>
-            <strong>Next Milestones &amp; Design Stage</strong>
+            <strong>Next Milestones &amp; Design Stage (2 Tracks)</strong>
             Platform development tracks and architectural modules in the design stage scheduled for upcoming milestones.
           </div>
           <div class="legend-item">
             <span class="badge badge--deferred">Deferred</span>
-            <strong>Separate Future Decisions</strong>
+            <strong>Separate Future Decisions (1 Track)</strong>
             Standalone modules and options intentionally set outside the scope of near-term releases.
           </div>
         </div>
@@ -870,8 +870,7 @@
         <div class="filter-bar">
           <div class="filter-buttons" role="group" aria-label="Filter tracks by readiness status">
             <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All tracks (10)</button>
-            <button class="filter-btn" type="button" data-filter="released" aria-pressed="false">In Release v0.14 (3)</button>
-            <button class="filter-btn" type="button" data-filter="inprogress" aria-pressed="false">Delivered in 0.13–0.14 / Acceptance Boundaries (4)</button>
+            <button class="filter-btn" type="button" data-filter="released" aria-pressed="false">In Release v0.14 (7)</button>
             <button class="filter-btn" type="button" data-filter="planned" aria-pressed="false">Planned (2)</button>
             <button class="filter-btn" type="button" data-filter="deferred" aria-pressed="false">Deferred (1)</button>
           </div>
@@ -884,18 +883,19 @@
           <article class="matrix-item" data-status="released">
             <div class="matrix-item__head">
               <span class="badge badge--released">In Release v0.14</span>
+              <span class="badge badge--inprogress">Scope: CI &amp; Rig</span>
               <h3 class="matrix-item__title">FirstInstall Installer &amp; Swap Auto-Update</h3>
             </div>
             <div>
-              <span class="matrix-item__col-label">Available in Release</span>
+              <span class="matrix-item__col-label">Available in Release v0.14</span>
               <p class="matrix-item__text">
-                Primary installer package <code>GoldenBreeze-FirstInstall-0.14.0-alpha.exe</code> (<code>stable</code> channel). Subsequent updates are delivered directly from the HTTPS server with Ed25519 manifest signature verification, child process tree termination via Job Object, build revision stamp verification (<code>gb-build-stamp.json</code>), rollback to the previous version, and short anonymized failure reports.
+                Primary installer package <code>GoldenBreeze-FirstInstall-0.14.0-alpha.exe</code> (<code>stable</code> channel). Subsequent updates are delivered directly from the HTTPS server with Ed25519 manifest signature verification, child process tree termination via Job Object, embedded build revision stamp verification, recovery to the working version upon update failure (automatic if the new build fails to launch, or via the recovery window button), and short anonymized failure reports.
               </p>
             </div>
             <div>
-              <span class="matrix-item__col-label">Readiness Boundary</span>
+              <span class="matrix-item__col-label">Readiness &amp; Acceptance Boundary</span>
               <p class="matrix-item__text">
-                On the Windows x64 rig, clean installation of <code>v0.14.0-alpha</code>, clean exit without leftover processes, live update <code>0.13.0-alpha → 0.14.0-alpha</code> preserving user data and the FTMO session, and live rollback verification (<code>rolled_back</code>) are all confirmed.
+                For the published <code>v0.14.0-alpha</code> installer (<code>stable</code> channel), clean installation, full NSIS uninstallation, and live one-click update <code>0.13.0-alpha → 0.14.0-alpha</code> preserving the database, strategies, and settings are verified in the cloud Windows environment. On the local Windows x64 rig using the dedicated acceptance build of the same source revision, cold start, clean exit without leftover processes, <code>0.13 → 0.14</code> update preserving the FTMO session, and recovery to the working <code>0.14</code> build via the recovery window button upon a faulty test update package are verified (rolling back the published product build <code>0.14.0-alpha → 0.13.0-alpha</code> was not separately tested).
               </p>
             </div>
           </article>
@@ -904,18 +904,19 @@
           <article class="matrix-item" data-status="released">
             <div class="matrix-item__head">
               <span class="badge badge--released">In Release v0.14</span>
+              <span class="badge badge--inprogress">Scope: Main Chat</span>
               <h3 class="matrix-item__title">Multi-Conversation Core Chat &amp; Model Selection</h3>
             </div>
             <div>
-              <span class="matrix-item__col-label">Available in Release</span>
+              <span class="matrix-item__col-label">Available in Release v0.14</span>
               <p class="matrix-item__text">
                 Workspace for tasking the main agent via <strong>Claude CLI</strong> and <strong>Codex CLI (ChatGPT sign-in without an API key)</strong>: creating, renaming, archiving, and restoring conversations, grouping, draft isolation, selecting model and reasoning level (thinking effort), displaying requested vs. actual model, and Markdown response formatting.
               </p>
             </div>
             <div>
-              <span class="matrix-item__col-label">Readiness Boundary</span>
+              <span class="matrix-item__col-label">Readiness &amp; Acceptance Boundary</span>
               <p class="matrix-item__text">
-                Included in the published <code>v0.14.0-alpha</code> release. Live main chat interaction via <code>claude_cli</code> is verified in the desktop UI during <code>v0.14.0-alpha</code> acceptance on the Windows x64 rig.
+                Included in the published <code>v0.14.0-alpha</code> release. Live main chat interaction via the connected <strong>Claude CLI</strong> provider is verified in the desktop UI during acceptance on the Windows x64 rig; manual visual comparison of remaining screen states against Figma baselines continues separately.
               </p>
             </div>
           </article>
@@ -924,98 +925,103 @@
           <article class="matrix-item" data-status="released">
             <div class="matrix-item__head">
               <span class="badge badge--released">In Release v0.14</span>
+              <span class="badge badge--inprogress">Scope: Tests + UI Review</span>
               <h3 class="matrix-item__title">Trilingual Interface (RU · UA · EN)</h3>
             </div>
             <div>
-              <span class="matrix-item__col-label">Available in Release</span>
+              <span class="matrix-item__col-label">Available in Release v0.14</span>
               <p class="matrix-item__text">
                 Switching between Russian, Ukrainian, and English across the Control Desk, Agent Studio, agent chat, memory, prop-firm cards, and update notifications, persisting language and theme selection across restarts.
               </p>
             </div>
             <div>
-              <span class="matrix-item__col-label">Readiness Boundary</span>
+              <span class="matrix-item__col-label">Readiness &amp; Acceptance Boundary</span>
               <p class="matrix-item__text">
-                Release <code>v0.14.0-alpha</code> delivers full localization of the "FTMO Conditions" card, "Terminal Reconciliation" block, and account registration messages (<code>RU</code>/<code>UA</code>/<code>EN</code>), replacing internal codes in the Control Desk with human-readable statuses.
+                Release <code>v0.14.0-alpha</code> delivers full localization of the "FTMO Conditions" card, "Terminal Reconciliation" block, and account registration messages (<code>RU</code>/<code>UA</code>/<code>EN</code>), replacing internal codes in the Control Desk with human-readable statuses; visual comparison of individual screens against Figma baselines is scheduled as an additional follow-up check.
               </p>
             </div>
           </article>
 
           <!-- 4 -->
-          <article class="matrix-item" data-status="inprogress">
+          <article class="matrix-item" data-status="released">
             <div class="matrix-item__head">
-              <span class="badge badge--inprogress">Delivered in v0.14 / Demo Verified</span>
+              <span class="badge badge--released">In Release v0.14</span>
+              <span class="badge badge--inprogress">Scope: FTMO-Demo + UI</span>
               <h3 class="matrix-item__title">Closed-History Analysis, Server Timezones &amp; Control Desk Readiness</h3>
             </div>
             <div>
-              <span class="matrix-item__col-label">Delivered in Release v0.14.0-alpha</span>
+              <span class="matrix-item__col-label">Available in Release v0.14</span>
               <p class="matrix-item__text">
                 Immediate analysis of closed bar history when the market is closed without waiting for a live tick, history persistence across session breaks, "Market State" block following the official FTMO schedule, weekly bar dating by server timezone (including DST transitions), auto-synchronization of symbols in MT5 "Market Watch", background verification of broker server time, window zoom (25%–500%), and narrow responsive layout (≤ 700px).
               </p>
             </div>
             <div>
-              <span class="matrix-item__col-label">Readiness Boundary</span>
+              <span class="matrix-item__col-label">Readiness &amp; Acceptance Boundary</span>
               <p class="matrix-item__text">
-                Included in the published <code>v0.14.0-alpha</code> installer (bars without verified UTC are never passed into the trading pipeline). Applying configuration in Studio, readiness checks, and session start are verified on the Windows x64 rig; manual review of remaining screens against Figma visual baselines continues separately.
+                Included in the published <code>v0.14.0-alpha</code> installer (bars without verified UTC are never passed into the trading pipeline). Creation, validation, publication, and activation of Studio configurations, readiness checks, and calculation/dry-run strategy evaluation in the Control Desk are verified on the Windows x64 acceptance rig; manual visual comparison of remaining screens against Figma baselines continues separately.
               </p>
             </div>
           </article>
 
           <!-- 5 -->
-          <article class="matrix-item" data-status="inprogress">
+          <article class="matrix-item" data-status="released">
             <div class="matrix-item__head">
-              <span class="badge badge--inprogress">Delivered in v0.14 / Demo Verified</span>
-              <h3 class="matrix-item__title">MT5 Technical Demo Cycle, Diagnostic Demo Route &amp; FTMO</h3>
+              <span class="badge badge--released">In Release v0.14</span>
+              <span class="badge badge--inprogress">Scope: FTMO-Demo</span>
+              <h3 class="matrix-item__title">MT5 Trading Pipeline, Diagnostic Demo Route &amp; FTMO Rules</h3>
             </div>
             <div>
-              <span class="matrix-item__col-label">Delivered &amp; Verified on FTMO-Demo</span>
+              <span class="matrix-item__col-label">Available in Release v0.14</span>
               <p class="matrix-item__text">
-                In <code>v0.14.0-alpha</code>, the platform includes a "Connect now" toggle and automatic adapter selection by platform family, auto-provisioning of the dedicated MT5 terminal (<code>[Experts]</code> Algo Trading and default profile) with non-activating window placement and auto-termination on exit, a GoatFunded card with "Support in development" status, FTMO objective reconciliation with the terminal, and a diagnostic/acceptance route for Studio agents in broker mode.
+                In <code>v0.14.0-alpha</code>, the platform includes connecting Demo and Real accounts via MetaTrader 5, a "Connect now" toggle and automatic adapter selection by platform family, auto-provisioning of the dedicated MT5 terminal (Algo Trading and default profile enabled) with non-activating window placement and auto-termination on exit, a GoatFunded card with "Support in development" status, FTMO objective reconciliation with the terminal, and acceptance and diagnostic execution verification routes for demo accounts.
               </p>
             </div>
             <div>
-              <span class="matrix-item__col-label">Readiness Boundary</span>
+              <span class="matrix-item__col-label">Readiness &amp; Acceptance Boundary</span>
               <p class="matrix-item__text">
-                On the <code>FTMO-Demo</code> account, live acceptance verified: MT5 connection, <code>prop-policy</code> v2 reconciliation, negative risk barrier (<code>HTTP 422</code>), full <code>BUY 0.01 XAUUSD</code> lifecycle (<code>PropGuard</code>, <code>exit_cost_reserve</code>, server-side <code>SL</code>/<code>TP</code>, close, and <code>0/0</code> reconciliation), and <code>ExecutionDiagnosticLoop</code> (<code>5/5</code> scenarios, including live server-side <code>trailing-stop</code> via <code>TRADE_ACTION_SLTP</code>). The diagnostic route strictly blocks real accounts (<code>account_not_demo</code>); completed live trading acceptance on a Real account (<code>Real</code>) is not claimed.
+                On the acceptance build with an <code>FTMO-Demo</code> account (<code>XAUUSD</code>, <code>M5</code>), live acceptance verified MT5 connection, FTMO program rule checks, and automatic rejection of configuration publication when risk limits are weaker than program rules. The ordinary Studio strategy was verified in calculation/dry-run mode up to a successful order pre-check without submitting a live trade order; opening and closing a live <code>0.01 XAUUSD</code> demo position with prop-risk and exit-cost reserve checks, server-side <code>SL</code>/<code>TP</code>, and all <code>5/5</code> diagnostic scenarios passed (two of which verified live server-side <code>trailing-stop</code> modification) with flat book reconciliation (<code>0/0</code>) via the acceptance and diagnostic routes. The platform supports working with both <code>Demo</code> and <code>Real</code> accounts: the "demo-only" restriction applies exclusively to the diagnostic test route, while completed live trading acceptance on a <code>Real</code> account is not claimed for this release.
               </p>
             </div>
           </article>
 
           <!-- 6 -->
-          <article class="matrix-item" data-status="inprogress">
+          <article class="matrix-item" data-status="released">
             <div class="matrix-item__head">
-              <span class="badge badge--inprogress">Delivered in v0.14 / Scope Boundaries</span>
+              <span class="badge badge--released">In Release v0.14</span>
+              <span class="badge badge--inprogress">Scope: Dry-Run Pass</span>
               <h3 class="matrix-item__title">From Chat Idea to Strategy Code &amp; Studio Catalog</h3>
             </div>
             <div>
-              <span class="matrix-item__col-label">Delivered in Release v0.14.0-alpha</span>
+              <span class="matrix-item__col-label">Available in Release v0.14</span>
               <p class="matrix-item__text">
                 The main agent writes and refines Python strategy code directly in chat: the application validates the code against a construct whitelist, runs it in an isolated memory-limited process on synthetic bars, and renders a strategy card with code preview and an <strong>"Add to catalog"</strong> button for immediate selection in Agent Studio.
               </p>
             </div>
             <div>
-              <span class="matrix-item__col-label">Readiness Boundary</span>
+              <span class="matrix-item__col-label">Readiness &amp; Acceptance Boundary</span>
               <p class="matrix-item__text">
-                Included in the published <code>v0.14.0-alpha</code> installer (evaluation of a <code>+sourcefree</code> strategy signal with AI review was also confirmed on the rig). The in-chat run checks executability and invariants on synthetic bars; a standalone code editor in Studio and a deep historical dataset backtester are deferred.
+                Included in the published <code>v0.14.0-alpha</code> installer. The in-chat run checks executability and invariants on synthetic bars, while on the Windows x64 acceptance rig the standard strategy is verified through signal calculation on closed bars, AI review, volume sizing, and order pre-check in calculation/dry-run mode without submitting a live trade; a standalone code editor in Studio and a deep historical dataset backtester are deferred.
               </p>
             </div>
           </article>
 
           <!-- 7 -->
-          <article class="matrix-item" data-status="inprogress">
+          <article class="matrix-item" data-status="released">
             <div class="matrix-item__head">
-              <span class="badge badge--inprogress">Delivered in v0.14 / Subagent Follow-Up</span>
+              <span class="badge badge--released">In Release v0.14</span>
+              <span class="badge badge--inprogress">Scope: Subagent Follow-Up</span>
               <h3 class="matrix-item__title">Knowledge Library, Multimodal Attachments &amp; Researcher Agent</h3>
             </div>
             <div>
-              <span class="matrix-item__col-label">Delivered in Release v0.14.0-alpha</span>
+              <span class="matrix-item__col-label">Available in Release v0.14</span>
               <p class="matrix-item__text">
                 Chat supports multimodal attachments (screenshots, tables, text, <code>PDF</code>, <code>DOCX</code>, frame extraction from videos up to 10 MB / 10 min), a built-in <strong>Knowledge Library</strong> (saving materials, searching, and reading with source and page citations), live <strong>web search</strong>, and delegation of research questions to a <strong>child researcher subagent</strong>.
               </p>
             </div>
             <div>
-              <span class="matrix-item__col-label">Readiness Boundary</span>
+              <span class="matrix-item__col-label">Readiness &amp; Acceptance Boundary</span>
               <p class="matrix-item__text">
-                Included in the published <code>v0.14.0-alpha</code> installer (the child researcher has access only to the Knowledge Library and web search without trading account access; a separate live acceptance check of delegation to the child researcher on the rig remains scheduled as a follow-up). Coordinating multiple <em>trading</em> executor subagents belongs to the planned portfolio milestone.
+                Included in the published <code>v0.14.0-alpha</code> installer (the child researcher has access only to the Knowledge Library and web search without trading account access; a separate live acceptance check of delegation to the child researcher on the rig is scheduled as a standalone follow-up check). Coordinating multiple <em>trading</em> executor subagents belongs to the planned portfolio milestone.
               </p>
             </div>
           </article>
@@ -1033,7 +1039,7 @@
               </p>
             </div>
             <div>
-              <span class="matrix-item__col-label">Readiness Boundary</span>
+              <span class="matrix-item__col-label">Readiness &amp; Acceptance Boundary</span>
               <p class="matrix-item__text">
                 In the current release, MetaTrader 5 (MT5) is the active trading connector and FTMO is the supported prop-firm integration. TradeLocker integration is a planned stage, and licensing &amp; access tiers are in the design stage (plans, pricing, and sales terms are not yet approved).
               </p>
@@ -1053,7 +1059,7 @@
               </p>
             </div>
             <div>
-              <span class="matrix-item__col-label">Readiness Boundary</span>
+              <span class="matrix-item__col-label">Readiness &amp; Acceptance Boundary</span>
               <p class="matrix-item__text">
                 Builds upon the current Control Desk profile system and requires a dedicated capital allocation model, portfolio drawdown limits, and independent acceptance.
               </p>
@@ -1069,7 +1075,7 @@
             <div>
               <span class="matrix-item__col-label">What Is Deferred</span>
               <p class="matrix-item__text">
-                A standalone built-in code editor for manual programming in Studio and a custom deep historical backtesting engine with dataset management (baseline in-chat code generation and synthetic-bar verification are already implemented in 0.13), as well as purchasing a paid Authenticode certificate and a custom domain.
+                A standalone built-in code editor for manual programming in Studio and a custom deep historical backtesting engine with dataset management (baseline in-chat code generation and synthetic-bar verification are already implemented in the 0.13–0.14-alpha cycle), as well as purchasing a paid Authenticode certificate and a custom domain.
               </p>
             </div>
             <div>
@@ -1190,7 +1196,7 @@
                   Channel: <code>stable</code> · Source SHA: <code>bb20fb6a</code>
                 </td>
                 <td>
-                  Delivery of the 0.13–0.14-alpha cycle capabilities (including intermediate build 0.13.0-alpha from 10.11.2026, Source SHA: <code>f4556857</code>) and verified live Windows acceptance on <code>FTMO-Demo</code>: clean install, 0.13 → 0.14 update preserving user data and rollback verification (<code>rolled_back</code>), FTMO <code>prop-policy</code> v2 rules and risk barrier (<code>HTTP 422</code>), strict parameter comparison when applying Studio configuration, full <code>XAUUSD</code> demo trade lifecycle with <code>PropGuard</code> and server-side <code>trailing-stop</code> (<code>5/5</code> scenarios), auto-provisioning and exit termination of the dedicated MT5 terminal, Control Desk window zoom (25%–500%) and narrow layout (≤ 700px), localization of FTMO conditions and terminal reconciliation (RU/UA/EN), "Support in development" status for GoatFunded, Knowledge Library, multimodal attachments, web search, child researcher in code, main chat via Codex CLI (ChatGPT) and Claude CLI, and in-chat strategy code generation with Studio catalog registration.
+                  Delivery of the 0.13–0.14-alpha cycle capabilities (including intermediate build 0.13.0-alpha from 10.11.2026, Source SHA: <code>f4556857</code>). For the published <code>stable</code> installer, clean installation, uninstallation, and 0.13 → 0.14 update preserving user data are verified in the cloud Windows environment. On the local Windows x64 acceptance rig (acceptance build of the same source revision, <code>FTMO-Demo</code> account), live checks verified: 0.13 → 0.14 update preserving the FTMO session and recovery to the working 0.14 build via the recovery window upon a faulty test package, FTMO program rules and risk barrier rejecting weaker limits, Studio configuration activation and ordinary strategy calculation/dry-run pass with order pre-check, live <code>0.01 XAUUSD</code> demo trades and <code>5/5</code> diagnostic scenarios passed (two of which verified live server-side <code>trailing-stop</code>) in the acceptance and diagnostic routes, and live main chat interaction via Claude CLI. The build also includes auto-provisioning and exit termination of the dedicated MT5 terminal, Control Desk window zoom (25%–500%) and narrow layout (≤ 700px), localization of FTMO conditions and terminal reconciliation (RU/UA/EN), "Support in development" status for GoatFunded, Knowledge Library, multimodal attachments, web search, child researcher, and in-chat strategy code release (live rig follow-up for the researcher subagent and comparison of remaining Figma screens continue separately; live trading acceptance on <code>Real</code> accounts is not claimed).
                 </td>
                 <td>
                   <a href="https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.14.0-alpha">Release page</a><br>
