@@ -833,12 +833,12 @@
     <section id="roadmap" class="section section--alt" aria-labelledby="roadmap-title">
       <div class="container">
         <div class="section__header">
-          <span class="section__eyebrow">Track Statuses · November 12, 2026</span>
+          <span class="section__eyebrow">Track Statuses · Roadmap Updated November 14, 2026 (v0.14 Acceptance Snapshot — November 12, 2026)</span>
           <h2 id="roadmap-title" class="section__title">
             Available in Release v0.14, Live Acceptance Status &amp; Planned Next
           </h2>
           <p class="section__subtitle">
-            Multi-agent trading platform roadmap matrix: capabilities from the <code>0.13–0.14-alpha</code> cycle are delivered in the published <code>v0.14.0-alpha</code> installer (<code>stable</code> channel). For each track, we explicitly separate delivery in the build from specific verified scenarios (cloud Windows environment for the product installer, local acceptance build on an <code>FTMO-Demo</code> account, calculation/dry-run pass for the ordinary strategy, and acceptance/diagnostic demo trades), while noting separate follow-up checks and that completed live trading acceptance on a connected <code>Real</code> account is not claimed for this release.
+            Multi-agent trading platform roadmap matrix: capabilities from the <code>0.13–0.14-alpha</code> cycle are delivered in the published <code>v0.14.0-alpha</code> installer (<code>stable</code> channel, published November 11, 2026). For each track, we explicitly separate delivery in the build from specific verified scenarios (cloud Windows environment for the product installer, local acceptance build on an <code>FTMO-Demo</code> account, calculation/dry-run pass for the ordinary strategy, and acceptance/diagnostic demo trades), while noting separate follow-up checks, that completed live trading acceptance on a connected <code>Real</code> account is not claimed for this release, and which changes added to the main development branch as of November 14, 2026 are preparing for the next delivery.
           </p>
         </div>
 
@@ -1085,6 +1085,21 @@
               </p>
             </div>
           </article>
+        </div>
+
+        <div class="panel-card" style="margin-top: 20px;">
+          <h3 class="panel-card__title">In the Main Development Branch — Preparing for the Next Delivery (Updated November 14, 2026)</h3>
+          <p style="margin-top: 0; margin-bottom: 12px; font-size: 0.92rem; color: var(--text-secondary);">
+            The enhancements below have been added to the main development branch after <code>v0.14.0-alpha</code> and are preparing for the next delivery (they are <strong>not included</strong> in the published <code>GoldenBreeze-FirstInstall-0.14.0-alpha.exe</code> <code>stable</code> installer, and no next version number, release date, or completed live acceptance is promised in advance):
+          </p>
+          <ul class="checklist" style="margin-bottom: 0;">
+            <li>
+              <strong>Strategy Catalog &amp; Launch Readiness Panel:</strong> a curated strategy list in Agent Studio with a recommended version and preservation of previously saved configurations, archiving and restoration of authored versions, draft deletion from the chat card, a shortcut from Studio to create a strategy in Chat, and a clear launch-readiness panel in the Control Desk (<code>RU</code>/<code>UA</code>/<code>EN</code>).
+            </li>
+            <li>
+              <strong>Unified Control Desk, Separated Safety Actions &amp; Service Checks:</strong> MT5 account connection and readiness check (balance, equity, and broker-confirmed <code>Demo</code>/<code>Real</code> account type) directly in the Control Desk before starting an agent, distinct actions for ordinary stop (continuing protective <code>trailing-stop</code> management of open positions), revoking order permission, closing positions, and a permanent emergency core stop button, plus a dedicated Service Checks section and consolidated risk and prop-firm settings.
+            </li>
+          </ul>
         </div>
 
         <p style="margin-top: 20px; margin-bottom: 0; font-size: 0.9rem; color: var(--text-secondary);">

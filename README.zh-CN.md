@@ -12,7 +12,7 @@ Golden Breeze 专为交易领域中专业 AI 智能体的协同作业而打造�
 
 [**下载 Windows 版 (v0.14.0-alpha)**](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.14.0-alpha/GoldenBreeze-FirstInstall-0.14.0-alpha.exe) · [**网页展台 (英文)**](https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/en/) · [网页展台 (乌克兰文)](https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/uk/) · [网页展台 (俄文)](https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/) · [版本发布 v0.14.0-alpha](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.14.0-alpha) · [状态与路线图（英文）](docs/en/roadmap.md) · [快速上手指南（英文）](docs/en/first-start.md) · [合作伙伴与赞助商](#合作伙伴与赞助商)
 
-> **Alpha · v0.14.0-alpha（发布于 2026 年 11 月 11 日；状态与路线图快照截至 2026 年 11 月 12 日）。** 主安装程序包 `GoldenBreeze-FirstInstall-0.14.0-alpha.exe`（`stable` 稳定通道，Windows x64）已在 Releases 中发布，交付了 `0.13.0-alpha`–`0.14.0-alpha` 开发周期的功能。针对已发布的 `stable` 安装包，已在云端 Windows 环境中验证了全新安装、NSIS 卸载以及保留用户数据的 `0.13.0-alpha → 0.14.0-alpha` 更新。在专用 Windows x64 验收测试机上（使用相同源码修订版的验收构建版本与 `FTMO-Demo` 模拟账户），已完成保留 FTMO 会话的更新、遇到故障测试包时回退恢复至可用 `0.14` 版本、FTMO MT5 连接、智能体工作室配置发布与激活、常规策略的计算验证模式（`dry-run`）全链路通过，以及在验收与诊断场景下包含风险检查与 `trailing-stop` 追踪止损管理的 `0.01 XAUUSD` 实时模拟交易验证（平台未声明已完成真实账户 `Real` 上的实时交易验收）。
+> **Alpha · v0.14.0-alpha（发布于 2026 年 11 月 11 日；v0.14.0-alpha 验收快照截至 2026 年 11 月 12 日；路线图更新于 2026 年 11 月 14 日）。** 主安装程序包 `GoldenBreeze-FirstInstall-0.14.0-alpha.exe`（`stable` 稳定通道，Windows x64）已在 Releases 中发布，交付了 `0.13.0-alpha`–`0.14.0-alpha` 开发周期的功能。针对已发布的 `stable` 安装包，已在云端 Windows 环境中验证了全新安装、NSIS 卸载以及保留用户数据的 `0.13.0-alpha → 0.14.0-alpha` 更新。在专用 Windows x64 验收测试机上（使用相同源码修订版的验收构建版本与 `FTMO-Demo` 模拟账户），已完成保留 FTMO 会话的更新、遇到故障测试包时回退恢复至可用 `0.14` 版本、FTMO MT5 连接、智能体工作室配置发布与激活、常规策略的计算验证模式（`dry-run`）全链路通过，以及在验收与诊断场景下包含风险检查与 `trailing-stop` 追踪止损管理的 `0.01 XAUUSD` 实时模拟交易验证（平台未声明已完成真实账户 `Real` 上的实时交易验收）。
 
 ---
 
@@ -69,8 +69,12 @@ Golden Breeze 专为交易领域中专业 AI 智能体的协同作业而打造�
 
 ---
 
-## 未来演进方向（规划中与延后项目）
+## 未来演进方向（正准备下一轮交付、规划中与延后项目）
 
+截至 2026 年 11 月 14 日已加入主开发分支的改进正准备下一轮交付（**未**包含在已发布的 `v0.14.0-alpha` 安装包中，且不预先承诺下一版本号、发布日期或已完成实时验收）：
+
+- **主开发分支 — 策略目录与启动就绪面板：** 智能体工作室提供包含推荐版本且保留已保存配置的清晰策略列表，支持原创策略版本归档与恢复、在对话卡片中删除草稿、从工作室一键跳转至对话创建策略，并在控制台中提供清晰的启动就绪检查面板（`RU`/`UA`/`EN`）。
+- **主开发分支 — 统一控制台、分离的安全操作与服务检查：** 支持在启动智能体前直接在控制台中连接并检查 MT5 账户状态（余额、净值及经纪商确认的 `Demo`/`Real` 账户类型），将常规停止（继续保持现有持仓的保护性 `trailing-stop` 追踪止损管理）、撤销下单权限、平仓持仓与常驻紧急停止按钮明确分离，并提供独立的“服务检查”分区以及整合后的风险与自营公司规则设置。
 - **规划中 — 多交易执行器与投资组合管理：** 扩展多智能体交易能力——跨多个品种与交易时段并行协调专业交易智能体、资金分配、执行投资组合级自营公司风险规则、端到端回撤控制及市场状态分析。
 - **规划中 — 平台目录与专有 TradeLocker 接入：** 扩充自营公司与交易平台适配器的统一注册表；在当前版本中，**MetaTrader 5 (MT5)** 是当前启用的交易连接器，**FTMO** 是当前支持的自营公司接入，而 **TradeLocker** 接入已列为独立的计划里程碑。
 - **规划中 — 已保存的交易智能体工作流：** 用于就绪检查、市场研究、合规自营规则执行以及计划性风险控制的自动化多步可复用流程。
