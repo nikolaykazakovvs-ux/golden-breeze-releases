@@ -31,7 +31,7 @@
 2. В настройках репозитория **Settings → Pages** в блоке **Build and deployment** выбирается:
    - **Source:** `Deploy from a branch`
    - **Branch:** `main`, папка `/docs` → **Save**.
-3. После завершения развёртывания проверяется открытие страницы по адресу `https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/` и работа ссылок на текущий выпуск `v0.17.2-alpha`.
+3. После завершения развёртывания проверяется открытие страницы по адресу `https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/` и работа ссылок на текущий выпуск `v0.17.3-alpha`.
 
 ---
 
