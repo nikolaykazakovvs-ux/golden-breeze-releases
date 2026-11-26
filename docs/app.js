@@ -273,7 +273,7 @@
         accLimit: "до 2 одновременных · SL обязателен",
         actionsTitle: "ДЕЙСТВИЯ · XAU · ИМПУЛЬС H1",
         runPillText: "● Торговая сессия активна (Демо)",
-        opsSummary: "<strong>РЕЗУЛЬТАТЫ ОПЕРАЦИЙ:</strong> Изучение рынка: прочитано 200 закрытых баров H1, тренд восходящий · Проверить готовность: терминал MT5 подключён, Algo Trading разрешён, спред 18 п. в норме.",
+        opsSummary: "<strong>РЕЗУЛЬТАТЫ ОПЕРАЦИЙ:</strong> Разовый разбор рынка: прочитано 200 закрытых баров H1, тренд восходящий · Подготовка к запуску: терминал MT5 подключён, Algo Trading разрешён, спред 18 п. в норме.",
         logTitle: "ЖУРНАЛ АГЕНТА · XAU · ИМПУЛЬС H1",
         posBadge: "Риск защищён · Trailing SL",
         posInstrument: "XAUUSD · BUY 0.20 лота",
@@ -347,7 +347,7 @@
         ],
         baseLogs: [
           { time: "14:05:12", badge: "ОРДЕР", kind: "exec", msg: "Открыта демо-позиция <strong>BUY 0.20 XAUUSD @ 2 641.20</strong>, SL 2 634.00, TP 2 662.00." },
-          { time: "14:00:04", badge: "РЫНОК", kind: "mkt", msg: "Изучение рынка: закрыт бар H1 (2 640.90), пробой локального максимума сессии." },
+          { time: "14:00:04", badge: "РЫНОК", kind: "mkt", msg: "Закрыт бар H1 (2 640.90), пробой локального максимума сессии." },
           { time: "13:58:40", badge: "ГОТОВ", kind: "ok", msg: "Проверка готовности пройдена (6/6): счёт MT5 Demo · DEMO-01, лимит риска 0.5%." }
         ]
       },
@@ -374,7 +374,7 @@
         accLimit: "до 1 позиции · жёсткий SL 6.5 п.",
         actionsTitle: "ДЕЙСТВИЯ · XAU · ВОЗВРАТ M15",
         runPillText: "● Готов к запуску по сигналу (Демо)",
-        opsSummary: "<strong>РЕЗУЛЬТАТЫ ОПЕРАЦИЙ:</strong> Изучение рынка: прочитано 300 закрытых баров M15, отклонение от VWAP +0.24% · Проверить готовность: счёт MT5 Demo · DEMO-01 подтверждён, конфликт позиций исключён.",
+        opsSummary: "<strong>РЕЗУЛЬТАТЫ ОПЕРАЦИЙ:</strong> Разовый разбор рынка: прочитано 300 закрытых баров M15, отклонение от VWAP +0.24% · Подготовка к запуску: счёт MT5 Demo · DEMO-01 подтверждён, конфликт позиций исключён.",
         logTitle: "ЖУРНАЛ АГЕНТА · XAU · ВОЗВРАТ M15",
         posBadge: "План заявки · Лимитный расчёт",
         posInstrument: "XAUUSD · План BUY LIMIT 0.15",
@@ -445,7 +445,7 @@
         accLimit: "до 1 позиции · ожидание старта",
         actionsTitle: "ДЕЙСТВИЯ · EUR · ДИАПАЗОН M30",
         runPillText: "⏸ На паузе (только анализ баров)",
-        opsSummary: "<strong>РЕЗУЛЬТАТЫ ОПЕРАЦИЙ:</strong> Изучение рынка: прочитано 240 закрытых баров M30, границы утреннего диапазона 1.0840–1.0892 · Проверить готовность: демо-счёт MT5 Demo · DEMO-02 проверен, торговля не запущена.",
+        opsSummary: "<strong>РЕЗУЛЬТАТЫ ОПЕРАЦИЙ:</strong> Разовый разбор рынка: прочитано 240 закрытых баров M30, границы утреннего диапазона 1.0840–1.0892 · Подготовка к запуску: демо-счёт MT5 Demo · DEMO-02 проверен, торговля не запущена.",
         logTitle: "ЖУРНАЛ АГЕНТА · EUR · ДИАПАЗОН M30",
         posBadge: "Без открытых сделок",
         posInstrument: "EURUSD · Позиций нет (режим изучения)",
@@ -468,7 +468,7 @@
             wickTop: 38,
             bodyY: 42,
             bodyH: 12,
-            decision: "14:20:05 · Режим изучения рынка без торговли: сформирована сводка по 240 закрытым барам M30 EURUSD, ключевое сопротивление 1.0864.",
+            decision: "14:20:05 · Разовый разбор рынка без сделок: сформирована сводка по 240 закрытым барам M30 EURUSD, ключевое сопротивление 1.0864.",
             topLog: { time: "14:20:05", badge: "РЫНОК", kind: "mkt", msg: "Сводка по закрытым барам M30 сохранена в журнал агента (котировка <strong>1.0862</strong>)." }
           },
           {
@@ -519,7 +519,7 @@
         accLimit: "up to 2 concurrent · SL mandatory",
         actionsTitle: "ACTIONS · XAU · MOMENTUM H1",
         runPillText: "● Trading session active (Demo)",
-        opsSummary: "<strong>OPERATION RESULTS:</strong> Study Market: 200 closed H1 bars read, trend bullish · Check Readiness: MT5 terminal connected, Algo Trading allowed, spread 18 pts normal.",
+        opsSummary: "<strong>OPERATION RESULTS:</strong> One-shot market check: 200 closed H1 bars read, trend bullish · Prepare launch: MT5 terminal connected, Algo Trading allowed, spread 18 pts normal.",
         logTitle: "AGENT LOG · XAU · MOMENTUM H1",
         posBadge: "Risk protected · Trailing SL",
         posInstrument: "XAUUSD · BUY 0.20 lots",
@@ -593,7 +593,7 @@
         ],
         baseLogs: [
           { time: "14:05:12", badge: "ORDER", kind: "exec", msg: "Opened demo position <strong>BUY 0.20 XAUUSD @ 2 641.20</strong>, SL 2 634.00, TP 2 662.00." },
-          { time: "14:00:04", badge: "MARKET", kind: "mkt", msg: "Study Market: H1 bar closed (2 640.90), breakout above session local high." },
+          { time: "14:00:04", badge: "MARKET", kind: "mkt", msg: "H1 bar closed (2 640.90), breakout above session local high." },
           { time: "13:58:40", badge: "READY", kind: "ok", msg: "Readiness check passed (6/6): account MT5 Demo · DEMO-01, risk limit 0.5%." }
         ]
       },
@@ -620,7 +620,7 @@
         accLimit: "max 1 position · hard SL 6.5 pts",
         actionsTitle: "ACTIONS · XAU · MEANREVERT M15",
         runPillText: "● Ready to start on signal (Demo)",
-        opsSummary: "<strong>OPERATION RESULTS:</strong> Study Market: 300 closed M15 bars read, VWAP deviation +0.24% · Check Readiness: account MT5 Demo · DEMO-01 verified, position conflict excluded.",
+        opsSummary: "<strong>OPERATION RESULTS:</strong> One-shot market check: 300 closed M15 bars read, VWAP deviation +0.24% · Prepare launch: account MT5 Demo · DEMO-01 verified, position conflict excluded.",
         logTitle: "AGENT LOG · XAU · MEANREVERT M15",
         posBadge: "Order plan · Limit calculation",
         posInstrument: "XAUUSD · Plan BUY LIMIT 0.15",
@@ -691,7 +691,7 @@
         accLimit: "max 1 position · awaiting start",
         actionsTitle: "ACTIONS · EUR · RANGE M30",
         runPillText: "⏸ Paused (bar analysis only)",
-        opsSummary: "<strong>OPERATION RESULTS:</strong> Study Market: 240 closed M30 bars read, morning range bounds 1.0840–1.0892 · Check Readiness: demo account MT5 Demo · DEMO-02 verified, trading not started.",
+        opsSummary: "<strong>OPERATION RESULTS:</strong> One-shot market check: 240 closed M30 bars read, morning range bounds 1.0840–1.0892 · Prepare launch: demo account MT5 Demo · DEMO-02 verified, trading not started.",
         logTitle: "AGENT LOG · EUR · RANGE M30",
         posBadge: "No open trades",
         posInstrument: "EURUSD · No positions (study mode)",
@@ -714,7 +714,7 @@
             wickTop: 38,
             bodyY: 42,
             bodyH: 12,
-            decision: "14:20:05 · Market study mode without trading: compiled summary over 240 closed M30 EURUSD bars, key resistance at 1.0864.",
+            decision: "14:20:05 · One-shot market check without trades: compiled summary over 240 closed M30 EURUSD bars, key resistance at 1.0864.",
             topLog: { time: "14:20:05", badge: "MARKET", kind: "mkt", msg: "Closed M30 bar summary saved to agent log (quote <strong>1.0862</strong>)." }
           },
           {
@@ -765,7 +765,7 @@
         accLimit: "до 2 одночасних · SL обов'язковий",
         actionsTitle: "ДІЇ · XAU · ІМПУЛЬС H1",
         runPillText: "● Торгова сесія активна (Демо)",
-        opsSummary: "<strong>РЕЗУЛЬТАТИ ОПЕРАЦІЙ:</strong> Вивчення ринку: прочитано 200 закритих барів H1, тренд висхідний · Перевірити готовність: термінал MT5 підключено, Algo Trading дозволено, спред 18 п. у нормі.",
+        opsSummary: "<strong>РЕЗУЛЬТАТИ ОПЕРАЦІЙ:</strong> Разовий розбір ринку: прочитано 200 закритих барів H1, тренд висхідний · Підготовка до запуску: термінал MT5 підключено, Algo Trading дозволено, спред 18 п. у нормі.",
         logTitle: "ЖУРНАЛ АГЕНТА · XAU · ІМПУЛЬС H1",
         posBadge: "Ризик захищено · Trailing SL",
         posInstrument: "XAUUSD · BUY 0.20 лота",
@@ -839,7 +839,7 @@
         ],
         baseLogs: [
           { time: "14:05:12", badge: "ОРДЕР", kind: "exec", msg: "Відкрито демо-позицію <strong>BUY 0.20 XAUUSD @ 2 641.20</strong>, SL 2 634.00, TP 2 662.00." },
-          { time: "14:00:04", badge: "РИНОК", kind: "mkt", msg: "Вивчення ринку: закрито бар H1 (2 640.90), пробій локального максимуму сесії." },
+          { time: "14:00:04", badge: "РИНОК", kind: "mkt", msg: "Закрито бар H1 (2 640.90), пробій локального максимуму сесії." },
           { time: "13:58:40", badge: "ГОТОВИЙ", kind: "ok", msg: "Перевірку готовності пройдено (6/6): рахунок MT5 Demo · DEMO-01, ліміт ризику 0.5%." }
         ]
       },
@@ -866,7 +866,7 @@
         accLimit: "до 1 позиції · жорсткий SL 6.5 п.",
         actionsTitle: "ДІЇ · XAU · ПОВЕРНЕННЯ M15",
         runPillText: "● Готовий до запуску за сигналом (Демо)",
-        opsSummary: "<strong>РЕЗУЛЬТАТИ ОПЕРАЦІЙ:</strong> Вивчення ринку: прочитано 300 закритих барів M15, відхилення від VWAP +0.24% · Перевірити готовність: рахунок MT5 Demo · DEMO-01 підтверджено, конфлікт позицій виключено.",
+        opsSummary: "<strong>РЕЗУЛЬТАТИ ОПЕРАЦІЙ:</strong> Разовий розбір ринку: прочитано 300 закритих барів M15, відхилення від VWAP +0.24% · Підготовка до запуску: рахунок MT5 Demo · DEMO-01 підтверджено, конфлікт позицій виключено.",
         logTitle: "ЖУРНАЛ АГЕНТА · XAU · ПОВЕРНЕННЯ M15",
         posBadge: "План заявки · Лімітний розрахунок",
         posInstrument: "XAUUSD · План BUY LIMIT 0.15",
@@ -937,7 +937,7 @@
         accLimit: "до 1 позиції · очікування старту",
         actionsTitle: "ДІЇ · EUR · ДІАПАЗОН M30",
         runPillText: "⏸ На паузі (лише аналіз барів)",
-        opsSummary: "<strong>РЕЗУЛЬТАТИ ОПЕРАЦІЙ:</strong> Вивчення ринку: прочитано 240 закритих барів M30, межі ранкового діапазону 1.0840–1.0892 · Перевірити готовність: демо-рахунок MT5 Demo · DEMO-02 перевірено, торгівлю не запущено.",
+        opsSummary: "<strong>РЕЗУЛЬТАТИ ОПЕРАЦІЙ:</strong> Разовий розбір ринку: прочитано 240 закритих барів M30, межі ранкового діапазону 1.0840–1.0892 · Підготовка до запуску: демо-рахунок MT5 Demo · DEMO-02 перевірено, торгівлю не запущено.",
         logTitle: "ЖУРНАЛ АГЕНТА · EUR · ДІАПАЗОН M30",
         posBadge: "Без відкритих угод",
         posInstrument: "EURUSD · Позицій немає (режим вивчення)",
@@ -960,7 +960,7 @@
             wickTop: 38,
             bodyY: 42,
             bodyH: 12,
-            decision: "14:20:05 · Режим вивчення ринку без торгівлі: сформовано зведення за 240 закритими барами M30 EURUSD, ключовий опір 1.0864.",
+            decision: "14:20:05 · Разовий розбір ринку без угод: сформовано зведення за 240 закритими барами M30 EURUSD, ключовий опір 1.0864.",
             topLog: { time: "14:20:05", badge: "РИНОК", kind: "mkt", msg: "Зведення за закритими барами M30 збережено в журнал агента (котирування <strong>1.0862</strong>)." }
           },
           {
