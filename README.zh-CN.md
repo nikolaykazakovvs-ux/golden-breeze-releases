@@ -10,9 +10,9 @@
 
 Golden Breeze 专为交易领域中专业 AI 智能体的协同作业而打造。用户可通过统一的控制台（Control Desk）全面治理各个智能体、分配任务并管理已连接交易账户的访问权限：涵盖从市场分析、决策制定、持仓管理与风险控制，到深度研究、策略工程、隔离验证以及版本化策略目录的完整流程。
 
-[**下载 Windows 版 (v0.19.2-alpha)**](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.19.2-alpha/GoldenBreeze-FirstInstall-0.19.2-alpha.exe) · [**网页展台 (英文)**](https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/en/) · [网页展台 (乌克兰文)](https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/uk/) · [网页展台 (俄文)](https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/) · [版本发布 v0.19.2-alpha](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.19.2-alpha) · [状态与路线图（英文）](docs/en/roadmap.md) · [快速上手指南（英文）](docs/en/first-start.md) · [合作伙伴与赞助商](#合作伙伴与赞助商)
+[**下载 Windows 版 (v0.20.0-alpha)**](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.20.0-alpha/GoldenBreeze-FirstInstall-0.20.0-alpha.exe) · [**网页展台 (英文)**](https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/en/) · [网页展台 (乌克兰文)](https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/uk/) · [网页展台 (俄文)](https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/) · [版本发布 v0.20.0-alpha](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.20.0-alpha) · [状态与路线图（英文）](docs/en/roadmap.md) · [快速上手指南（英文）](docs/en/first-start.md) · [合作伙伴与赞助商](#合作伙伴与赞助商)
 
-> **Alpha · v0.19.2-alpha（发布于 2026 年 11 月 26 日；展台快照截至 2026 年 11 月 26 日）。** Releases 中已发布首次安装包 `GoldenBreeze-FirstInstall-0.19.2-alpha.exe`（`stable` 通道，Windows x64）；其大小、SHA-256 及首次安装清单签名已与发布元数据核对。在 `0.13.0-alpha`–`0.16.0-alpha` 功能（策略目录、统一控制台、扩展的市场数据、基于历史的 Replay 信号检查、“关于”窗口与诊断报告）的基础上，`0.17` 系列版本新增：在对话中选择已连接的 CLI、API 及本地 Ollama AI 内核，带机器人运行日志的决策记忆分类，无需手动行为审查的 FTMO 准入，按需连接 MT5 并独立设置内核紧急停止的有序控制台，以及不再闪现窗口的后台 CLI 调用。v0.17.3 新增：在控制台显示已连接账户的余额和净值、打开提供商官方页面的“创建 API 密钥”按钮、API 提供商与 Ollama 的模型列表刷新，并修复了 Claude API 在对话和交易循环中的问题。v0.18 新增：多个智能体并行运行各自的交易循环并拥有独立的账户快照、按账户共享的风险控制、每个账户独立的后台 MT5 实例，以及固定显示的运行中智能体面板；完成此次更新后，如需回到 0.17.3 或更早版本，必须恢复更新前创建的备份。v0.18.1 修复了 FTMO 评估阶段与登录错误的识别、保护性跟踪期间普通停止的处理，以及策略检查数量和版本名称。v0.19 新增图形化控制台：来自 MT5 终端的实时 K 线图，叠加所应用策略的线条，标注策略信号、AI 内核决策与经纪商确认的成交，显示持仓线，并可按“策略 → 内核 → 经纪商”链路解读决策；另有“实时报价”“市场与时段背景”“事件流”卡片，以及面向工作会话的控制台布局。v0.19.1 修复绑定账户的智能体订单送达经纪商的问题，以及通过独立后台进程连接的账户的就绪检查与账户模式检查。v0.19.2 是不含新功能的修复版本：它让账户能力检查能够读取通过独立后台进程连接的账户，在重新连接后刷新账户类型检查与账户标签，在二次风险检查中计入佣金预留，在实时图表中显示用户自编策略的计算结果，并将“服务检查”和执行许可绑定到所选智能体。Releases 中没有单独发布的 v0.19.0：0.18.1 之后的下一个面向用户的版本是 0.19.1。展台尚未发布 v0.19 的实时验收报告：下文所述安装、更新及 `FTMO-Demo` 检查属于此前的 v0.14.0-alpha 安装包（2026 年 11 月 12 日快照）；不声明已在 `Real` 账户上完成实盘交易验收。
+> **Alpha · v0.20.0-alpha（发布于 2026 年 11 月 26 日；展台快照截至 2026 年 11 月 26 日）。** Releases 中已发布首次安装包 `GoldenBreeze-FirstInstall-0.20.0-alpha.exe`（`stable` 通道，Windows x64）；其大小、SHA-256 及首次安装清单签名已与发布元数据核对。在 `0.13.0-alpha`–`0.16.0-alpha` 功能（策略目录、统一控制台、扩展的市场数据、基于历史的 Replay 信号检查、“关于”窗口与诊断报告）的基础上，`0.17` 系列版本新增：在对话中选择已连接的 CLI、API 及本地 Ollama AI 内核，带机器人运行日志的决策记忆分类，无需手动行为审查的 FTMO 准入，按需连接 MT5 并独立设置内核紧急停止的有序控制台，以及不再闪现窗口的后台 CLI 调用。v0.17.3 新增：在控制台显示已连接账户的余额和净值、打开提供商官方页面的“创建 API 密钥”按钮、API 提供商与 Ollama 的模型列表刷新，并修复了 Claude API 在对话和交易循环中的问题。v0.18 新增：多个智能体并行运行各自的交易循环并拥有独立的账户快照、按账户共享的风险控制、每个账户独立的后台 MT5 实例，以及固定显示的运行中智能体面板；完成此次更新后，如需回到 0.17.3 或更早版本，必须恢复更新前创建的备份。v0.18.1 修复了 FTMO 评估阶段与登录错误的识别、保护性跟踪期间普通停止的处理，以及策略检查数量和版本名称。v0.19 新增图形化控制台：来自 MT5 终端的实时 K 线图，叠加所应用策略的线条，标注策略信号、AI 内核决策与经纪商确认的成交，显示持仓线，并可按“策略 → 内核 → 经纪商”链路解读决策；另有“实时报价”“市场与时段背景”“事件流”卡片，以及面向工作会话的控制台布局。v0.19.1 修复绑定账户的智能体订单送达经纪商的问题，以及通过独立后台进程连接的账户的就绪检查与账户模式检查。v0.19.2 是不含新功能的修复版本：它让账户能力检查能够读取通过独立后台进程连接的账户，在重新连接后刷新账户类型检查与账户标签，在二次风险检查中计入佣金预留，在实时图表中显示用户自编策略的计算结果，并将“服务检查”和执行许可绑定到所选智能体。v0.20.0 是对用户而言不含新功能的版本：它修复聊天回答下的来源卡片（指向智能体实际读取的那部分知识库文档，搜索找到但智能体未打开的部分单独列出，此前保存的回答按保存时的样子显示），并且只包含模拟盘交易模拟器的服务端部分；程序中尚无模拟盘交易模式。Releases 中没有单独发布的 v0.19.0：0.18.1 之后的下一个面向用户的版本是 0.19.1。展台尚未发布 v0.20 的实时验收报告：下文所述安装、更新及 `FTMO-Demo` 检查属于此前的 v0.14.0-alpha 安装包（2026 年 11 月 12 日快照）；不声明已在 `Real` 账户上完成实盘交易验收。
 
 ---
 
@@ -23,15 +23,16 @@ Golden Breeze 专为交易领域中专业 AI 智能体的协同作业而打造�
 - **乌克兰文网页展台：** [`https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/uk/`](https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/uk/)
 - **俄文网页展台：** [`https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/`](https://nikolaykazakovvs-ux.github.io/golden-breeze-releases/)
 - 介绍多智能体交易平台架构、5 步交易工作流逻辑，以及包含演示数据的交互式控制台（Control Desk）工作区预览；
-- 交互式功能状态矩阵（“已在 v0.19 发布版提供”且每张卡片均标明明确的验证范围徽章、“已计划”、“已延后”）；
+- 交互式功能状态矩阵（“已在 v0.20 发布版提供”且每张卡片均标明明确的验证范围徽章、“已计划”、“已延后”）；
 - `FirstInstall` 安装包直接下载链接、`SHA-256` 一键复制及 PowerShell 校验命令；
 - 英文用户文档：[状态与路线图（英文，`docs/en/roadmap.md`）](docs/en/roadmap.md) · [安装与首次启动（英文，`docs/en/first-start.md`）](docs/en/first-start.md)；
 - 规范的代码库维护与 GitHub Pages 说明（俄文）：[`docs/github-pages.md`（俄文）](docs/github-pages.md) · [`docs/CONTENT-MAINTENANCE.md`（俄文）](docs/CONTENT-MAINTENANCE.md)。
 
 ---
 
-## v0.19.2-alpha 发布版可用功能（`stable` 通道）
+## v0.20.0-alpha 发布版可用功能（`stable` 通道）
 
+- **v0.20.0 修复。**v0.20.0 是对用户而言不含新功能的版本；从 v0.19.2 可直接更新到该版本。它修复了聊天回答下的来源卡片（回答依据了知识库文档的情况）：卡片现在指向智能体实际读取的那部分知识库文档（此前，若搜索找到某一部分而智能体随后读取了另一部分，卡片仍保留第一部分）；每个已读取的部分都会标明其在文档中的位置，搜索找到但智能体未打开的部分则在“搜索已找到，未读取”标题下单独列出。此前保存的回答按保存时的样子显示，位于“来源”标题下，并保留原来的文档位置。该版本还只包含模拟盘交易模拟器的服务端部分（带有市价单和挂单、止损/止盈与跟踪止损的虚拟账户，无法访问真实经纪商）；程序中尚无模拟盘交易模式，因此用户无法使用该功能。
 - **v0.19.2 修复。**v0.19.2 是不含新功能的修复版本；从 v0.19.1 可直接更新到该版本。修复内容：通过独立后台进程连接的账户，其账户能力检查现在会真正读取该账户；此前它会保存“经纪商已断开”的结果，导致智能体界面提示未获取到账户限额数据，而该账户上的订单实际仍在执行；重新连接账户后，控制台不再显示上一次连接时做出的账户类型检查，账户标签（Demo 或 Real）也不再落后于最近一次检查，而启动与发送订单的决策仍每次重新读取账户类型；若在首次与二次风险检查之间报价变动，导致到止损的亏损加上佣金预留已超出该笔交易预算，订单不再发送给经纪商（仅影响智能体的交易循环）；在控制台实时图表中，“1. 策略”区块会显示用户自编策略的计算结果（买入信号、卖出信号或无信号、策略说明，以及信号对应的止损和目标），而不再提示没有策略数据；“服务检查”针对所选智能体及其账户作答，而不再针对列表中的第一个账户，或在切换选择后仍针对原来的智能体，并且执行许可现在按每个智能体分别授予和撤销。
 - **v0.19.1 修复。** v0.19.1 修复：绑定账户的智能体订单重新可以送达经纪商（发送前的二次风险检查曾错误拒绝交易循环中的每一笔订单）；风险会按最新报价重新计算，超出风险预算的订单会在发送前被拒绝；执行诊断的就绪检查不再对通过独立后台进程连接的账户误报失败；此类账户上处于“经纪商”模式的智能体重新通过最新的账户模式检查（“准备启动”、启动、启用执行），而诊断路径中的真实账户、他人的登录名或服务器仍会被拒绝。
 - **图形化控制台：MT5 实时图表、策略图层与决策解读（v0.19 新增）。** 控制台新增实时图表：K 线来自 MT5 终端，最新一根 K 线随价格移动；支持缩放与历史翻页，多个智能体运行时，所选智能体的图表、卡片与决策解读均取自其账户所在的终端。所应用策略的线条绘制在可见历史上（突破策略为价格通道边界、突破阈值与计算窗口；数值由策略自身计算）。K 线上标注策略信号、AI 内核决策与经纪商确认的成交；已开仓位显示入场线、止损线和目标线，并标出移动止损（`trailing-stop`）的步进。所选决策按“策略 → 内核 → 经纪商”链路逐步解读；试运行决策标为“试探性入场”，不会显示订单已发送的消息。“实时报价”“市场与时段背景”“事件流”卡片与图表配合：市场背景自动刷新，“一次性市场检查（不交易）”仍是单独的操作（经纪商时间表、智能体入场窗口、通道与 ATR、波动率状态、M5–D1 各周期方向、伦敦与纽约时段）。控制台布局围绕工作会话设计：启动前为准备与控制，运行中图表优先，并显示所选智能体的解读、风险与控制；方块与固定条可打开针对性停止，并显示智能体名称与账户号码掩码。图表读取终端“市场报价”窗口中可见的品种，并在品种被隐藏时提示。这些场景的实时验收尚未在展台发布。
@@ -54,7 +55,7 @@ Golden Breeze 专为交易领域中专业 AI 智能体的协同作业而打造�
 
 ## 历史快照：0.13–0.14-alpha 周期已交付功能与实时验收状态（v0.14.0-alpha，快照截至 2026 年 11 月 12 日）
 
-本节所述检查属于此前的 `v0.14.0-alpha`（`stable`）安装包，不会沿用到 `v0.19.2-alpha`；功能交付与按环境和账户类型已证实的验证场景分开说明：
+本节所述检查属于此前的 `v0.14.0-alpha`（`stable`）安装包，不会沿用到 `v0.20.0-alpha`；功能交付与按环境和账户类型已证实的验证场景分开说明：
 
 1. **知识库、多模态附件、网络搜索与对话中的子研究员智能体：**
    - 支持在对话消息中附加屏幕截图与图表、文本与表格文件、带有文本层的 `PDF`、`DOCX` 以及短视频片段（不超过 10 MB 且时长在 10 分钟以内——在隔离进程中提取视频帧，不进行音频识别）；
@@ -95,17 +96,17 @@ Golden Breeze 专为交易领域中专业 AI 智能体的协同作业而打造�
 
 ## 下载与快速入门（Windows x64）
 
-当前预发布版本：**[Golden Breeze v0.19.2-alpha](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.19.2-alpha)**（对于 `alpha` 预发布版本，请使用直接标签链接或访问 [Releases](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases) 页面，因为 GitHub 的 `/releases/latest` 接口不包含预发布版本）。
+当前预发布版本：**[Golden Breeze v0.20.0-alpha](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/tag/v0.20.0-alpha)**（对于 `alpha` 预发布版本，请使用直接标签链接或访问 [Releases](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases) 页面，因为 GitHub 的 `/releases/latest` 接口不包含预发布版本）。
 
-- **Windows 版下载（FirstInstall）：** [`GoldenBreeze-FirstInstall-0.19.2-alpha.exe`](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.19.2-alpha/GoldenBreeze-FirstInstall-0.19.2-alpha.exe)（`407,597,200` 字节 / `388.7 MiB`）
-- **校验和文件：** [`GoldenBreeze-FirstInstall-0.19.2-alpha.exe.sha256`](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.19.2-alpha/GoldenBreeze-FirstInstall-0.19.2-alpha.exe.sha256)
-- **SHA-256 校验值：** `c7439901a73aadcfdd12bfe8fbc3795fbb77bca75a0f8b89acd75d9ee7603b7c`
-- **更新清单与签名：** [`build-manifest.json`](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.19.2-alpha/build-manifest.json) · [`first-install.json`](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.19.2-alpha/first-install.json) · [`first-install.json.sig`](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.19.2-alpha/first-install.json.sig)
+- **Windows 版下载（FirstInstall）：** [`GoldenBreeze-FirstInstall-0.20.0-alpha.exe`](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.20.0-alpha/GoldenBreeze-FirstInstall-0.20.0-alpha.exe)（`407,647,786` 字节 / `388.8 MiB`）
+- **校验和文件：** [`GoldenBreeze-FirstInstall-0.20.0-alpha.exe.sha256`](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.20.0-alpha/GoldenBreeze-FirstInstall-0.20.0-alpha.exe.sha256)
+- **SHA-256 校验值：** `5ffdb08fc824bc336387be4b6c718fea6853dc11976bed9da51dde0c3d9299c4`
+- **更新清单与签名：** [`build-manifest.json`](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.20.0-alpha/build-manifest.json) · [`first-install.json`](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.20.0-alpha/first-install.json) · [`first-install.json.sig`](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/releases/download/v0.20.0-alpha/first-install.json.sig)
 
 运行前请在 Windows PowerShell 中校验 `SHA-256`（确认下载的文件与受信任的发布构件逐字节完全一致）：
 
 ```powershell
-Get-FileHash .\GoldenBreeze-FirstInstall-0.19.2-alpha.exe -Algorithm SHA256
+Get-FileHash .\GoldenBreeze-FirstInstall-0.20.0-alpha.exe -Algorithm SHA256
 ```
 
 - GitHub 自动生成的 **Source code** 源码归档仅包含当前展台仓库的文件，并非应用程序安装包。
@@ -135,6 +136,6 @@ Get-FileHash .\GoldenBreeze-FirstInstall-0.19.2-alpha.exe -Algorithm SHA256
 
 [在 GitHub Issues 中提问或反馈问题 →](https://github.com/nikolaykazakovvs-ux/golden-breeze-releases/issues)
 
-反馈时请注明确切的应用程序版本（`0.19.2-alpha`）、预期行为与实际表现。截图请确保已去除密码、API 密钥或账户号码等敏感信息。
+反馈时请注明确切的应用程序版本（`0.20.0-alpha`）、预期行为与实际表现。截图请确保已去除密码、API 密钥或账户号码等敏感信息。
 
 *历史分析结果或模拟账户（Demo）表现并不代表真实账户（Real）能获得类似结果。Golden Breeze 不承诺或保证任何投资收益。*
